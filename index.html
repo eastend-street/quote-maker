@@ -95,11 +95,33 @@
                 startTimer("pageload-section");
             </script>
 
+            <div class="wrapper">
+                <input type="text" class="form-control" placeholder='"Quote here"' id="text_top" />
+                <input type="text" class="form-control" placeholder="Author here" id="text_bottom" />
+            </div>
+
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
                 console.groupEnd("SECTION Section");
             </script>
         </section>
+
+        <section>
+                <script>
+                    console.group("SECTION Section");
+                    startTimer("pageload-section");
+                </script>
+    
+                <div class="wrapper">
+                    <input type="text" class="form-control" value='"Quote here"' id="text_top" />
+                    <input type="text" class="form-control" value="-Author here" id="text_bottom" />
+                </div>
+    
+                <script>
+                    debugInfo.sectionTime = endTimer("pageload-section");
+                    console.groupEnd("SECTION Section");
+                </script>
+            </section>
 
 
         <script>

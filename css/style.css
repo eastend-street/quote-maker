@@ -1,23 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/* 
+====================
+FONTS
+==================== 
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/bpicons/bpicons.eot');
+	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}
+
+/* 
+====================
+MAIN STYLE
+==================== 
+*/
 
 html, body {
-    height: 100%;
-    margin: 0;
     color: #424242;
     background: #f2f4f8;
     text-align: center;
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Josefin Sans', 'sans-serif';
 }
 
 main {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 
@@ -25,17 +38,37 @@ h1{
     font-size: 280%;
 }
 
+
+/* 
+====================
+SECTION
+==================== 
+*/
+
 section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.form-body{
-    padding: 0;
-    border: 0.5px solid lightgrey;
-    background: white;
+section .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    -webkit-text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.67);
+    text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.67);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
 }
+
+/* 
+====================
+CANVAS
+==================== 
+*/
 
 img#start-image {
     position: absolute;
