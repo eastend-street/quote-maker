@@ -40,4 +40,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://quote-maker-admin:JLlR4Fo3zzoQrc7s@cluster0-kxxb5.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+const db = client.db('quote-maker');
+const collection = db.collection('quotes');
+
+
+
 module.exports = app;
