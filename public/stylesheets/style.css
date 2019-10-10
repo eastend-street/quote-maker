@@ -14,7 +14,6 @@ MAIN STYLE
 html, body {
     color: #424242;
     background: #f2f4f8;
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -127,7 +126,7 @@ BUTTON
 
 .custom-file-upload {
     width: 50px;
-    height: 50px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +136,7 @@ button, .custom-file-upload {
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #FFC750;
-    background: linear-gradient(45deg, #FFC750 50%, #fff 50%);
+    background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     position: relative;
     color: #FFC750;
     font-size: 1.5em;
@@ -201,11 +200,11 @@ section#two {
 
 .section-two-label {
     background: url('../images/02.png') no-repeat;
-    width: 1047px;
-    height: 766px;
+    width: 1066px;
+    height: 820px;
     position: absolute;
     top: 50%;
-    transform: translate(-20%, -50%);
+    transform: translate(-40%, -50%);
 }
 
 /*

@@ -124,8 +124,8 @@
 
             <div class="wrapper">
 
-                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="quote_top"></textarea>
-                <input type="text" class="input-auther" placeholder="Author" minlength="1" maxlength="30" id="auther_top" />
+                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="text_top"></textarea>
+                <input type="text" class="input-auther" placeholder="Author" minlength="1" maxlength="30" id="text_bottom" />
                 <!-- <button id="submit-quote">Submit</button> -->
                 <a href="#two">
                     <button class="next">
@@ -150,8 +150,9 @@
                     startTimer("pageload-section");
                 </script>
 
-                <<div class="canvas-section">
+                <div class="canvas-section">
                         <div class="canvas-main">
+                        <div class="section-two-label"></div>
                           <canvas id="quoteCanvas" class="canvas-container">
                             Unfortunately your browser does not support canvas.
                           </canvas>
@@ -197,7 +198,6 @@
                           </div>
                 
                           <div class="settings-input-file">
-                            <!-- <button id="random-image" type="button">?</button> -->
                             <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
                             <input type="text"  />
                             <input type="file" id="image-upload" class="image-upload" />
@@ -208,7 +208,8 @@
                 
                           <div class="settings-input">
                             <button id="save_quote" type="button">Save</button>
-                            <button id="download_quote" type="button">Download</button>
+                            <a id="download_quote" download="myQuote.jpg">
+                            <button type="button">Download</button></a>
                           </div>
                         </div>
                       </div>
