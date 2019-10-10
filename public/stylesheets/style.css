@@ -136,7 +136,7 @@ button, .custom-file-upload {
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #FFC750;
-    background: linear-gradient(45deg, #FFC750 50%, #fff 50%);
+    background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     position: relative;
     color: #FFC750;
     font-size: 1.5em;

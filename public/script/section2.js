@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    var canvas = document.getElementById('quoteCanvas');
+    let canvas = document.getElementById('quoteCanvas');
     ctx = canvas.getContext('2d');
 
     // core drawing function
-    var drawQuote = function () {
+    const drawQuote = function () {
         var img = document.getElementById('start-image');
         var fontSize = parseInt($('#text_top_font_size').val());
         var canvasSize = $(".canvas-container").width();
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 
     //inner canvas for wrapping text
-    var wrapText = function (context, text, x, y, maxWidth, lineHeight, fromBottom) {
+    const wrapText = function (context, text, x, y, maxWidth, lineHeight, fromBottom) {
         var pushMethod = (fromBottom) ? 'unshift' : 'push';
 
         lineHeight = (fromBottom) ? -lineHeight : lineHeight;
@@ -87,12 +87,15 @@ $(document).ready(function () {
     };
 
     // read random image from upload field and display it in browser
-    var randomImage = function () {
+    const randomImage = function () {
         var randomNum = Math.floor(Math.random() * 999);
 
         var source = 'https://picsum.photos/id/'+randomNum+'/500.jpg';
+        // source = 'https://picsum.photos/200/300';
 
         var image = new Image();
+        image.crossOrigin = 'anonymous';
+        image.src = source;
         image.onerror = function () {
             randomImage();
         };
@@ -101,8 +104,8 @@ $(document).ready(function () {
             drawQuote();
         };
         
-        image.src = source;
-        console.log(source);
+        
+        console.log(image.src);
     }
 
     // read selected input image from upload field and display it in browser
@@ -185,8 +188,10 @@ $(document).ready(function () {
     });
 
     $('#download_quote').click(function (e) {
-        $(this).attr('href', canvas.toDataURL());
-        $(this).attr('download', 'quote.png');
+        // $(this).attr('href', canvas.toDataURL());
+        // $(this).attr('download', 'quote.png');
+        var image = canvas.toDataURL("image/jpg");
+        e.href = image;
     });
 
 
