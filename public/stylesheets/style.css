@@ -1,14 +1,27 @@
-/* 
+/*
 ====================
 FONTS
-==================== 
+====================
 */
 
+<<<<<<< HEAD
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/bpicons/bpicons.eot');
+	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}
+
+/*
+=======
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
-/* 
+/*
+>>>>>>> 522c1fccfbc9c012113ddd589a6c391c3604ba87
 ====================
 MAIN STYLE
-==================== 
+====================
 */
 
 html, body {
@@ -29,10 +42,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
 }
 
-/* 
+/*
 ====================
 FORM
-==================== 
+====================
 */
 
 label {
@@ -49,7 +62,7 @@ input[type="text"], input[type="email"], textarea {
     border: solid 2px #FFC750;
     color: inherit;
     display: block;
-    outline: 0; 
+    outline: 0;
     text-decoration: none;
     width: 90%;
 }
@@ -86,10 +99,10 @@ textarea {
     opacity: 1.0;
 }
 
-/* 
+/*
 ====================
 BUTTON
-==================== 
+====================
 */
 
 button {
@@ -103,7 +116,7 @@ button {
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
   }
-  
+
   button:after {
     content: "";
     position: absolute;
@@ -114,26 +127,26 @@ button {
     background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     z-index: -1;
   }
-  
+
   button,
   button:after {
     background-size: 300%;
     background-position: 100%;
     transition: .7s;
   }
-  
+
   button:hover,
   button:hover:after {
     background-position: 0;
     color: #fff;
   }
-  
-    
 
-/* 
+
+
+/*
 ====================
 SECTION
-==================== 
+====================
 */
 
 section {
@@ -153,10 +166,10 @@ section .wrapper {
     white-space: nowrap;
 }
 
-/* 
+/*
 ====================
 CANVAS
-==================== 
+====================
 */
 
 img#start-image {
@@ -185,4 +198,190 @@ img#start-image {
 
 .canvas-main {
     background-color: blue;
+}
+
+/*
+====================
+3 dots nav
+====================
+*/
+nav {
+    position: fixed;
+    height: 100vh;
+    width: 18px;
+    margin-left: 80px;
+    z-index: 3;
+}
+
+nav .wrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 128px;
+    width: 18px;
+}
+
+nav .wrapper .outer-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #fafaff;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .wrapper .outer-circle:nth-child(1) {
+    top: 0;
+}
+
+nav .wrapper .outer-circle:nth-child(2) {
+    top: 55px;
+}
+
+nav .wrapper .outer-circle:nth-child(3) {
+    top: 110px;
+}
+
+nav .wrapper .outer-circle .inner-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fafaff;
+    display: none;
+}
+
+nav .wrapper .outer-circle .inner-circle.active {
+    display: block;
+}
+
+/*
+====================
+SECTION 1
+====================
+*/
+
+header {
+    /* background-color: black; */
+    color: #fafaff;
+    position: relative;
+}
+
+header .wrapper {
+    position: absolute;
+    z-index: 2;
+    padding: 20px 40px;
+}
+
+header .wrapper a {
+    text-decoration: none;
+    color: #fafaff;
+    display: flex;
+    align-items: center;
+}
+
+header .wrapper .logo {
+    width: 60px;
+}
+
+header .wrapper .header-title {
+    padding-left: 23px;
+    font-size: 28px;
+    font-family: 'Calisto MT';
+}
+
+section#one {
+    height: 100vh;
+    overflow: hidden;
+}
+
+section#one .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#one .wrapper .input-quote {
+    height: 196px;
+    width: 490px;
+    margin-bottom: 40px;
+    border: none;
+    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    font-size: 1.8rem;
+    padding: 5px 15px;
+    border-style: none;
+    background-color: #fafaff;
+    box-sizing: border-box;
+}
+
+section#one .wrapper .input-quote::placeholder {
+    color: rgb(200, 200, 200);
+}
+
+section#one .wrapper .input-quote:focus {
+    outline: 0;
+}
+
+section#one .wrapper input {
+    height: 72px;
+    width: 490px;
+    margin-bottom: 40px;
+    border: none;
+    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    font-size: 1.8rem;
+    padding-left: 15px;
+    border-style: none;
+    background-color: #fafaff;
+    box-sizing: border-box;
+}
+
+section#one .wrapper input.input-quote {
+    height: 150px;
+}
+
+section#one .wrapper input::placeholder {
+    color: rgb(200, 200, 200);
+}
+
+section#one .wrapper input:focus {
+    outline: 0;
+}
+
+section#one .wrapper a {
+    text-decoration: none;
+}
+
+section#one .wrapper .next {
+    height: 83px;
+    width: 235px;
+    border: 2px solid rgb(248, 200, 100);
+    color: rgb(248, 200, 100);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#one .wrapper .next span {
+    font-family: Baskerville;
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+section#one .back-pic-wrapper {
+    right: 0;
+    bottom: 0;
+    position: relative;
+}
+
+section#one .back-pic {
+    position: absolute;
+    width: 630px;
+    right: 54px;
+    bottom: 163px;
 }
