@@ -31,10 +31,9 @@ app.get("/api", (req, res) => {
   client.connect(err => {
     const db = client.db(process.env.DB_DATABASE_NAME);
     db.collection("quotes")
-      .find({})
+      .find(req.query)
       .toArray(function(err, result) {
         if (err) throw err;
-        console.log(result);
         client.close();
         res.send(result);
       });
@@ -47,7 +46,7 @@ app.post(
     check("quote").isLength({ min: 1, max: 150 }),
     check("author").isLength({ min: 1, max: 30 }),
     check("author").isLength({ min: 1, max: 500 }),
-    check("categories").isLength({ min: 1, max: 50 })
+    check("category").isLength({ min: 1, max: 50 })
   ],
   (req, res) => {
     client.connect(err => {
@@ -60,7 +59,7 @@ app.post(
         quote: req.body.quote,
         author: req.body.author,
         canvas_url: req.body.canvas_url,
-        categories: req.body.categories
+        category: req.body.category
       };
       db.collection("quotes").insertOne(data, (err, result) => {
         console.log("Inserted one document into the collection");
