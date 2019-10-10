@@ -89,7 +89,19 @@
         </div>
     </header>
 
-    <nav></nav>
+    <nav>
+        <div class="wrapper">
+            <div class="outer-circle" id="nav1">
+                <div class="inner-circle"></div>
+            </div>
+            <div class="outer-circle" id="nav2">
+                <div class="inner-circle"></div>
+            </div>
+            <div class="outer-circle" id="nav3">
+                <div class="inner-circle"></div>
+            </div>
+        </div>
+    </nav>
 
     <main>
         <script>
@@ -146,7 +158,7 @@
                 </script>
             </section>
 
-            <section id="two">
+            <section id="three">
                     <script>
                         console.group("SECTION Section");
                         startTimer("pageload-section");
@@ -240,6 +252,7 @@
         debugInfo.bodyTime = endTimer("pageload-body");
         console.groupEnd("BODY Section");
     </script>
+    <script src="./section1.js"></script>
 </body>
 
 <script>

@@ -84,7 +84,59 @@ img#start-image {
 3 dots nav
 ====================
 */
+nav {
+    position: fixed;
+    height: 100vh;
+    width: 18px;
+    margin-left: 80px;
+    z-index: 3;
+}
 
+nav .wrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 128px;
+    width: 18px;
+}
+
+nav .wrapper .outer-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #fafaff;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .wrapper .outer-circle:nth-child(1) {
+    top: 0;
+}
+
+nav .wrapper .outer-circle:nth-child(2) {
+    top: 55px;
+}
+
+nav .wrapper .outer-circle:nth-child(3) {
+    top: 110px;
+}
+
+nav .wrapper .outer-circle .inner-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fafaff;
+    display: none;
+}
+
+nav .wrapper .outer-circle .inner-circle.active {
+    display: block;
+}
 
 /*
 ====================
@@ -94,7 +146,7 @@ SECTION 1
 
 header {
     /* background-color: black; */
-    color: white;
+    color: #fafaff;
     position: relative;
 }
 
@@ -106,7 +158,7 @@ header .wrapper {
 
 header .wrapper a {
     text-decoration: none;
-    color: white;
+    color: #fafaff;
     display: flex;
     align-items: center;
 }
