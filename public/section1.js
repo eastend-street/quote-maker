@@ -38,7 +38,7 @@
         }
     });
 
-    var scrollMenu = function() {
+    const scrollMenu = function() {
         let navList = {
             '#one': 0,
             '#two': 0,
