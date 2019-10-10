@@ -54,6 +54,7 @@
 
   <link rel="stylesheet" href="./stylesheets/reset.css">
   <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script>
     debugInfo.headTime = endTimer("pageload-head");
@@ -162,8 +163,11 @@
           </div>
 
           <div class="settings-input-file">
-              <button id="random-image" type="button">?</button>
-              <input type="file" id="image-upload" class="image-upload" />
+            <!-- <button id="random-image" type="button">?</button> -->
+            <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
+            <input type="text"  />
+            <input type="file" id="image-upload" class="image-upload" />
+            <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
           </div>
 
           <div class="settings-input"></div>
