@@ -1,256 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-    clearConsole();
-    console.group("HTML Section");
-    startTimer("pageload-html");
+  clearConsole();
+  console.group("HTML Section");
+  startTimer("pageload-html");
 
-    class DebugInfo {
-        constructor() {
-            this.htmlTime = 0;
-            this.headTime = 0;
-            this.headerTime = 0;
-            this.mainTime = 0;
-            this.sectionTime = 0;
-            this.bodyTime = 0;
-            this.footerTime = 0;
-        }
+  class DebugInfo {
+    constructor() {
+      this.htmlTime = 0;
+      this.headTime = 0;
+      this.headerTime = 0;
+      this.mainTime = 0;
+      this.sectionTime = 0;
+      this.bodyTime = 0;
+      this.footerTime = 0;
     }
+  }
 
-    let debugInfo = new DebugInfo();
+  let debugInfo = new DebugInfo();
 
 
-    function clearConsole() {
-        console.clear();
-    }
+  function clearConsole() {
+    console.clear();
+  }
 
-    function startTimer(group) {
-        return console.time(group);
-    }
+  function startTimer(group) {
+    return console.time(group);
+  }
 
-    function endTimer(group) {
-        return console.timeEnd(group);
-    }                 
+  function endTimer(group) {
+    return console.timeEnd(group);
+  }                 
 </script>
 
 <head>
-    <script>
-        console.group("HEAD SECTION");
-        startTimer("pageload-head");
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="HTML,CSS,ExpressJS,JavaScript">
-    <meta name="description" content="Quote making website">
-    <meta name="author" content="Team Shihomi">
-    <meta name="generator" content="Visual Studio Code">
-    <meta name="application-name" content="Responsive Website">
-    <title>Quote maker</title>
-    <!-- Add Base URI later -->
-    <!-- <base href="http://localhost:3000/" target="_self"> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <noscript>JavaScript is not supported or is disabled in browser!</noscript>
+  <script>
+    console.group("HEAD SECTION");
+    startTimer("pageload-head");
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="HTML,CSS,ExpressJS,JavaScript">
+  <meta name="description" content="Quote making website">
+  <meta name="author" content="Team Shihomi">
+  <meta name="generator" content="Visual Studio Code">
+  <meta name="application-name" content="Responsive Website">
+  <title>Quote maker</title>
+  <!-- Add Base URI later -->
+  <!-- <base href="http://localhost:3000/" target="_self"> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <noscript>JavaScript is not supported or is disabled in browser!</noscript>
 
-    <link rel="stylesheet" href="./stylesheets/reset.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./stylesheets/reset.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
 
-    <script>
-        debugInfo.headTime = endTimer("pageload-head");
-        console.groupEnd("HEAD Section");
-    </script>
+  <script>
+    debugInfo.headTime = endTimer("pageload-head");
+    console.groupEnd("HEAD Section");
+  </script>
 </head>
 
 <body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
-    onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
+  onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
+  onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
 
+  <script>
+    console.group("BODY Section");
+    startTimer("pageload-body");
+  </script>
+
+  <header>
     <script>
-        console.group("BODY Section");
-        startTimer("pageload-body");
+      console.group("HEADER Section");
+      startTimer("pageload-header");
     </script>
 
-    <header>
-        <script>
-            console.group("HEADER Section");
-            startTimer("pageload-header");
-        </script>
 
-
-        <script>
-            debugInfo.headerTime = endTimer("pageload-header");
-            console.groupEnd("HEADER Section");
-        </script>
-    </header>
-
-    <main>
-        <script>
-            console.group("MAIN Section");
-            startTimer("pageload-main");
-        </script>
-
-        <section id="one">
-            <script>
-                console.group("SECTION Section");
-                startTimer("pageload-section");
-            </script>
-
-            <div class="wrapper">
-                <input type="text" class="form-control" placeholder='"Quote here"' id="text_top" />
-                <input type="text" class="form-control" placeholder="Author here" id="text_bottom" />
-                <!-- <button id="submit-quote">Submit</button> -->
-                <a href="#two">Submit</a>
-            </div>
-
-            <script>
-                debugInfo.sectionTime = endTimer("pageload-section");
-                console.groupEnd("SECTION Section");
-            </script>
-        </section>
-
-        <section id="two">
-                <script>
-                    console.group("SECTION Section");
-                    startTimer("pageload-section");
-                </script>
-    
-                <div class="wrapper">
-                    <h1>Section 2</h1>
-                </div>
-    
-                <script>
-                    debugInfo.sectionTime = endTimer("pageload-section");
-                    console.groupEnd("SECTION Section");
-                </script>
-            </section>
-
-            <section id="two">
-                    <script>
-                        console.group("SECTION Section");
-                        startTimer("pageload-section");
-                    </script>
-        
-                    <div class="wrapper">
-                        <h1>Section 3</h1>
-                    </div>
-        
-                    <script>
-                        debugInfo.sectionTime = endTimer("pageload-section");
-                        console.groupEnd("SECTION Section");
-                    </script>
-                </section>
-
-
-        <script>
-            debugInfo.mainTime = endTimer("pageload-main");
-            console.groupEnd("MAIN Section");
-        </script>
-    </main>
-
-    <footer>
-        <script>
-            console.group("FOOTER SECTION");
-            startTimer("pageload-footer");
-
-            function onContextMenuEvent() {
-                console.log("onContextMenuEvent")
-            }
-
-            function onKeyDownEvent() {
-                console.log("onKeyDownEvent")
-            }
-            function onKeyUpEvent() {
-                console.log("onKeyUpEvent")
-            }
-
-            function onKeyPressEvent() {
-                console.log("onKeyPressEvent")
-            }
-
-            function onCopyEvent() {
-                console.log("copy")
-            }
-
-            function onPasteEvent() {
-                console.log("paste")
-            }
-
-            function onCutEvent() {
-                console.log("cut")
-            }
-
-            function onPageLoad() {
-                console.log("Page is loaded");
-            }
-
-            function onPageUnLoad() {
-                console.log("Page is Un-loaded");
-            }
-
-            function onPageShow() {
-                console.log("Page is Showing")
-            }
-
-            function onPageHide() {
-                console.log("Page is hiding")
-            }
-
-            function onPageFocus() {
-                console.log("Page has Focus")
-            }
-
-            function onPageBlur() {
-                console.log("Page lost focus")
-            }
-
-            function onBeforePageFocus() {
-                console.log("Page is about to gain focus")
-            }
-            function onBeforePageBlur() {
-                console.log("Page about to lose focus")
-            }
-
-            debugInfo.footerTime = endTimer("pageload-footer");
-            console.groupEnd("FOOTER Section");
-        </script>
-    </footer>
     <script>
-        debugInfo.bodyTime = endTimer("pageload-body");
-        console.groupEnd("BODY Section");
+      debugInfo.headerTime = endTimer("pageload-header");
+      console.groupEnd("HEADER Section");
     </script>
+  </header>
+
+  <main>
+    <script>
+      console.group("MAIN Section");
+      startTimer("pageload-main");
+    </script>
+
+    <section id="one">
+      <script>
+        console.group("SECTION Section");
+        startTimer("pageload-section");
+      </script>
+
+      <div class="wrapper">
+        <input type="text" class="form-control" placeholder='"Quote here"' id="text_top" />
+        <input type="text" class="form-control" placeholder="Author here" id="text_bottom" />
+        <!-- <button id="submit-quote">Submit</button> -->
+        <a href="#two">Submit</a>
+      </div>
+
+      <script>
+        debugInfo.sectionTime = endTimer("pageload-section");
+        console.groupEnd("SECTION Section");
+      </script>
+    </section>
+
+    <section id="two">
+      <div class="section-two-label"></div>
+      <script>
+        console.group("SECTION Section");
+        startTimer("pageload-section");
+      </script>
+
+      <div class="canvas-section">
+        <div class="canvas-main">
+          <canvas id="quoteCanvas" class="canvas-container">
+            Unfortunately your browser does not support canvas.
+          </canvas>
+          <img id="start-image" src="" alt="" />
+        </div>
+        <div class="canvas-settings">
+          <span>Quote</span>
+          <input type="text" placeholder='"Quote here"' id="text_top2" />
+          <label class="control-label" for="text_top_font_size">Font size:</label>
+          <input style="width:80%" id="text_top_font_size" type="range" min="0" max="72" value="50" />
+          <span id="text_top_font_size__val">50</span>px
+          <label class="control-label" for="text_top_offset">Offset from top:</label>
+          <input style="width:80%" id="text_top_offset" type="range" min="0" max="500" value="250" />
+          <span id="text_top_offset__val">250</span>px
+
+          <span>Author</span>
+          <input type="text" placeholder="Author here" id="text_bottom2" />
+          <label  for="text_bottom_font_size">Font size:</label>
+          <input style="width:80%" id="text_bottom_font_size" type="range" min="0" max="20" value="15" />
+          <span id="text_bottom_font_size__val">15</span>px
+          <label  for="text_bottom_offset">Offset from top:</label>
+          <input style="width:80%" id="text_bottom_offset" type="range" min="0" max="1000" value="950" />
+          <span id="text_bottom_offset__val">950</span>px
+
+          <span>More</span>
+          <label for="text_line_height">Line height:</label>
+          <input style="width:80%" id="text_line_height" type="range" min="0" max="100" value="15" />
+          <span id="text_line_height__val">15</span>pt
+          <label for="text_stroke_width">Stroke width:</label>
+          <input style="width:80%" id="text_stroke_width" type="range" min="0" max="20" value="4" />
+          <span id="text_stroke_width__val">4</span>pt
+
+          <span>Image:</span>
+          <input type="file" id="imgInp" />
+          <button id="randomImage" type="button">Get a random image</button>
+
+          <br>
+          <button id="save_quote" type="button">Save</button>
+          <button id="download_quote" type="button">Download</button>
+        </div>
+      </div>
+
+      <script>
+        debugInfo.sectionTime = endTimer("pageload-section");
+        console.groupEnd("SECTION Section");
+      </script>
+    </section>
+
+    <section id="three">
+      <script>
+        console.group("SECTION Section");
+        startTimer("pageload-section");
+      </script>
+
+      <div class="wrapper">
+        <h1>Section 3</h1>
+      </div>
+
+      <script>
+        debugInfo.sectionTime = endTimer("pageload-section");
+        console.groupEnd("SECTION Section");
+      </script>
+    </section>
+
+
+    <script>
+      debugInfo.mainTime = endTimer("pageload-main");
+      console.groupEnd("MAIN Section");
+    </script>
+  </main>
+
+  <footer>
+    <script>
+      console.group("FOOTER SECTION");
+      startTimer("pageload-footer");
+
+      function onContextMenuEvent() {
+        console.log("onContextMenuEvent")
+      }
+
+      function onKeyDownEvent() {
+        console.log("onKeyDownEvent")
+      }
+      function onKeyUpEvent() {
+        console.log("onKeyUpEvent")
+      }
+
+      function onKeyPressEvent() {
+        console.log("onKeyPressEvent")
+      }
+
+      function onCopyEvent() {
+        console.log("copy")
+      }
+
+      function onPasteEvent() {
+        console.log("paste")
+      }
+
+      function onCutEvent() {
+        console.log("cut")
+      }
+
+      function onPageLoad() {
+        console.log("Page is loaded");
+      }
+
+      function onPageUnLoad() {
+        console.log("Page is Un-loaded");
+      }
+
+      function onPageShow() {
+        console.log("Page is Showing")
+      }
+
+      function onPageHide() {
+        console.log("Page is hiding")
+      }
+
+      function onPageFocus() {
+        console.log("Page has Focus")
+      }
+
+      function onPageBlur() {
+        console.log("Page lost focus")
+      }
+
+      function onBeforePageFocus() {
+        console.log("Page is about to gain focus")
+      }
+      function onBeforePageBlur() {
+        console.log("Page about to lose focus")
+      }
+
+      debugInfo.footerTime = endTimer("pageload-footer");
+      console.groupEnd("FOOTER Section");
+    </script>
+  </footer>
+  <script>
+    debugInfo.bodyTime = endTimer("pageload-body");
+    console.groupEnd("BODY Section");
+  </script>
+  <script src="./script/canvas.js"></script>
 </body>
 
 <script>
-    debugInfo.htmlTime = endTimer("pageload-html");
-    console.groupEnd("HTML Section");
+  debugInfo.htmlTime = endTimer("pageload-html");
+  console.groupEnd("HTML Section");
 
-    console.group("Debug Information");
-    console.group("Page Information");
-    console.log("Page Loaded: " + location.href + " with parms: " + location.search);
-    console.log("Language: " + navigator.language);
-    console.log("Cookies Enabled: " + navigator.cookieEnabled);
-    console.log("Platform: " + navigator.platform + "(" + navigator.product + ")");
-    console.log(navigator.appCodeName + "(" + navigator.appName + ") " + navigator.appVersion);
-    console.log("UserAgent: " + navigator.userAgent);
-    console.log("JavaEnabled: " + navigator.javaEnabled());
-    console.log("Is Online: " + navigator.onLine);
-    console.groupEnd("Page Information");
+  console.group("Debug Information");
+  console.group("Page Information");
+  console.log("Page Loaded: " + location.href + " with parms: " + location.search);
+  console.log("Language: " + navigator.language);
+  console.log("Cookies Enabled: " + navigator.cookieEnabled);
+  console.log("Platform: " + navigator.platform + "(" + navigator.product + ")");
+  console.log(navigator.appCodeName + "(" + navigator.appName + ") " + navigator.appVersion);
+  console.log("UserAgent: " + navigator.userAgent);
+  console.log("JavaEnabled: " + navigator.javaEnabled());
+  console.log("Is Online: " + navigator.onLine);
+  console.groupEnd("Page Information");
 
-    console.group("DOM Information");
-    console.group("DOM - Window Object");
-    console.log(window);
-    console.groupEnd("DOM - Window object");
+  console.group("DOM Information");
+  console.group("DOM - Window Object");
+  console.log(window);
+  console.groupEnd("DOM - Window object");
 
-    console.group("DOM - Document Object");
-    console.log(document);
-    console.groupEnd("DOM - Document Object");
+  console.group("DOM - Document Object");
+  console.log(document);
+  console.groupEnd("DOM - Document Object");
 
-    console.group("DOM - Navigator");
-    console.log(navigator);
-    console.groupEnd("DOM - Navigator");
-    console.groupEnd("DOM Information");
+  console.group("DOM - Navigator");
+  console.log(navigator);
+  console.groupEnd("DOM - Navigator");
+  console.groupEnd("DOM Information");
 
-    console.groupEnd("DebugInformation");
+  console.groupEnd("DebugInformation");
 
 </script>
 
