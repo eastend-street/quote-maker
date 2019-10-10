@@ -388,12 +388,13 @@ section#one .wrapper .input-quote {
     width: 490px;
     margin-bottom: 40px;
     border: none;
-    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
     font-size: 1.8rem;
-    padding: 5px 15px;
+    padding: 15px;
     border-style: none;
     background-color: #fafaff;
     box-sizing: border-box;
+    border-radius: 0;
 }
 
 section#one .wrapper .input-quote::placeholder {
@@ -409,12 +410,13 @@ section#one .wrapper input {
     width: 490px;
     margin-bottom: 40px;
     border: none;
-    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
     font-size: 1.8rem;
     padding-left: 15px;
     border-style: none;
     background-color: #fafaff;
     box-sizing: border-box;
+    border-radius: 0;
 }
 
 section#one .wrapper input.input-quote {
