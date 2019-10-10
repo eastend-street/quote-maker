@@ -14,7 +14,6 @@ MAIN STYLE
 html, body {
     color: #424242;
     background: #f2f4f8;
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -37,8 +36,7 @@ FORM
 
 label {
     color: #787878;
-    display: block;
-    font-size: 0.9em;
+    font-size: 0.7em;
     font-weight: 400;
     margin: 0 0 1em 0;
 }
@@ -49,7 +47,7 @@ input[type="text"], input[type="email"], textarea {
     border: solid 2px #FFC750;
     color: inherit;
     display: block;
-    outline: 0; 
+    outline: 0;
     text-decoration: none;
     width: 90%;
 }
@@ -102,9 +100,9 @@ button {
     font-size: 1.2em;
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
-  }
-  
-  button:after {
+}
+
+button:after {
     content: "";
     position: absolute;
     top: 0;
@@ -113,22 +111,18 @@ button {
     right: 0;
     background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     z-index: -1;
-  }
-  
-  button,
-  button:after {
+}
+
+button, button:after {
     background-size: 300%;
     background-position: 100%;
     transition: .7s;
-  }
-  
-  button:hover,
-  button:hover:after {
+}
+
+button:hover, button:hover:after {
     background-position: 0;
     color: #fff;
-  }
-  
-    
+}
 
 /* 
 ====================
@@ -153,6 +147,19 @@ section .wrapper {
     white-space: nowrap;
 }
 
+section#two {
+    background-color: #FAFAFF;
+}
+
+.section-two-label {
+    background: url('../images/02.png') no-repeat;
+    width: 1047px;
+    height: 766px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-20%, -50%);
+}
+
 /* 
 ====================
 CANVAS
@@ -166,23 +173,40 @@ img#start-image {
 }
 
 .setting-value {
-    text-align: center;
     font-weight: bold;
 }
 
 .canvas-section {
-    display: grid;
-    grid-template-columns: 70% auto;
-    grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
     height: 100%;
+    padding: 50px 100px;
+}
+
+.canvas-container {
+    display: block;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.1);
+    box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.15);
 }
 
 .canvas-section>div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 0 20px;
 }
 
 .canvas-main {
-    background-color: blue;
+    flex: 2 0 300px;
+    width: 75%;
 }
+
+.canvas-settings {
+    flex: 1 0 300px;
+    width: 25%;
+    height: 100%;
+}
+
+/* @media only screen and (max-width: 768px) {
+
+} */
