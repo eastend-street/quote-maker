@@ -90,7 +90,7 @@ $(document).ready(function () {
     var randomImage = function () {
         var randomNum = Math.floor(Math.random() * 999);
 
-        var source = 'https://picsum.photos/id/'+randomNum+'/350.jpg';
+        var source = 'https://picsum.photos/id/'+randomNum+'/500.jpg';
 
         var image = new Image();
         image.onerror = function () {
@@ -194,7 +194,7 @@ $(document).ready(function () {
     // Init at startup
     //==================== 
     window.setTimeout(function () {
-        drawQuote();
+        // drawQuote();
     }, 100);
 
 });
