@@ -14,7 +14,6 @@ MAIN STYLE
 html, body {
     color: #424242;
     background: #f2f4f8;
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -201,11 +200,11 @@ section#two {
 
 .section-two-label {
     background: url('../images/02.png') no-repeat;
-    width: 1047px;
-    height: 766px;
+    width: 1066px;
+    height: 820px;
     position: absolute;
     top: 50%;
-    transform: translate(-20%, -50%);
+    transform: translate(-40%, -50%);
 }
 
 /*

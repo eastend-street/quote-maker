@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    let canvas = document.getElementById('quoteCanvas');
+    var canvas = document.getElementById('quoteCanvas');
     ctx = canvas.getContext('2d');
 
     // core drawing function
-    const drawQuote = function () {
+    var drawQuote = function () {
         var img = document.getElementById('start-image');
         var fontSize = parseInt($('#text_top_font_size').val());
         var canvasSize = $(".canvas-container").width();
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 
     //inner canvas for wrapping text
-    const wrapText = function (context, text, x, y, maxWidth, lineHeight, fromBottom) {
+    var wrapText = function (context, text, x, y, maxWidth, lineHeight, fromBottom) {
         var pushMethod = (fromBottom) ? 'unshift' : 'push';
 
         lineHeight = (fromBottom) ? -lineHeight : lineHeight;
@@ -87,7 +87,7 @@ $(document).ready(function () {
     };
 
     // read random image from upload field and display it in browser
-    const randomImage = function () {
+    var randomImage = function () {
         var randomNum = Math.floor(Math.random() * 999);
 
         var source = 'https://picsum.photos/id/'+randomNum+'/500.jpg';
@@ -194,7 +194,7 @@ $(document).ready(function () {
     // Init at startup
     //==================== 
     window.setTimeout(function () {
-        // drawQuote();
+        drawQuote();
     }, 100);
 
 });
