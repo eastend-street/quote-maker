@@ -126,30 +126,37 @@
           <span>Quote</span>
           <input type="text" placeholder='"Quote here"' id="text_top2" />
           <label class="control-label" for="text_top_font_size">Font size:</label>
-          <input style="width:80%" id="text_top_font_size" type="range" min="0" max="72" value="50" />
+          <input style="width:80%" id="text_top_font_size" class="slider" type="range" min="0" max="72" value="50" />
           <span id="text_top_font_size__val">50</span>px
           <label class="control-label" for="text_top_offset">Offset from top:</label>
-          <input style="width:80%" id="text_top_offset" type="range" min="0" max="500" value="250" />
+          <input style="width:80%" id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" />
           <span id="text_top_offset__val">250</span>px
 
           <span>Author</span>
           <input type="text" placeholder="Author here" id="text_bottom2" />
-          <label  for="text_bottom_font_size">Font size:</label>
-          <input style="width:80%" id="text_bottom_font_size" type="range" min="0" max="20" value="15" />
+          <label for="text_bottom_font_size">Font size:</label>
+          <input style="width:80%" id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" />
           <span id="text_bottom_font_size__val">15</span>px
-          <label  for="text_bottom_offset">Offset from top:</label>
-          <input style="width:80%" id="text_bottom_offset" type="range" min="0" max="1000" value="950" />
+          <label for="text_bottom_offset">Offset from top:</label>
+          <input style="width:80%" id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" />
           <span id="text_bottom_offset__val">950</span>px
 
           <span>More</span>
           <label for="text_line_height">Line height:</label>
-          <input style="width:80%" id="text_line_height" type="range" min="0" max="100" value="15" />
+          <input style="width:80%" id="text_line_height" class="slider" type="range" min="0" max="100" value="15" />
           <span id="text_line_height__val">15</span>pt
           <label for="text_stroke_width">Stroke width:</label>
-          <input style="width:80%" id="text_stroke_width" type="range" min="0" max="20" value="4" />
+          <input style="width:80%" id="text_stroke_width" class="slider" type="range" min="0" max="20" value="4" />
           <span id="text_stroke_width__val">4</span>pt
 
-          <span>Image:</span>
+          <select class="category-select" id="">
+            <option value="" disabled selected>Select a category</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+
+          <br>
           <input type="file" id="imgInp" />
           <button id="randomImage" type="button">Get a random image</button>
 

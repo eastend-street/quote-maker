@@ -41,7 +41,7 @@ label {
     margin: 0 0 1em 0;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="file"], textarea {
     -webkit-appearance: none;
     appearance: none;
     background: #f7f7f7;
@@ -54,11 +54,11 @@ input[type="text"], input[type="email"], textarea {
     width: 90%;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
     border-color: #49bf9d;
 }
 
-input[type="text"], input[type="password"], input[type="email"], select {
+input[type="text"], input[type="file"], select {
     height: 4.75em;
 }
 
@@ -194,6 +194,10 @@ img#start-image {
     top: -10000px;
 }
 
+.wraparound{
+    height: 100%;
+}
+
 .setting-value {
     font-weight: bold;
 }
@@ -210,8 +214,8 @@ img#start-image {
     width: 100%;
     height: calc(100% - 100px);
     background-color: #fff;
-    -webkit-box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.1);
-    box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.15);
+    -webkit-box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
+    box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
 }
 
 .canvas-section>div {
