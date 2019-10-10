@@ -106,7 +106,7 @@ $(document).ready(function () {
     }
 
     // read selected input image from upload field and display it in browser
-    $("#imgInp").change(function () {
+    $("#image-upload").change(function () {
         var input = this;
 
         if (input.files && input.files[0]) {
@@ -180,7 +180,7 @@ $(document).ready(function () {
         drawQuote();
     });
 
-    $('#randomImage').click(function (e) {
+    $('#random-image').click(function (e) {
         randomImage();
     });
 

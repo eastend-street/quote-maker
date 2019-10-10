@@ -51,7 +51,11 @@ input[type="text"], input[type="file"], select, textarea {
     display: block;
     outline: 0;
     text-decoration: none;
-    width: 90%;
+    padding: 0 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box; 
 }
 
 input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
@@ -106,6 +110,10 @@ textarea {
     opacity: 1.0;
 }
 
+.image-upload {
+    margin-left: -5px;
+}
+
 /* 
 ====================
 BUTTON
@@ -119,7 +127,7 @@ button {
     background: linear-gradient(45deg, #FFC750 50%, #fff 50%);
     position: relative;
     color: #FFC750;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
 }
@@ -144,6 +152,10 @@ button, button:after {
 button:hover, button:hover:after {
     background-position: 0;
     color: #fff;
+}
+
+button:focus {
+    outline:0;
 }
 
 /* 
@@ -229,17 +241,26 @@ img#start-image {
     height: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 60% 1fr;
+    grid-template-columns: 2fr 60% 1fr;
+    grid-template-rows: 50px 100px 60px 60px 50px 100px 60px 60px 50px 50px 50px 100px 52px 20px;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
 }
 
-.canvas-settings > div{
-
+.settings-header {
+    font-size: 180%;
 }
 
 .settings-header, .settings-input {
     grid-column: 1 / span 3;
-  }
+}
+
+.settings-input-file {
+    grid-column: 1 / span 3;
+    display: flex;
+}
+
+.settings-slider-val {
+    text-align: end;
+}

@@ -125,33 +125,33 @@
         <div class="canvas-settings">
           <div class="settings-header">Quote</div>
           <div class="settings-input"><input type="text" placeholder='"Quote here"' id="text_top2" /></div>
-          
-          <div><label class="control-label" for="text_top_font_size">Font size:</label></div>
+
+          <div><label for="text_top_font_size">Font size:</label></div>
           <div><input id="text_top_font_size" class="slider" type="range" min="0" max="72" value="50" /></div>
-          <div><span id="text_top_font_size__val">50</span>px</div>
-          
-         <div><label class="control-label" for="text_top_offset">Offset from top:</label></div>
-         <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
-         <div><span id="text_top_offset__val">250</span>px</div>
+          <div class="settings-slider-val"><span id="text_top_font_size__val">50</span>px</div>
+
+          <div><label for="text_top_offset">Offset from top:</label></div>
+          <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
+          <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
 
           <div class="settings-header">Author</div>
           <div class="settings-input"><input type="text" placeholder="Author here" id="text_bottom2" /></div>
-          
+
           <div><label for="text_bottom_font_size">Font size:</label></div>
           <div><input id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" /></div>
-          <div><span id="text_bottom_font_size__val">15</span>px</div>
+          <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
           <div><label for="text_bottom_offset">Offset from top:</label></div>
           <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" /></div>
-          <div><span id="text_bottom_offset__val">950</span>px</div>
+          <div class="settings-slider-val"><span id="text_bottom_offset__val">950</span>px</div>
 
           <div class="settings-header">More</div>
           <div><label for="text_line_height">Line height:</label></div>
           <div><input id="text_line_height" class="slider" type="range" min="0" max="100" value="15" /></div>
-          <div><span id="text_line_height__val">15</span>pt</div>
+          <div class="settings-slider-val"><span id="text_line_height__val">15</span>pt</div>
           <div><label for="text_stroke_width">Stroke width:</label></div>
           <div><input id="text_stroke_width" class="slider" type="range" min="0" max="20" value="4" /></div>
-          <div><span id="text_stroke_width__val">4</span>pt</div>
-          
+          <div class="settings-slider-val"><span id="text_stroke_width__val">4</span>pt</div>
+
           <div class="settings-input">
             <select class="category-select" id="">
               <option value="" disabled selected>Select a category</option>
@@ -160,11 +160,13 @@
               <option value="3">Three</option>
             </select>
           </div>
-          
-          <div class="settings-input">
-            <input type="file" id="imgInp" />
-            <button id="randomImage" type="button">Get a random image</button>
+
+          <div class="settings-input-file">
+              <button id="random-image" type="button">?</button>
+              <input type="file" id="image-upload" class="image-upload" />
           </div>
+
+          <div class="settings-input"></div>
 
           <div class="settings-input">
             <button id="save_quote" type="button">Save</button>
