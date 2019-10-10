@@ -198,3 +198,17 @@ section#one .wrapper .next span {
     font-style: italic;
     font-weight: 600;
 }
+
+
+section#one .back-pic-wrapper {
+    right: 0;
+    bottom: 0;
+    position: relative;
+}
+
+section#one .back-pic {
+    position: absolute;
+    width: 630px;
+    right: 54px;
+    bottom: 163px;
+}
