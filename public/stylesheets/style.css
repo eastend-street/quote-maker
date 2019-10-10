@@ -395,6 +395,8 @@ section#one .wrapper .input-quote {
     background-color: #fafaff;
     box-sizing: border-box;
     border-radius: 0;
+    max-height: 500px;
+    resize: none;
 }
 
 section#one .wrapper .input-quote::placeholder {
