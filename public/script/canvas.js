@@ -33,8 +33,7 @@ $(document).ready(function () {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
 
-        var textTop = $('#text_top').val();
-        textTop = textTop.toUpperCase();
+        var textTop = '" '+ $('#text_top').val() + ' "';
         var x = canvasSize / 2;
         var y = parseInt($('#text_top_offset').val());
 
@@ -44,8 +43,7 @@ $(document).ready(function () {
         wrapText(ctx, textTop, x, y, maxTextAreaWidth, lineHeight, false);
 
         ctx.textBaseline = 'bottom';
-        var textBottom = $('#text_bottom').val();
-        textBottom = "— " + textBottom.toUpperCase();
+        var textBottom = '— ' + $('#text_bottom').val();
         y = parseInt($('#text_bottom_offset').val());
 
         wrapText(ctx, textBottom, x, y, maxTextAreaWidth, lineHeight, true);
