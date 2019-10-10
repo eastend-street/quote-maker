@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+require('dotenv').config();
 
 var indexRouter = require("./routes/index");
 
@@ -22,16 +23,15 @@ app.use("/", indexRouter);
 
 const MongoClient = require("mongodb").MongoClient;
 const uri =
-  "mongodb+srv://quote-maker-admin:JLlR4Fo3zzoQrc7s@cluster0-kxxb5.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
+  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOSTNAME}/test?retryWrites=true&w=majority`;
+  const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-const dbName = "quote_maker";
 
 app.get("/api", (req, res) => {
   client.connect(err => {
-    const db = client.db(dbName);
+    const db = client.db(process.env.DB_DATABASE_NAME);
     db.collection("quotes")
       .find({})
       .toArray(function(err, result) {
@@ -45,7 +45,7 @@ app.get("/api", (req, res) => {
 
 app.post("/api", (req, res) => {
   client.connect(err => {
-    const db = client.db(dbName);
+    const db = client.db(process.env.DB_DATABASE_NAME);
     const data = {
       quote: req.body.quote,
       author: req.body.author,
