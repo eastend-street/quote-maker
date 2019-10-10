@@ -8,10 +8,12 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
     "ejs": "^2.7.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "mongodb": "^3.3.2",
     "morgan": "~1.9.1"
   }
 }
