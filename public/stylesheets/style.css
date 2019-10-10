@@ -41,7 +41,7 @@ label {
     margin: 0 0 1em 0;
 }
 
-input[type="text"], input[type="file"], textarea {
+input[type="text"], input[type="file"], select, textarea {
     -webkit-appearance: none;
     appearance: none;
     background: #f7f7f7;
@@ -194,10 +194,6 @@ img#start-image {
     top: -10000px;
 }
 
-.wraparound{
-    height: 100%;
-}
-
 .setting-value {
     font-weight: bold;
 }
@@ -231,8 +227,19 @@ img#start-image {
     flex: 1 0 300px;
     width: 25%;
     height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 60% 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
 }
 
-/* @media only screen and (max-width: 768px) {
+.canvas-settings > div{
 
-} */
+}
+
+.settings-header, .settings-input {
+    grid-column: 1 / span 3;
+  }
