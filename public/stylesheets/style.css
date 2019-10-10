@@ -1,7 +1,7 @@
-/* 
+/*
 ====================
 FONTS
-==================== 
+====================
 */
 
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
@@ -13,10 +13,10 @@ FONTS
 	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
 }
 
-/* 
+/*
 ====================
 MAIN STYLE
-==================== 
+====================
 */
 
 html, body {
@@ -39,10 +39,10 @@ h1{
 }
 
 
-/* 
+/*
 ====================
 SECTION
-==================== 
+====================
 */
 
 section{
@@ -62,10 +62,10 @@ section .wrapper {
     white-space: nowrap;
 }
 
-/* 
+/*
 ====================
 CANVAS
-==================== 
+====================
 */
 
 img#start-image {
@@ -77,4 +77,124 @@ img#start-image {
 .setting-value {
     text-align: center;
     font-weight: bold;
+}
+
+/*
+====================
+3 dots nav
+====================
+*/
+
+
+/*
+====================
+SECTION 1
+====================
+*/
+
+header {
+    /* background-color: black; */
+    color: white;
+    position: relative;
+}
+
+header .wrapper {
+    position: absolute;
+    z-index: 2;
+    padding: 20px 40px;
+}
+
+header .wrapper a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+header .wrapper .logo {
+    width: 60px;
+}
+
+header .wrapper .herder-title {
+    padding-left: 23px;
+    font-size: 28px;
+    font-family: 'Calisto MT';
+}
+
+section#one {
+    height: 100vh;
+    overflow: hidden;
+}
+
+section#one .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#one .wrapper .input-quote {
+    height: 196px;
+    width: 490px;
+    margin-bottom: 40px;
+    border: none;
+    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    font-size: 1.8rem;
+    padding: 5px 15px;
+    border-style: none;
+    background-color: #fafaff;
+    box-sizing: border-box;
+}
+
+section#one .wrapper .input-quote::placeholder {
+    color: rgb(200, 200, 200);
+}
+
+section#one .wrapper .input-quote:focus {
+    outline: 0;
+}
+
+section#one .wrapper input {
+    height: 72px;
+    width: 490px;
+    margin-bottom: 40px;
+    border: none;
+    box-shadow: 0px 7px 3px -3px rgba(0,0,0,0.6);
+    font-size: 1.8rem;
+    padding-left: 15px;
+    border-style: none;
+    background-color: #fafaff;
+    box-sizing: border-box;
+}
+
+section#one .wrapper input.input-quote {
+    height: 150px;
+}
+
+section#one .wrapper input::placeholder {
+    color: rgb(200, 200, 200);
+}
+
+section#one .wrapper input:focus {
+    outline: 0;
+}
+
+section#one .wrapper a {
+    text-decoration: none;
+}
+
+section#one .wrapper .next {
+    height: 83px;
+    width: 235px;
+    border: 2px solid rgb(248, 200, 100);
+    color: rgb(248, 200, 100);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#one .wrapper .next span {
+    font-family: Baskerville;
+    font-style: italic;
+    font-weight: 600;
 }

@@ -30,7 +30,7 @@
 
     function endTimer(group) {
         return console.timeEnd(group);
-    }                 
+    }
 </script>
 
 <head>
@@ -76,12 +76,20 @@
             startTimer("pageload-header");
         </script>
 
-
         <script>
             debugInfo.headerTime = endTimer("pageload-header");
             console.groupEnd("HEADER Section");
         </script>
+
+        <div class="wrapper">
+            <a href="/">
+                <img class="logo" src="./images/logo.png">
+                <span class="herder-title">QUOTE MAKER</span>
+            </a>
+        </div>
     </header>
+
+    <nav></nav>
 
     <main>
         <script>
@@ -90,16 +98,26 @@
         </script>
 
         <section id="one">
+
             <script>
                 console.group("SECTION Section");
                 startTimer("pageload-section");
             </script>
 
+            <video autoplay muted loop id="backgroundVideo">
+                <source src="./videos/header_background.mp4" type="video/mp4">
+            </video>
+
             <div class="wrapper">
-                <input type="text" class="form-control" placeholder='"Quote here"' id="text_top" />
-                <input type="text" class="form-control" placeholder="Author here" id="text_bottom" />
+
+                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="quote_top"></textarea>
+                <input type="text" class="input-auther" placeholder="Author" minlength="1" maxlength="30" id="auther_top" />
                 <!-- <button id="submit-quote">Submit</button> -->
-                <a href="#two">Submit</a>
+                <a href="#two">
+                    <div class="next">
+                        <span>NEXT</span>
+                    </div>
+                </a>
             </div>
 
             <script>
@@ -113,11 +131,11 @@
                     console.group("SECTION Section");
                     startTimer("pageload-section");
                 </script>
-    
+
                 <div class="wrapper">
                     <h1>Section 2</h1>
                 </div>
-    
+
                 <script>
                     debugInfo.sectionTime = endTimer("pageload-section");
                     console.groupEnd("SECTION Section");
@@ -129,11 +147,11 @@
                         console.group("SECTION Section");
                         startTimer("pageload-section");
                     </script>
-        
+
                     <div class="wrapper">
                         <h1>Section 3</h1>
                     </div>
-        
+
                     <script>
                         debugInfo.sectionTime = endTimer("pageload-section");
                         console.groupEnd("SECTION Section");
