@@ -194,7 +194,7 @@ $(document).ready(function () {
     // Init at startup
     //==================== 
     window.setTimeout(function () {
-        // drawQuote();
+        drawQuote();
     }, 100);
 
 });
