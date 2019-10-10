@@ -450,6 +450,12 @@ section#one .wrapper .next span {
     font-family: Baskerville;
     font-style: italic;
     font-weight: 600;
+    transition: .7s;
+}
+
+section#one .wrapper .next:hover span {
+    color: #fafaff;
+    transition: .7s;
 }
 
 
