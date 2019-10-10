@@ -4,21 +4,8 @@ FONTS
 ====================
 */
 
-<<<<<<< HEAD
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
-@font-face {
-	font-family: 'bpicons';
-	font-weight: normal;
-	font-style: normal;
-	src: url('../fonts/bpicons/bpicons.eot');
-	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
-}
-
-/*
-=======
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
 /*
->>>>>>> 522c1fccfbc9c012113ddd589a6c391c3604ba87
 ====================
 MAIN STYLE
 ====================
@@ -50,13 +37,14 @@ FORM
 
 label {
     color: #787878;
-    display: block;
-    font-size: 0.9em;
+    font-size: 0.7em;
     font-weight: 400;
     margin: 0 0 1em 0;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="file"], select, textarea {
+    -webkit-appearance: none;
+    appearance: none;
     background: #f7f7f7;
     border-radius: 0.35em;
     border: solid 2px #FFC750;
@@ -64,19 +52,43 @@ input[type="text"], input[type="email"], textarea {
     display: block;
     outline: 0;
     text-decoration: none;
-    width: 90%;
+    padding: 0 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
     border-color: #49bf9d;
 }
 
-input[type="text"], input[type="password"], input[type="email"], select {
+input[type="text"], input[type="file"], select {
     height: 4.75em;
 }
 
 textarea {
     padding: 0.75em;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #898989;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #898989;
+    border-radius: 50%;
+    background: #FFC750;
+    cursor: pointer;
 }
 
 ::-webkit-input-placeholder {
@@ -99,25 +111,41 @@ textarea {
     opacity: 1.0;
 }
 
+.image-upload {
+    margin-left: -5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
 /*
 ====================
 BUTTON
 ====================
 */
 
-button {
+.custom-file-upload {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button, .custom-file-upload {
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #FFC750;
     background: linear-gradient(45deg, #FFC750 50%, #fff 50%);
     position: relative;
     color: #FFC750;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
-  }
+}
 
-  button:after {
+button:after, .custom-file-upload:after {
     content: "";
     position: absolute;
     top: 0;
@@ -126,21 +154,22 @@ button {
     right: 0;
     background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     z-index: -1;
-  }
+}
 
-  button,
-  button:after {
+button, button:after, .custom-file-upload, .custom-file-upload:after {
     background-size: 300%;
     background-position: 100%;
     transition: .7s;
-  }
+}
 
-  button:hover,
-  button:hover:after {
+button:hover, button:hover:after, .custom-file-upload:hover, .custom-file-upload:hover:after {
     background-position: 0;
     color: #fff;
-  }
+}
 
+button:focus {
+    outline: 0;
+}
 
 
 /*
@@ -166,6 +195,19 @@ section .wrapper {
     white-space: nowrap;
 }
 
+section#two {
+    background-color: #FAFAFF;
+}
+
+.section-two-label {
+    background: url('../images/02.png') no-repeat;
+    width: 1047px;
+    height: 766px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-20%, -50%);
+}
+
 /*
 ====================
 CANVAS
@@ -179,25 +221,61 @@ img#start-image {
 }
 
 .setting-value {
-    text-align: center;
     font-weight: bold;
 }
 
 .canvas-section {
-    display: grid;
-    grid-template-columns: 70% auto;
-    grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
     height: 100%;
+    padding: 50px 100px;
+}
+
+.canvas-container {
+    display: block;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
+    box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
 }
 
 .canvas-section>div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 0 20px;
 }
 
 .canvas-main {
-    background-color: blue;
+    flex: 2 0 300px;
+    width: 75%;
+}
+
+.canvas-settings {
+    flex: 1 0 300px;
+    width: 25%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 60% 1fr;
+    grid-template-rows: 50px 100px 60px 60px 50px 100px 60px 60px 50px 50px 50px 100px 52px 20px;
+    grid-column-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.settings-header {
+    font-size: 180%;
+}
+
+.settings-header, .settings-input {
+    grid-column: 1 / span 3;
+}
+
+.settings-input-file {
+    grid-column: 1 / span 3;
+    display: flex;
+}
+
+.settings-slider-val {
+    text-align: end;
 }
 
 /*
