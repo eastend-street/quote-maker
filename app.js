@@ -46,16 +46,17 @@ app.get("/api", (req, res) => {
 app.post("/api", (req, res) => {
   client.connect(err => {
     const db = client.db(dbName);
-    const document = {
-      quote: "sample4",
-      author: "sample4",
-      canvas_url: "http://i.imgur.com/I86rTVl.jpg",
-      categories: "sample"
+    const data = {
+      quote: req.body.quote,
+      author: req.body.author,
+      canvas_url: req.body.canvas_url,
+      categories: req.body.categories
     };
-    db.collection("quotes").insertOne(document, (err, result) => {
+    db.collection("quotes").insertOne(data, (err, result) => {
       console.log("Inserted one document into the collection");
       console.log(err);
       client.close();
+      res.send(err);
     });
   });
 });
