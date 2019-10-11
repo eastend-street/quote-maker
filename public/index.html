@@ -67,7 +67,7 @@
 
 <body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
     onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()" onscroll="throttle(100, getClientRect)">
+    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
 
     <script>
         console.group("BODY Section");
@@ -80,16 +80,16 @@
             startTimer("pageload-nav");
         </script>
 
-        <div class="wrapper" id="nav-bar">
+        <div class="wrapper nav-bar">
             <ul>
                 <li class="outer-circle">
-                    <a href="#one" class="inner-circle" id="nav1"></a>
+                    <a href="#one" class="inner-circle nav1"></a>
                 </li>
                 <li class="outer-circle">
-                    <a href="#two" class="inner-circle" id="nav2"></a>
+                    <a href="#two" class="inner-circle nav2"></a>
                 </li>
                 <li class="outer-circle">
-                    <a href="#three" class="inner-circle" id="nav3"></a>
+                    <a href="#three" class="inner-circle nav3"></a>
                 </li>
             </ul>
         </div>
@@ -131,7 +131,7 @@
                 startTimer("pageload-section");
             </script>
 
-            <video autoplay muted loop id="backgroundVideo">
+            <video autoplay muted loop class="background-video">
                 <source src="./videos/header_background.mp4" type="video/mp4">
             </video>
 
@@ -141,7 +141,7 @@
                     id="text_top"></textarea>
                 <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
                     id="text_bottom" />
-                <a href="#two" id="nextButton">
+                <a href="#two" class="next-button">
                     <button class="next">
                         <span>NEXT</span>
                     </button>
@@ -152,7 +152,7 @@
                 <img src="./images/01.png" class="back-pic">
             </div>
 
-            <audio id="audioBeautiful" controls style="display: none">
+            <audio class="audio-beautiful" controls style="display: none">
                 <source src="./beautiful.mp3" type="audio/mp3">
             </audio>
 
@@ -257,6 +257,7 @@
                 console.group("SECTION Section");
                 startTimer("pageload-section");
             </script>
+
             <div class="btnContainer">
                 <button id="Love" class="categoryBtn" value="http://localhost:3000/api?category=love">Love</button>
                 <button id="Life" class="categoryBtn" value="http://localhost:3000/api?category=life">Life</button>
@@ -264,6 +265,7 @@
                 <button id="Motivation" class="categoryBtn" value="http://localhost:3000/api?category=motivation">Motivation</button>
                 <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
                 <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
+
             </div>
 
             <div id="gallery"></div>
@@ -273,89 +275,86 @@
             </script>
         </section>
 
-
         <script>
             debugInfo.mainTime = endTimer("pageload-main");
             console.groupEnd("MAIN Section");
         </script>
 
-    
-</main>
-<footer>
-        <script>
-            console.group("FOOTER SECTION");
-            startTimer("pageload-footer");
+        <footer>
+            <script>
+                console.group("FOOTER SECTION");
+                startTimer("pageload-footer");
 
-            function onContextMenuEvent() {
-                console.log("onContextMenuEvent")
-            }
+                function onContextMenuEvent() {
+                    console.log("onContextMenuEvent")
+                }
 
-            function onKeyDownEvent() {
-                console.log("onKeyDownEvent")
-            }
-            function onKeyUpEvent() {
-                console.log("onKeyUpEvent")
-            }
+                function onKeyDownEvent() {
+                    console.log("onKeyDownEvent")
+                }
+                function onKeyUpEvent() {
+                    console.log("onKeyUpEvent")
+                }
 
-            function onKeyPressEvent() {
-                console.log("onKeyPressEvent")
-            }
+                function onKeyPressEvent() {
+                    console.log("onKeyPressEvent")
+                }
 
-            function onCopyEvent() {
-                console.log("copy")
-            }
+                function onCopyEvent() {
+                    console.log("copy")
+                }
 
-            function onPasteEvent() {
-                console.log("paste")
-            }
+                function onPasteEvent() {
+                    console.log("paste")
+                }
 
-            function onCutEvent() {
-                console.log("cut")
-            }
+                function onCutEvent() {
+                    console.log("cut")
+                }
 
-            function onPageLoad() {
-                console.log("Page is loaded");
-                getClientRect();
-            }
+                function onPageLoad() {
+                    console.log("Page is loaded");
+                }
 
-            function onPageUnLoad() {
-                console.log("Page is Un-loaded");
-            }
+                function onPageUnLoad() {
+                    console.log("Page is Un-loaded");
+                }
 
-            function onPageShow() {
-                console.log("Page is Showing")
-            }
+                function onPageShow() {
+                    console.log("Page is Showing")
+                }
 
-            function onPageHide() {
-                console.log("Page is hiding")
-            }
+                function onPageHide() {
+                    console.log("Page is hiding")
+                }
 
-            function onPageFocus() {
-                console.log("Page has Focus")
-            }
+                function onPageFocus() {
+                    console.log("Page has Focus")
+                }
 
-            function onPageBlur() {
-                console.log("Page lost focus")
-            }
+                function onPageBlur() {
+                    console.log("Page lost focus")
+                }
 
-            function onBeforePageFocus() {
-                console.log("Page is about to gain focus")
-            }
-            function onBeforePageBlur() {
-                console.log("Page about to lose focus")
-            }
+                function onBeforePageFocus() {
+                    console.log("Page is about to gain focus")
+                }
+                function onBeforePageBlur() {
+                    console.log("Page about to lose focus")
+                }
 
-            debugInfo.footerTime = endTimer("pageload-footer");
-            console.groupEnd("FOOTER Section");
-        </script>
-        <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
-        <div class="foot logo"><img class="footer-logo" src="./images/outline-logo.png"></div>
-        <div class="foot contact-logo">
-            <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
-            <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
-            <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
-        </div>
-    </footer>
+                debugInfo.footerTime = endTimer("pageload-footer");
+                console.groupEnd("FOOTER Section");
+            </script>
+            <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+            <div class="foot logo"><img class="footer-logo" src="./images/logo.png" width="20px"></div>
+            <div class="foot contact-logo">
+                <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
+                <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
+                <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
+            </div>
+        </footer>
+    </main>
 
     <script>
         debugInfo.bodyTime = endTimer("pageload-body");
@@ -364,45 +363,6 @@
     <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
     <script src="./script/section3.js"></script>
-    <script>
-        // in scroll event use this function
-        // because do some acrion in every scroll events is too much
-        let lastExec = 0;
-        function throttle(delay, callback) {
-            const elapsed = Date.now() - lastExec;
-            if (elapsed >= delay) {
-                callback();
-                lastExec = Date.now();
-            }
-        }
-        const scroll_target = {
-            nav1: document.getElementById("one"),
-            nav2: document.getElementById("two"),
-            nav3: document.getElementById("three")
-        };
-        const navWrapper = document.getElementById("nav-bar");
-        const getClientRect = () => {
-            console.log('asdf');
-            for (let key of Object.keys(scroll_target)) {
-                let y = scroll_target[key].getBoundingClientRect().top;
-                document.getElementById(key).classList.remove("active");
-                if (-616 < y && y <= 300) {
-                    if (!scroll_target[key].classList.contains("active")) {
-                        document
-                            .getElementById(key)
-                            .classList.add("active");
-                        if (key === "nav2") {
-                            navWrapper.classList.remove("back-white");
-                            navWrapper.classList.add("back-black");
-                        } else {
-                            navWrapper.classList.remove("back-black");
-                            navWrapper.classList.add("back-white");
-                        }
-                    }
-                }
-            }
-        };
-    </script>
 </body>
 
 <script>
