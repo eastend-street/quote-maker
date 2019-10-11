@@ -9,6 +9,7 @@
         constructor() {
             this.htmlTime = 0;
             this.headTime = 0;
+            this.navTime = 0;
             this.headerTime = 0;
             this.mainTime = 0;
             this.sectionTime = 0;
@@ -72,6 +73,11 @@
     </script>
 
     <nav>
+        <script>
+            console.group("NAV SECTION");
+            startTimer("pageload-nav");
+        </script>
+
         <div class="wrapper">
             <div class="outer-circle" id="nav1">
                 <div class="inner-circle"></div>
@@ -83,6 +89,11 @@
                 <div class="inner-circle"></div>
             </div>
         </div>
+
+        <script>
+            debugInfo.navTime = endTimer("pageload-nav");
+            console.groupEnd("NAV Section");
+        </script>
     </nav>
 
     <main>
@@ -92,17 +103,17 @@
                 startTimer("pageload-header");
             </script>
 
-            <script>
-                debugInfo.headerTime = endTimer("pageload-header");
-                console.groupEnd("HEADER Section");
-            </script>
-
             <div class="wrapper">
                 <a href="/">
                     <img class="logo" src="./images/logo.png">
                     <span class="header-title">QUOTE MAKER</span>
                 </a>
             </div>
+
+            <script>
+                debugInfo.headerTime = endTimer("pageload-header");
+                console.groupEnd("HEADER Section");
+            </script>
         </header>
         <script>
             console.group("MAIN Section");
@@ -170,7 +181,8 @@
                     <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
 
                     <div class="settings-header">Author</div>
-                    <div class="settings-input"><input type="text" placeholder="Author" id="text_bottom2" minlength="1" maxlength="30" /></div>
+                    <div class="settings-input"><input type="text" placeholder="Author" id="text_bottom2" minlength="1"
+                            maxlength="30" /></div>
 
                     <div><label for="text_bottom_font_size">Font size:</label></div>
                     <div><input id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" />
@@ -190,20 +202,23 @@
                     <div class="settings-slider-val"><span id="text_stroke_width__val">4</span>pt</div>
 
                     <div class="settings-input">
-                        <select class="category-select" id="">
-                            <option value="" disabled selected>Select a category</option>
-                            <option value="love">Love</option>
-                            <option value="life">Life</option>
-                            <option value="friendship">Friendship</option>
-                            <option value="motivation">Motivation</option>
-                            <option value="prank">Prank</option>
-                            <option value="travel">Travel</option>
-                        </select>
+                        <span class="custom-dropdown">
+                            <select id="">
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="love">Love</option>
+                                <option value="life">Life</option>
+                                <option value="friendship">Friendship</option>
+                                <option value="motivation">Motivation</option>
+                                <option value="prank">Prank</option>
+                                <option value="travel">Travel</option>
+                            </select>
+                        </span>
                     </div>
 
                     <div class="settings-input-file">
                         <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
-                        <input id="image-upload-input" class="image-upload-input" type="text" placeholder="Random image -or- Upload image" />
+                        <input id="image-upload-input" class="image-upload-input" type="text"
+                            placeholder="Random image -or- Upload image" />
                         <input type="file" id="image-upload" class="image-upload" />
                         <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
                     </div>
