@@ -67,7 +67,7 @@
 
 <body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
     onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()" onscroll="throttle(100, getClientRect)">
+    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
 
     <script>
         console.group("BODY Section");
@@ -336,7 +336,6 @@
 
                 function onPageLoad() {
                     console.log("Page is loaded");
-                    getClientRect();
                 }
 
                 function onPageUnLoad() {
@@ -385,44 +384,6 @@
     </script>
     <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
-    <script>
-        // in scroll event use this function
-        // because do some action in every scroll events is too much
-        let lastExec = 0;
-        function throttle(delay, callback) {
-            const elapsed = Date.now() - lastExec;
-            if (elapsed >= delay) {
-                callback();
-                lastExec = Date.now();
-            }
-        }
-        const scrollTarget = {
-            nav1: document.getElementById("one"),
-            nav2: document.getElementById("two"),
-            nav3: document.getElementById("three")
-        };
-        const navWrapper = document.getElementsByClassName("nav-bar")[0];
-        const getClientRect = () => {
-            for (const key of Object.keys(scrollTarget)) {
-                const y = scrollTarget[key].getBoundingClientRect().top;
-                document.getElementsByClassName(key)[0].classList.remove("active");
-                if (-616 < y && y <= 300) {
-                    if (!scrollTarget[key].classList.contains("active")) {
-                        document
-                            .getElementsByClassName(key)[0]
-                            .classList.add("active");
-                        if (key === "nav2") {
-                            navWrapper.classList.remove("back-white");
-                            navWrapper.classList.add("back-black");
-                        } else {
-                            navWrapper.classList.remove("back-black");
-                            navWrapper.classList.add("back-white");
-                        }
-                    }
-                }
-            }
-        };
-    </script>
 </body>
 
 <script>
