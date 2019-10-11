@@ -166,7 +166,7 @@
                     <canvas id="quoteCanvas" class="canvas-container">
                         Unfortunately your browser does not support canvas.
                     </canvas>
-                    <img id="start-image" src="" alt="" />
+                    <img id="start-image" src="" alt="" crossorigin="anonymous" />
                 </div>
                 <div class="canvas-settings">
                     <div class="settings-header">Quote</div>
@@ -227,8 +227,9 @@
 
                     <div class="settings-input">
                         <button id="save_quote" type="button">SAVE</button>
-                        <a id="download_quote" download="myQuote.jpg">
-                            <button type="button">DOWNLOAD</button></a>
+                        <a id="download_quote" download="myQuote.png" onclick="download_quote(this);">
+                            <button type="button">DOWNLOAD</button>
+                        </a>
                     </div>
                 </div>
             </div>
