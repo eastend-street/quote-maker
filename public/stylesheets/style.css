@@ -562,11 +562,28 @@ footer
 =====================
 */
 footer{
+    display: grid;
     position: relative;
     background-color: rgb(1, 56, 56);
     color: #ffffff;
+    grid-template-columns:200px minmax(300px, auto) 200px;
+    grid-auto-rows: minmax(60px, auto);
+    grid-template-areas: "copyright logo contact";
 }
 
-footer .wrapper{
+footer > .foot{
+    margin: auto;
     padding: 20px 40px;
+    text-align: center;
+    font-size: 10px;
+}
+
+footer > .logo{
+    grid-area: logo;
+    padding: 20px 40px;
+    /* background-color: darkred; */
+}
+
+footer > .contact-logo > a{
+    text-decoration: none;
 }
