@@ -115,10 +115,7 @@ $(document).ready(function () {
     }
 
 
-    //====================
-    // Register event listeners
-    //==================== 
-
+    // Event listeners
     $(document).on('change keydown keyup', '#text_top', function () {
         $('#text_top2').val($(this).val());
         drawQuote();
@@ -222,12 +219,5 @@ $(document).ready(function () {
             drawQuote();
         }, 500);
     });
-
-    //====================
-    // Init at startup
-    //==================== 
-    window.setTimeout(function () {
-        // drawQuote();
-    }, 100);
 
 });

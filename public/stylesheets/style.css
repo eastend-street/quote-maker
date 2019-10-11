@@ -143,6 +143,7 @@ textarea {
     line-height: 72px;
     width: 100px;
     color: #fff;
+    font-size: 1.75rem;
 }
 
 .file-upload .file-select .random-select-button {
@@ -153,6 +154,7 @@ textarea {
     line-height: 72px;
     width: 100px;
     color: #fff;
+    font-size: 1.75rem;
 }
 
 .file-upload .file-select .file-select-name {
@@ -362,7 +364,7 @@ img#start-image {
     height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
-    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px;
+    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px auto auto 75px 90px;
     grid-column-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
@@ -379,6 +381,13 @@ img#start-image {
 .settings-input-file {
     grid-column: 1 / span 3;
     display: flex;
+}
+
+.settings-buttons {
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .settings-slider-val {
