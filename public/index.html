@@ -80,16 +80,16 @@
             startTimer("pageload-nav");
         </script>
 
-        <div class="wrapper" id="nav-bar">
+        <div class="wrapper nav-bar">
             <ul>
                 <li class="outer-circle">
-                    <a href="#one" class="inner-circle" id="nav1"></a>
+                    <a href="#one" class="inner-circle nav1"></a>
                 </li>
                 <li class="outer-circle">
-                    <a href="#two" class="inner-circle" id="nav2"></a>
+                    <a href="#two" class="inner-circle nav2"></a>
                 </li>
                 <li class="outer-circle">
-                    <a href="#three" class="inner-circle" id="nav3"></a>
+                    <a href="#three" class="inner-circle nav3"></a>
                 </li>
             </ul>
         </div>
@@ -131,7 +131,7 @@
                 startTimer("pageload-section");
             </script>
 
-            <video autoplay muted loop id="backgroundVideo">
+            <video autoplay muted loop class="background-video">
                 <source src="./videos/header_background.mp4" type="video/mp4">
             </video>
 
@@ -141,7 +141,7 @@
                     id="text_top"></textarea>
                 <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
                     id="text_bottom" />
-                <a href="#two" id="nextButton">
+                <a href="#two" class="next-button">
                     <button class="next">
                         <span>NEXT</span>
                     </button>
@@ -152,7 +152,7 @@
                 <img src="./images/01.png" class="back-pic">
             </div>
 
-            <audio id="audioBeautiful" controls style="display: none">
+            <audio class="audio-beautiful" controls style="display: none">
                 <source src="./beautiful.mp3" type="audio/mp3">
             </audio>
 
@@ -401,16 +401,15 @@
             nav2: document.getElementById("two"),
             nav3: document.getElementById("three")
         };
-        const navWrapper = document.getElementById("nav-bar");
+        const navWrapper = document.getElementsByClassName("nav-bar")[0];
         const getClientRect = () => {
-            console.log('asdf');
             for (let key of Object.keys(scroll_target)) {
                 let y = scroll_target[key].getBoundingClientRect().top;
-                document.getElementById(key).classList.remove("active");
+                document.getElementsByClassName(key)[0].classList.remove("active");
                 if (-616 < y && y <= 300) {
                     if (!scroll_target[key].classList.contains("active")) {
                         document
-                            .getElementById(key)
+                            .getElementsByClassName(key)[0]
                             .classList.add("active");
                         if (key === "nav2") {
                             navWrapper.classList.remove("back-white");

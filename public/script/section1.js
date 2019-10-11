@@ -7,8 +7,8 @@
         audio.play();
     };
 
-    const audioBeautiful = document.getElementById("audioBeautiful");
-    const nextButton = document.querySelector('#nextButton');
+    const audioBeautiful = document.getElementsByClassName("audio-beautiful")[0];
+    const nextButton = document.getElementsByClassName('nextButton')[0];
     nextButton.addEventListener('click', e => {
         playAudio(audioBeautiful);
     });

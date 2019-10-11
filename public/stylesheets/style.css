@@ -28,8 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
 }
 
-#backgroundVideo {
-    /* height: 100vh; */
+.background-video {
     min-height: 100%;
 }
 
@@ -302,7 +301,7 @@ section .wrapper {
     white-space: nowrap;
 }
 
-/* 
+/*
 ====================
 section3
 ====================
@@ -328,7 +327,7 @@ section3
     padding-left: 10px;
     padding-right: 10px;
     background-color: aliceblue;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 #three > div.grid-container{
@@ -336,7 +335,7 @@ section3
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
     grid-auto-rows: minmax(10em,auto);
-}   
+}
 #inner{
     border: 1px solid blue;
 }
@@ -648,7 +647,7 @@ section#one .back-pic {
     bottom: 163px;
 }
 
-/* 
+/*
 =====================
 footer
 =====================
