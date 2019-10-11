@@ -587,7 +587,9 @@ footer > .foot{
 footer > .logo{
     grid-area: logo;
     padding: 0px 30px;
-    /* background-color: darkred; */
+}
+footer > div.foot.logo > img{
+    width: 120px;
 }
 
 footer > .contact-logo > a{
