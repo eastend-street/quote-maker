@@ -19,7 +19,7 @@ html, body {
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -525,4 +525,74 @@ section#one .back-pic {
     width: 630px;
     right: 54px;
     bottom: 163px;
+}
+
+
+/*
+====================
+SECTION 3
+====================
+*/
+section#three {
+    background-image: linear-gradient(45deg,rgb(127, 0, 78) 20%, rgb(0, 0, 40)90%);
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 180px;
+    
+}
+
+.categoryBtn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 2px solid #fafaff;
+    background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
+    position: relative;
+    color: #fafaff;
+    font-size: 1em;
+    font-family: Arial;
+    font-style: normal;
+    background:none;  
+    transition-duration: 0.5s;
+}
+
+.categoryBtn:hover {
+    border: 2px solid #FFC750;
+    color: #FFC750;
+    
+}
+
+#gallery {
+    padding: 20px 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition-duration: 0.7s;  
+}
+
+.image-container {
+    margin: 15px;
+    height: 200px;
+    flex: 1 0 200px;
+    overflow: hidden;
+    transition-duration: 0.7s;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    transition-duration: 1s;  
+}
+
+.image-container:hover .image {
+    transform: scale(1.2);
 }
