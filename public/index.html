@@ -52,7 +52,8 @@
     <!-- <base href="http://localhost:3000/" target="_self"> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <noscript>JavaScript is not supported or is disabled in browser!</noscript>
-
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,11 +62,12 @@
         debugInfo.headTime = endTimer("pageload-head");
         console.groupEnd("HEAD Section");
     </script>
+    <script src="./script/lib/autosize.min.js"></script>
 </head>
 
 <body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
     onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
+    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()" onscroll="throttle(100, getClientRect)">
 
     <script>
         console.group("BODY Section");
@@ -78,16 +80,18 @@
             startTimer("pageload-nav");
         </script>
 
-        <div class="wrapper">
-            <div class="outer-circle" id="nav1">
-                <div class="inner-circle"></div>
-            </div>
-            <div class="outer-circle" id="nav2">
-                <div class="inner-circle"></div>
-            </div>
-            <div class="outer-circle" id="nav3">
-                <div class="inner-circle"></div>
-            </div>
+        <div class="wrapper" id="nav-bar">
+            <ul>
+                <li class="outer-circle">
+                    <a href="#one" class="inner-circle" id="nav1"></a>
+                </li>
+                <li class="outer-circle">
+                    <a href="#two" class="inner-circle" id="nav2"></a>
+                </li>
+                <li class="outer-circle">
+                    <a href="#three" class="inner-circle" id="nav3"></a>
+                </li>
+            </ul>
         </div>
 
         <script>
@@ -137,7 +141,7 @@
                     id="text_top"></textarea>
                 <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
                     id="text_bottom" />
-                <a href="#two">
+                <a href="#two" id="nextButton">
                     <button class="next">
                         <span>NEXT</span>
                     </button>
@@ -147,6 +151,10 @@
             <div class="back-pic-wrapper">
                 <img src="./images/01.png" class="back-pic">
             </div>
+
+            <audio id="audioBeautiful" controls style="display: none">
+                <source src="./beautiful.mp3" type="audio/mp3">
+            </audio>
 
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
@@ -191,9 +199,9 @@
                     </div>
                     <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
                     <div><label for="text_bottom_offset">Offset from top:</label></div>
-                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" />
+                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="860" />
                     </div>
-                    <div class="settings-slider-val"><span id="text_bottom_offset__val">950</span>px</div>
+                    <div class="settings-slider-val"><span id="text_bottom_offset__val">860</span>px</div>
 
                     <div class="settings-header">More</div>
                     <div><label for="text_line_height">Line height:</label></div>
@@ -218,16 +226,18 @@
                     </div>
 
                     <div class="settings-input-file">
-                        <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
-                        <input id="image-upload-input" class="image-upload-input" type="text"
-                            placeholder="Random image -or- Upload image" />
-                        <input type="file" id="image-upload" class="image-upload" />
-                        <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
+                        <a id="random-image" class="custom-random-image"></a>
+                        <div class="file-upload">
+                            <div class="file-select">
+                                <div class="random-select-button"><i class="fa fa-random"></i></div>
+                                <div class="file-select-name" id="noFile">Random image -or- Upload image</div>
+                                <div class="file-select-button" id="fileName"><i class="fa fa-upload"></i></div>
+                                <input type="file" name="chooseFile" id="image-upload">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="settings-input"></div>
-
-                    <div class="settings-input">
+                    <div class="settings-buttons">
                         <button id="save_quote" type="button">SAVE</button>
                         <a id="download_quote" download="myQuote.png" onclick="download_quote(this);">
                             <button type="button">DOWNLOAD</button>
@@ -292,7 +302,9 @@
             console.groupEnd("MAIN Section");
         </script>
 
-    <footer>
+    
+</main>
+<footer>
         <script>
             console.group("FOOTER SECTION");
             startTimer("pageload-footer");
@@ -326,6 +338,7 @@
 
             function onPageLoad() {
                 console.log("Page is loaded");
+                getClientRect();
             }
 
             function onPageUnLoad() {
@@ -366,14 +379,52 @@
             <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
         </div>
     </footer>
-</main>
 
     <script>
         debugInfo.bodyTime = endTimer("pageload-body");
         console.groupEnd("BODY Section");
     </script>
-    <script src="./section1.js"></script>
+    <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
+    <script>
+        // in scroll event use this function
+        // because do some acrion in every scroll events is too much
+        let lastExec = 0;
+        function throttle(delay, callback) {
+            const elapsed = Date.now() - lastExec;
+            if (elapsed >= delay) {
+                callback();
+                lastExec = Date.now();
+            }
+        }
+        const scroll_target = {
+            nav1: document.getElementById("one"),
+            nav2: document.getElementById("two"),
+            nav3: document.getElementById("three")
+        };
+        const navWrapper = document.getElementById("nav-bar");
+        const getClientRect = () => {
+            console.log('asdf');
+            for (let key of Object.keys(scroll_target)) {
+                let y = scroll_target[key].getBoundingClientRect().top;
+                document.getElementById(key).classList.remove("active");
+                if (-616 < y && y <= 300) {
+                    if (!scroll_target[key].classList.contains("active")) {
+                        document
+                            .getElementById(key)
+                            .classList.add("active");
+                        if (key === "nav2") {
+                            navWrapper.classList.remove("back-white");
+                            navWrapper.classList.add("back-black");
+                        } else {
+                            navWrapper.classList.remove("back-black");
+                            navWrapper.classList.add("back-white");
+                        }
+                    }
+                }
+            }
+        };
+    </script>
 </body>
 
 <script>

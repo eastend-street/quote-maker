@@ -5,7 +5,6 @@ FONTS
 */
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
-
 /*
 ====================
 MAIN STYLE
@@ -16,12 +15,11 @@ html, body {
     color: #424242;
     background: #f2f4f8;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 main {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -36,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*
 ====================
-FORM
+FORM COMPONENTS
 ====================
 */
 
@@ -66,7 +64,7 @@ input[type="text"], input[type="file"], select, textarea {
 }
 
 input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
-    border-color: #49bf9d;
+    border-color: rgb(172, 134, 53);
 }
 
 input[type="text"], input[type="file"], select {
@@ -117,16 +115,62 @@ textarea {
     opacity: 1.0;
 }
 
-.image-upload {
-    margin-left: -5px;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-input[placeholder].image-upload-input {
+.file-upload {
     text-align: center;
+    width: 100%;
+}
+
+.file-upload .file-select {
+    display: block;
+    border: 2px solid #FFC750;
+    color: #969696;
+    cursor: pointer;
+    width: 100%;
+    background: #f7f7f7;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.35em;
+}
+
+.file-upload .file-select .file-select-button {
+    background: #FFC750;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 72px;
+    line-height: 72px;
+    width: 100px;
+    color: #fff;
+    font-size: 1.75rem;
+}
+
+.file-upload .file-select .random-select-button {
+    background: #FFC750;
+    position: absolute;
+    left: 0;
+    height: 72px;
+    line-height: 72px;
+    width: 100px;
+    color: #fff;
+    font-size: 1.75rem;
+}
+
+.file-upload .file-select .file-select-name {
+    line-height: 72px;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.file-upload .file-select input[type=file] {
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 .custom-dropdown {
@@ -188,15 +232,7 @@ BUTTON
 ====================
 */
 
-.custom-file-upload {
-    width: 50px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button, .custom-file-upload {
+button {
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #FFC750;
@@ -208,7 +244,7 @@ button, .custom-file-upload {
     font-style: italic;
 }
 
-button:after, .custom-file-upload:after {
+button:after {
     content: "";
     position: absolute;
     top: 0;
@@ -219,19 +255,27 @@ button:after, .custom-file-upload:after {
     z-index: -1;
 }
 
-button, button:after, .custom-file-upload, .custom-file-upload:after {
+button, button:after, .custom-file-upload {
     background-size: 300%;
     background-position: 100%;
     transition: .7s;
 }
 
-button:hover, button:hover:after, .custom-file-upload:hover, .custom-file-upload:hover:after {
+button:hover, button:hover:after {
     background-position: 0;
     color: #fff;
 }
 
 button:focus {
     outline: 0;
+}
+
+.custom-random-image {
+    position: absolute;
+    height: 72px;
+    width: 100px;
+    z-index: 10;
+    cursor: pointer;
 }
 
 /*
@@ -262,37 +306,40 @@ section .wrapper {
 section3
 ====================
 */
-#three{
+
+#three {
     height: auto;
     padding-bottom: 5em;
     background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
 }
 
-#head-tag{
+#head-tag {
     padding: 1em;
     text-align: center;
 }
-#head-tag > li{
+
+#head-tag>li {
     display: inline;
     color: white;
     list-style: none;
 }
 
-#head-tag > li > a{
+#head-tag>li>a {
     margin: 5px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: aliceblue;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
-#three > div.grid-container{
+#three>div.grid-container {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
-    grid-auto-rows: minmax(10em,auto);
-}   
-#inner{
+    grid-auto-rows: minmax(10em, auto);
+}
+
+#inner {
     border: 1px solid blue;
 }
 
@@ -350,10 +397,9 @@ img#start-image {
 .canvas-settings {
     flex: 1 0 300px;
     width: 25%;
-    height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
-    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px;
+    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px auto auto 75px 90px;
     grid-column-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
@@ -370,6 +416,13 @@ img#start-image {
 .settings-input-file {
     grid-column: 1 / span 3;
     display: flex;
+}
+
+.settings-buttons {
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .settings-slider-val {
@@ -397,6 +450,7 @@ nav .wrapper {
     transform: translateY(-50%);
     height: 128px;
     width: 18px;
+    ;
 }
 
 nav .wrapper .outer-circle {
@@ -410,6 +464,25 @@ nav .wrapper .outer-circle {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+nav .wrapper.back-black .outer-circle {
+    border-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-black .outer-circle .inner-circle {
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle {
+    background-color: transparent;
+    border-color: #fafaff;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle {
+    transition: .5s;
 }
 
 nav .wrapper .outer-circle:nth-child(1) {
@@ -428,12 +501,17 @@ nav .wrapper .outer-circle .inner-circle {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #fafaff;
-    display: none;
+    display: block;
 }
 
-nav .wrapper .outer-circle .inner-circle.active {
-    display: block;
+nav .wrapper.back-black .outer-circle .inner-circle.active {
+    background-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle.active {
+    background-color: #fafaff;
+    transition: .5s;
 }
 
 /*
@@ -487,12 +565,15 @@ section#one .wrapper .input-quote {
     width: 490px;
     margin-bottom: 40px;
     border: none;
-    box-shadow: 0px 7px 3px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
     font-size: 1.8rem;
-    padding: 5px 15px;
+    padding: 15px;
     border-style: none;
     background-color: #fafaff;
     box-sizing: border-box;
+    border-radius: 0;
+    max-height: 500px;
+    resize: none;
 }
 
 section#one .wrapper .input-quote::placeholder {
@@ -508,12 +589,13 @@ section#one .wrapper input {
     width: 490px;
     margin-bottom: 40px;
     border: none;
-    box-shadow: 0px 7px 3px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
     font-size: 1.8rem;
     padding-left: 15px;
     border-style: none;
     background-color: #fafaff;
     box-sizing: border-box;
+    border-radius: 0;
 }
 
 section#one .wrapper input.input-quote {
@@ -547,6 +629,12 @@ section#one .wrapper .next span {
     font-family: Baskerville;
     font-style: italic;
     font-weight: 600;
+    transition: .7s;
+}
+
+section#one .wrapper .next:hover span {
+    color: #fafaff;
+    transition: .7s;
 }
 
 section#one .back-pic-wrapper {
@@ -567,24 +655,30 @@ section#one .back-pic {
 footer
 =====================
 */
-footer{
-    display: grid;
+
+footer {
+    /* display: grid;
     position: relative;
+    width: 100%;
     background-color: #1e2832;
     color: #ffffff;
     grid-template-columns:200px minmax(30px, auto) 200px;
     grid-auto-rows: minmax(60px, auto);
-    grid-template-areas: "copyright logo contact";
+    grid-template-areas: "copyright logo contact"; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1e2832;
+    color: #ffffff;
 }
 
-footer > .foot{
-    margin: auto;
+footer>.foot {
     padding: 20px 40px;
     text-align: center;
     font-size: 10px;
 }
 
-footer > .logo{
+footer>.logo {
     grid-area: logo;
     padding: 0px 30px;
 }
@@ -592,6 +686,12 @@ footer > div.foot.logo > img{
     width: 120px;
 }
 
-footer > .contact-logo > a{
+footer>.contact-logo>a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 425px) {
+    .canvas-section {
+        padding: 50px 5px;
+    }
 }
