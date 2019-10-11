@@ -302,82 +302,82 @@
             console.groupEnd("MAIN Section");
         </script>
 
-    <footer>
-        <script>
-            console.group("FOOTER SECTION");
-            startTimer("pageload-footer");
+        <footer>
+            <script>
+                console.group("FOOTER SECTION");
+                startTimer("pageload-footer");
 
-            function onContextMenuEvent() {
-                console.log("onContextMenuEvent")
-            }
+                function onContextMenuEvent() {
+                    console.log("onContextMenuEvent")
+                }
 
-            function onKeyDownEvent() {
-                console.log("onKeyDownEvent")
-            }
-            function onKeyUpEvent() {
-                console.log("onKeyUpEvent")
-            }
+                function onKeyDownEvent() {
+                    console.log("onKeyDownEvent")
+                }
+                function onKeyUpEvent() {
+                    console.log("onKeyUpEvent")
+                }
 
-            function onKeyPressEvent() {
-                console.log("onKeyPressEvent")
-            }
+                function onKeyPressEvent() {
+                    console.log("onKeyPressEvent")
+                }
 
-            function onCopyEvent() {
-                console.log("copy")
-            }
+                function onCopyEvent() {
+                    console.log("copy")
+                }
 
-            function onPasteEvent() {
-                console.log("paste")
-            }
+                function onPasteEvent() {
+                    console.log("paste")
+                }
 
-            function onCutEvent() {
-                console.log("cut")
-            }
+                function onCutEvent() {
+                    console.log("cut")
+                }
 
-            function onPageLoad() {
-                console.log("Page is loaded");
-                getClientRect();
-            }
+                function onPageLoad() {
+                    console.log("Page is loaded");
+                    getClientRect();
+                }
 
-            function onPageUnLoad() {
-                console.log("Page is Un-loaded");
-            }
+                function onPageUnLoad() {
+                    console.log("Page is Un-loaded");
+                }
 
-            function onPageShow() {
-                console.log("Page is Showing")
-            }
+                function onPageShow() {
+                    console.log("Page is Showing")
+                }
 
-            function onPageHide() {
-                console.log("Page is hiding")
-            }
+                function onPageHide() {
+                    console.log("Page is hiding")
+                }
 
-            function onPageFocus() {
-                console.log("Page has Focus")
-            }
+                function onPageFocus() {
+                    console.log("Page has Focus")
+                }
 
-            function onPageBlur() {
-                console.log("Page lost focus")
-            }
+                function onPageBlur() {
+                    console.log("Page lost focus")
+                }
 
-            function onBeforePageFocus() {
-                console.log("Page is about to gain focus")
-            }
-            function onBeforePageBlur() {
-                console.log("Page about to lose focus")
-            }
+                function onBeforePageFocus() {
+                    console.log("Page is about to gain focus")
+                }
+                function onBeforePageBlur() {
+                    console.log("Page about to lose focus")
+                }
 
-            debugInfo.footerTime = endTimer("pageload-footer");
-            console.groupEnd("FOOTER Section");
-        </script>
-        <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
-        <div class="foot logo"><img class="footer-logo" src="./images/logo.png" width="20px"></div>
-        <div class="foot contact-logo">
-            <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
-            <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
-            <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
-        </div>
-    </footer>
-</main>
+                debugInfo.footerTime = endTimer("pageload-footer");
+                console.groupEnd("FOOTER Section");
+            </script>
+            <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+            <div class="foot logo"><img class="footer-logo" src="./images/logo.png" width="20px"></div>
+            <div class="foot contact-logo">
+                <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
+                <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
+                <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
+            </div>
+        </footer>
+    </main>
 
     <script>
         debugInfo.bodyTime = endTimer("pageload-body");
