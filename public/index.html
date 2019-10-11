@@ -137,7 +137,7 @@
                     id="text_top"></textarea>
                 <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
                     id="text_bottom" />
-                <a href="#two">
+                <a href="#two" id="nextButton">
                     <button class="next">
                         <span>NEXT</span>
                     </button>
@@ -147,6 +147,10 @@
             <div class="back-pic-wrapper">
                 <img src="./images/01.png" class="back-pic">
             </div>
+
+            <audio id="audioBeautiful" controls style="display: none">
+                <source src="./beautiful.mp3" type="audio/mp3">
+            </audio>
 
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
