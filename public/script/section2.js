@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    let category_value;
     let canvas = document.getElementById('quoteCanvas');
     ctx = canvas.getContext('2d');
 
@@ -109,32 +110,6 @@ $(document).ready(function () {
         console.log(image.src);
     }
 
-    // canvas save drawing as an image and download
-    download_quote = function (e) {
-        var image = canvas.toDataURL();
-        e.href = image;
-    };
-
-    // read selected input image from upload field and display it in browser
-    $("#image-upload").change(function () {
-        var input = this;
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#start-image').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-
-        window.setTimeout(function () {
-            drawQuote();
-        }, 500);
-    });
-
-
 
     //====================
     // Register event listeners
@@ -190,8 +165,48 @@ $(document).ready(function () {
         drawQuote();
     });
 
+    // get selected value from dropdown
+    $("#category-select").change(function () {
+        category_value = this.value;
+    });
+
+    // get a random image
     $('#random-image').click(function (e) {
         randomImage();
+    });
+
+    // save to server
+    $('#save_quote').click(function (e) {
+        if($("#category-select").value === undefined){
+            // set ALERT to remind user to select a category
+        }else{
+            // api POST ---> apicall(category_value)
+        }
+    });
+
+    // canvas save drawing as an image and download
+    download_quote = function (e) {
+        var image = canvas.toDataURL();
+        e.href = image;
+    };
+
+    // read selected input image from upload field and display it in browser
+    $("#image-upload").change(function () {
+        var input = this;
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#start-image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        window.setTimeout(function () {
+            drawQuote();
+        }, 500);
     });
 
     //====================
