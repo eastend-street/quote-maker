@@ -199,7 +199,9 @@ section#two {
 }
 
 .section-two-label {
-    background: url('../images/02.png') no-repeat;
+    background-image: url('../images/02.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 1066px;
     height: 820px;
     position: absolute;
@@ -254,7 +256,7 @@ img#start-image {
     height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
-    grid-template-rows: 50px 100px 60px 60px 50px 100px 60px 60px 50px 50px 50px 100px 52px 20px;
+    /* grid-template-rows: 50px 100px 60px 60px 50px 100px 60px 60px 50px 50px 50px 100px 52px 20px; */
     grid-column-gap: 20px;
     justify-items: stretch;
     align-items: stretch;

@@ -71,24 +71,7 @@
         startTimer("pageload-body");
     </script>
 
-    <header>
-        <script>
-            console.group("HEADER Section");
-            startTimer("pageload-header");
-        </script>
-
-        <script>
-            debugInfo.headerTime = endTimer("pageload-header");
-            console.groupEnd("HEADER Section");
-        </script>
-
-        <div class="wrapper">
-            <a href="/">
-                <img class="logo" src="./images/logo.png">
-                <span class="header-title">QUOTE MAKER</span>
-            </a>
-        </div>
-    </header>
+    
 
     <nav>
         <div class="wrapper">
@@ -105,6 +88,24 @@
     </nav>
 
     <main>
+            <header>
+                    <script>
+                        console.group("HEADER Section");
+                        startTimer("pageload-header");
+                    </script>
+            
+                    <script>
+                        debugInfo.headerTime = endTimer("pageload-header");
+                        console.groupEnd("HEADER Section");
+                    </script>
+            
+                    <div class="wrapper">
+                        <a href="/">
+                            <img class="logo" src="./images/logo.png">
+                            <span class="header-title">QUOTE MAKER</span>
+                        </a>
+                    </div>
+                </header>
         <script>
             console.group("MAIN Section");
             startTimer("pageload-main");

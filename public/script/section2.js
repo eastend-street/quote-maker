@@ -91,7 +91,6 @@ $(document).ready(function () {
         var randomNum = Math.floor(Math.random() * 999);
 
         var source = 'https://picsum.photos/id/'+randomNum+'/500.jpg';
-        // source = 'https://picsum.photos/200/300';
 
         var image = new Image();
         image.crossOrigin = 'anonymous';
