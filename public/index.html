@@ -9,6 +9,7 @@
         constructor() {
             this.htmlTime = 0;
             this.headTime = 0;
+            this.navTime = 0;
             this.headerTime = 0;
             this.mainTime = 0;
             this.sectionTime = 0;
@@ -71,26 +72,12 @@
         startTimer("pageload-body");
     </script>
 
-    <header>
-        <script>
-            console.group("HEADER Section");
-            startTimer("pageload-header");
-        </script>
-
-        <script>
-            debugInfo.headerTime = endTimer("pageload-header");
-            console.groupEnd("HEADER Section");
-        </script>
-
-        <div class="wrapper">
-            <a href="/">
-                <img class="logo" src="./images/logo.png">
-                <span class="header-title">QUOTE MAKER</span>
-            </a>
-        </div>
-    </header>
-
     <nav>
+        <script>
+            console.group("NAV SECTION");
+            startTimer("pageload-nav");
+        </script>
+
         <div class="wrapper" id="nav-bar">
             <ul>
                 <li class="outer-circle">
@@ -104,9 +91,32 @@
                 </li>
             </ul>
         </div>
+
+        <script>
+            debugInfo.navTime = endTimer("pageload-nav");
+            console.groupEnd("NAV Section");
+        </script>
     </nav>
 
     <main>
+        <header>
+            <script>
+                console.group("HEADER Section");
+                startTimer("pageload-header");
+            </script>
+
+            <div class="wrapper">
+                <a href="/">
+                    <img class="logo" src="./images/logo.png">
+                    <span class="header-title">QUOTE MAKER</span>
+                </a>
+            </div>
+
+            <script>
+                debugInfo.headerTime = endTimer("pageload-header");
+                console.groupEnd("HEADER Section");
+            </script>
+        </header>
         <script>
             console.group("MAIN Section");
             startTimer("pageload-main");
@@ -125,9 +135,10 @@
 
             <div class="wrapper">
 
-                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="text_top"></textarea>
-                <input type="text" class="input-auther" placeholder="Author" minlength="1" maxlength="30" id="text_bottom" />
-                <!-- <button id="submit-quote">Submit</button> -->
+                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150"
+                    id="text_top"></textarea>
+                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
+                    id="text_bottom" />
                 <a href="#two">
                     <button class="next">
                         <span>NEXT</span>
@@ -146,96 +157,108 @@
         </section>
 
         <section id="two">
-                <script>
-                    console.group("SECTION Section");
-                    startTimer("pageload-section");
-                </script>
+            <script>
+                console.group("SECTION Section");
+                startTimer("pageload-section");
+            </script>
 
-                <div class="canvas-section">
-                        <div class="canvas-main">
-                        <div class="section-two-label"></div>
-                          <canvas id="quoteCanvas" class="canvas-container">
-                            Unfortunately your browser does not support canvas.
-                          </canvas>
-                          <img id="start-image" src="" alt="" />
-                        </div>
-                        <div class="canvas-settings">
-                          <div class="settings-header">Quote</div>
-                          <div class="settings-input"><input type="text" placeholder='"Quote here"' id="text_top2" /></div>
-                
-                          <div><label for="text_top_font_size">Font size:</label></div>
-                          <div><input id="text_top_font_size" class="slider" type="range" min="0" max="72" value="50" /></div>
-                          <div class="settings-slider-val"><span id="text_top_font_size__val">50</span>px</div>
-                
-                          <div><label for="text_top_offset">Offset from top:</label></div>
-                          <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
-                          <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
-                
-                          <div class="settings-header">Author</div>
-                          <div class="settings-input"><input type="text" placeholder="Author here" id="text_bottom2" /></div>
-                
-                          <div><label for="text_bottom_font_size">Font size:</label></div>
-                          <div><input id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" /></div>
-                          <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
-                          <div><label for="text_bottom_offset">Offset from top:</label></div>
-                          <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" /></div>
-                          <div class="settings-slider-val"><span id="text_bottom_offset__val">950</span>px</div>
-                
-                          <div class="settings-header">More</div>
-                          <div><label for="text_line_height">Line height:</label></div>
-                          <div><input id="text_line_height" class="slider" type="range" min="0" max="100" value="15" /></div>
-                          <div class="settings-slider-val"><span id="text_line_height__val">15</span>pt</div>
-                          <div><label for="text_stroke_width">Stroke width:</label></div>
-                          <div><input id="text_stroke_width" class="slider" type="range" min="0" max="20" value="4" /></div>
-                          <div class="settings-slider-val"><span id="text_stroke_width__val">4</span>pt</div>
-                
-                          <div class="settings-input">
-                            <select class="category-select" id="">
-                              <option value="" disabled selected>Select a category</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+            <div class="canvas-section">
+                <div class="canvas-main">
+                    <div class="back-pic-wrapper">
+                        <img src="./images/02.png" class="back-pic">
+                    </div>
+                    <canvas id="quoteCanvas" class="canvas-container">
+                        Unfortunately your browser does not support canvas.
+                    </canvas>
+                    <img id="start-image" src="" alt="" crossorigin="anonymous" />
+                </div>
+                <div class="canvas-settings">
+                    <div class="settings-header">Quote</div>
+                    <div class="settings-input"><input type="text" placeholder='"Your Quote"' id="text_top2" /></div>
+
+                    <div><label for="text_top_font_size">Font size:</label></div>
+                    <div><input id="text_top_font_size" class="slider" type="range" min="0" max="72" value="50" /></div>
+                    <div class="settings-slider-val"><span id="text_top_font_size__val">50</span>px</div>
+
+                    <div><label for="text_top_offset">Offset from top:</label></div>
+                    <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
+                    <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
+
+                    <div class="settings-header">Author</div>
+                    <div class="settings-input"><input type="text" placeholder="Author" id="text_bottom2" minlength="1"
+                            maxlength="30" /></div>
+
+                    <div><label for="text_bottom_font_size">Font size:</label></div>
+                    <div><input id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" />
+                    </div>
+                    <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
+                    <div><label for="text_bottom_offset">Offset from top:</label></div>
+                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" />
+                    </div>
+                    <div class="settings-slider-val"><span id="text_bottom_offset__val">950</span>px</div>
+
+                    <div class="settings-header">More</div>
+                    <div><label for="text_line_height">Line height:</label></div>
+                    <div><input id="text_line_height" class="slider" type="range" min="0" max="100" value="15" /></div>
+                    <div class="settings-slider-val"><span id="text_line_height__val">15</span>pt</div>
+                    <div><label for="text_stroke_width">Stroke width:</label></div>
+                    <div><input id="text_stroke_width" class="slider" type="range" min="0" max="20" value="4" /></div>
+                    <div class="settings-slider-val"><span id="text_stroke_width__val">4</span>pt</div>
+
+                    <div class="settings-input">
+                        <span class="custom-dropdown">
+                            <select id="category-select">
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="love">Love</option>
+                                <option value="life">Life</option>
+                                <option value="friendship">Friendship</option>
+                                <option value="motivation">Motivation</option>
+                                <option value="prank">Prank</option>
+                                <option value="travel">Travel</option>
                             </select>
-                          </div>
-                
-                          <div class="settings-input-file">
-                            <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
-                            <input type="text"  />
-                            <input type="file" id="image-upload" class="image-upload" />
-                            <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
-                          </div>
-                
-                          <div class="settings-input"></div>
-                
-                          <div class="settings-input">
-                            <button id="save_quote" type="button">Save</button>
-                            <a id="download_quote" download="myQuote.jpg">
-                            <button type="button">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-
-                <script>
-                    debugInfo.sectionTime = endTimer("pageload-section");
-                    console.groupEnd("SECTION Section");
-                </script>
-            </section>
-
-            <section id="three">
-                    <script>
-                        console.group("SECTION Section");
-                        startTimer("pageload-section");
-                    </script>
-
-                    <div class="wrapper">
-                        <h1>Section 3</h1>
+                        </span>
                     </div>
 
-                    <script>
-                        debugInfo.sectionTime = endTimer("pageload-section");
-                        console.groupEnd("SECTION Section");
-                    </script>
-                </section>
+                    <div class="settings-input-file">
+                        <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
+                        <input id="image-upload-input" class="image-upload-input" type="text"
+                            placeholder="Random image -or- Upload image" />
+                        <input type="file" id="image-upload" class="image-upload" />
+                        <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
+                    </div>
+
+                    <div class="settings-input"></div>
+
+                    <div class="settings-input">
+                        <button id="save_quote" type="button">SAVE</button>
+                        <a id="download_quote" download="myQuote.png" onclick="download_quote(this);">
+                            <button type="button">DOWNLOAD</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                debugInfo.sectionTime = endTimer("pageload-section");
+                console.groupEnd("SECTION Section");
+            </script>
+        </section>
+
+        <section id="three">
+            <script>
+                console.group("SECTION Section");
+                startTimer("pageload-section");
+            </script>
+
+            <div class="wrapper">
+                <h1>Section 3</h1>
+            </div>
+
+            <script>
+                debugInfo.sectionTime = endTimer("pageload-section");
+                console.groupEnd("SECTION Section");
+            </script>
+        </section>
 
 
         <script>
