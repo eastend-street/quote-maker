@@ -15,12 +15,11 @@ html, body {
     color: #424242;
     background: #f2f4f8;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 main {
     height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -296,7 +295,7 @@ nav .wrapper {
     top: 50%;
     transform: translateY(-50%);
     height: 128px;
-    width: 18px;
+    width: 18px;;
 }
 
 nav .wrapper .outer-circle {
@@ -310,6 +309,25 @@ nav .wrapper .outer-circle {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+nav .wrapper.back-black .outer-circle {
+    border-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-black .outer-circle .inner-circle {
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle {
+    background-color: transparent;
+    border-color: #fafaff;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle {
+    transition: .5s;
 }
 
 nav .wrapper .outer-circle:nth-child(1) {
@@ -328,12 +346,17 @@ nav .wrapper .outer-circle .inner-circle {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #fafaff;
-    display: none;
+    display: block;
 }
 
-nav .wrapper .outer-circle .inner-circle.active {
-    display: block;
+nav .wrapper.back-black .outer-circle .inner-circle.active {
+    background-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle.active {
+    background-color: #fafaff;
+    transition: .5s;
 }
 
 /*
