@@ -45,7 +45,7 @@ app.post(
   [
     check("quote").isLength({ min: 1, max: 150 }),
     check("author").isLength({ min: 1, max: 30 }),
-    check("author").isLength({ min: 1, max: 500 }),
+    check("canvas_url").isLength({ min: 1, max: 500 }),
     check("category").isLength({ min: 1, max: 50 })
   ],
   (req, res) => {
