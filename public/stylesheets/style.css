@@ -5,7 +5,6 @@ FONTS
 */
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
-
 /*
 ====================
 MAIN STYLE
@@ -20,7 +19,7 @@ html, body {
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -121,13 +120,13 @@ textarea {
 }
 
 .file-upload .file-select {
-	display: block;
-	border: 2px solid #FFC750;
-	color: #969696;
-	cursor: pointer;
+    display: block;
+    border: 2px solid #FFC750;
+    color: #969696;
+    cursor: pointer;
     width: 100%;
-	background: #f7f7f7;
-	overflow: hidden;
+    background: #f7f7f7;
+    overflow: hidden;
     position: relative;
     border-radius: 0.35em;
 }
@@ -137,7 +136,7 @@ textarea {
     position: absolute;
     top: 0;
     right: 0;
-	height: 72px;
+    height: 72px;
     line-height: 72px;
     width: 100px;
     color: #fff;
@@ -146,9 +145,9 @@ textarea {
 
 .file-upload .file-select .random-select-button {
     background: #FFC750;
-	position: absolute;
+    position: absolute;
     left: 0;
-	height: 72px;
+    height: 72px;
     line-height: 72px;
     width: 100px;
     color: #fff;
@@ -156,21 +155,21 @@ textarea {
 }
 
 .file-upload .file-select .file-select-name {
-	line-height: 72px;
-	display: inline-block;
-	padding: 0 10px;
+    line-height: 72px;
+    display: inline-block;
+    padding: 0 10px;
 }
 
 .file-upload .file-select input[type=file] {
-	z-index: 5;
-	cursor: pointer;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	filter: alpha(opacity=0);
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 .custom-dropdown {
@@ -306,23 +305,25 @@ section .wrapper {
 section3
 ====================
 */
-#three{
+
+#three {
     height: auto;
     padding-bottom: 5em;
     background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
 }
 
-#head-tag{
+#head-tag {
     padding: 1em;
     text-align: center;
 }
-#head-tag > li{
+
+#head-tag>li {
     display: inline;
     color: white;
     list-style: none;
 }
 
-#head-tag > li > a{
+#head-tag>li>a {
     margin: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -330,13 +331,14 @@ section3
     border: 1px solid black;
 }
 
-#three > div.grid-container{
+#three>div.grid-container {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
-    grid-auto-rows: minmax(10em,auto);
+    grid-auto-rows: minmax(10em, auto);
 }
-#inner{
+
+#inner {
     border: 1px solid blue;
 }
 
@@ -394,7 +396,6 @@ img#start-image {
 .canvas-settings {
     flex: 1 0 300px;
     width: 25%;
-    height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
     grid-template-rows: 50px auto auto auto 50px auto auto auto 50px auto auto 75px 90px;
@@ -447,7 +448,8 @@ nav .wrapper {
     top: 50%;
     transform: translateY(-50%);
     height: 128px;
-    width: 18px;;
+    width: 18px;
+    ;
 }
 
 nav .wrapper .outer-circle {
@@ -652,29 +654,41 @@ section#one .back-pic {
 footer
 =====================
 */
-footer{
-    display: grid;
+
+footer {
+    /* display: grid;
     position: relative;
+    width: 100%;
     background-color: #1e2832;
     color: #ffffff;
-    grid-template-columns:200px minmax(300px, auto) 200px;
+    grid-template-columns: 200px minmax(300px, auto) 200px;
     grid-auto-rows: minmax(60px, auto);
-    grid-template-areas: "copyright logo contact";
+    grid-template-areas: "copyright logo contact"; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1e2832;
+    color: #ffffff;
 }
 
-footer > .foot{
-    margin: auto;
+footer>.foot {
     padding: 20px 40px;
     text-align: center;
     font-size: 10px;
 }
 
-footer > .logo{
+footer>.logo {
     grid-area: logo;
-    padding: 20px 40px;
+    padding: 20px 10px;
     /* background-color: darkred; */
 }
 
-footer > .contact-logo > a{
+footer>.contact-logo>a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 425px) {
+    .canvas-section {
+        padding: 50px 5px;
+    }
 }
