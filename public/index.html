@@ -74,7 +74,29 @@
         startTimer("pageload-body");
     </script>
 
-    <nav>
+
+
+        <div id="menuToggle">
+
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+                <a href="#one">
+                    <li>Home</li>
+                </a>
+                <a href="#two">
+                    <li>Quote Maker</li>
+                </a>
+                <a href="#three">
+                    <li>Quote Ideas</li>
+                </a>
+            </ul>
+        </div>
+
+    <nav class="sidenav">
         <script>
             console.group("NAV SECTION");
             startTimer("pageload-nav");
@@ -266,6 +288,32 @@
                 <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
                 <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
 
+            <div id="head-tag">
+                <li><a id="tag" href="">Love</a></li>
+                <li><a id="tag" href="">Life</a></li>
+                <li><a id="tag" href="">Friendship</a></li>
+                <li><a id="tag" href="">Motivation</a></li>
+                <li><a id="tag" href="">Prank</a></li>
+                <li><a id="tag" href="">Travel</a></li>
+                <!-- <input type="button" value="test to generate" onclick="addElement_img()" /> -->
+            </div>
+            <div class="grid-container">
+                <!-- here newly created div tag will be create by Javascript -->
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+
             </div>
 
             <div id="gallery"></div>
@@ -280,81 +328,83 @@
             console.groupEnd("MAIN Section");
         </script>
 
-        <footer>
-            <script>
-                console.group("FOOTER SECTION");
-                startTimer("pageload-footer");
-
-                function onContextMenuEvent() {
-                    console.log("onContextMenuEvent")
-                }
-
-                function onKeyDownEvent() {
-                    console.log("onKeyDownEvent")
-                }
-                function onKeyUpEvent() {
-                    console.log("onKeyUpEvent")
-                }
-
-                function onKeyPressEvent() {
-                    console.log("onKeyPressEvent")
-                }
-
-                function onCopyEvent() {
-                    console.log("copy")
-                }
-
-                function onPasteEvent() {
-                    console.log("paste")
-                }
-
-                function onCutEvent() {
-                    console.log("cut")
-                }
-
-                function onPageLoad() {
-                    console.log("Page is loaded");
-                }
-
-                function onPageUnLoad() {
-                    console.log("Page is Un-loaded");
-                }
-
-                function onPageShow() {
-                    console.log("Page is Showing")
-                }
-
-                function onPageHide() {
-                    console.log("Page is hiding")
-                }
-
-                function onPageFocus() {
-                    console.log("Page has Focus")
-                }
-
-                function onPageBlur() {
-                    console.log("Page lost focus")
-                }
-
-                function onBeforePageFocus() {
-                    console.log("Page is about to gain focus")
-                }
-                function onBeforePageBlur() {
-                    console.log("Page about to lose focus")
-                }
-
-                debugInfo.footerTime = endTimer("pageload-footer");
-                console.groupEnd("FOOTER Section");
-            </script>
-            <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
-            <div class="foot logo"><img class="footer-logo" src="./images/logo.png" width="20px"></div>
-            <div class="foot contact-logo">
-                <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
-                <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
-                <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
-            </div>
-        </footer>
     </main>
+    <footer>
+        <script>
+            console.group("FOOTER SECTION");
+            startTimer("pageload-footer");
+
+            function onContextMenuEvent() {
+                console.log("onContextMenuEvent")
+            }
+
+            function onKeyDownEvent() {
+                console.log("onKeyDownEvent")
+            }
+            function onKeyUpEvent() {
+                console.log("onKeyUpEvent")
+            }
+
+            function onKeyPressEvent() {
+                console.log("onKeyPressEvent")
+            }
+
+            function onCopyEvent() {
+                console.log("copy")
+            }
+
+            function onPasteEvent() {
+                console.log("paste")
+            }
+
+            function onCutEvent() {
+                console.log("cut")
+            }
+
+            function onPageLoad() {
+                console.log("Page is loaded");
+                getClientRect();
+            }
+
+            function onPageUnLoad() {
+                console.log("Page is Un-loaded");
+            }
+
+            function onPageShow() {
+                console.log("Page is Showing")
+            }
+
+            function onPageHide() {
+                console.log("Page is hiding")
+            }
+
+            function onPageFocus() {
+                console.log("Page has Focus")
+            }
+
+            function onPageBlur() {
+                console.log("Page lost focus")
+            }
+
+            function onBeforePageFocus() {
+                console.log("Page is about to gain focus")
+            }
+            function onBeforePageBlur() {
+                console.log("Page about to lose focus")
+            }
+
+            debugInfo.footerTime = endTimer("pageload-footer");
+            console.groupEnd("FOOTER Section");
+        </script>
+        <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+        <div class="foot logo"><img class="footer-logo" src="./images/outline-logo.png" width="20px"></div>
+        <div class="foot contact-logo">
+            <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
+            <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
+            <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
+        </div>
+    </footer>
+
 
     <script>
         debugInfo.bodyTime = endTimer("pageload-body");
