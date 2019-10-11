@@ -635,7 +635,6 @@ section#three {
 }
 
 .btnContainer {
-    display: flex;
     justify-content: space-between;
     padding: 0px 180px;
 
