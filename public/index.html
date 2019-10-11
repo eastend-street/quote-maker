@@ -191,9 +191,9 @@
                     </div>
                     <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
                     <div><label for="text_bottom_offset">Offset from top:</label></div>
-                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="950" />
+                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="860" />
                     </div>
-                    <div class="settings-slider-val"><span id="text_bottom_offset__val">950</span>px</div>
+                    <div class="settings-slider-val"><span id="text_bottom_offset__val">860</span>px</div>
 
                     <div class="settings-header">More</div>
                     <div><label for="text_line_height">Line height:</label></div>
@@ -218,14 +218,16 @@
                     </div>
 
                     <div class="settings-input-file">
-                        <label id="random-image" class="custom-file-upload"><i class="fa fa-question"></i></label>
-                        <input id="image-upload-input" class="image-upload-input" type="text"
-                            placeholder="Random image -or- Upload image" />
-                        <input type="file" id="image-upload" class="image-upload" />
-                        <label for="image-upload" class="custom-file-upload"><i class="fa fa-upload"></i></label>
+                        <a id="random-image" class="custom-random-image"></a>
+                        <div class="file-upload">
+                            <div class="file-select">
+                                <div class="random-select-button"><i class="fa fa-question"></i></div>
+                                <div class="file-select-name" id="noFile">Random image -or- Upload image</div>
+                                <div class="file-select-button" id="fileName"><i class="fa fa-upload"></i></div>
+                                <input type="file" name="chooseFile" id="image-upload">
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="settings-input"></div>
 
                     <div class="settings-input">
                         <button id="save_quote" type="button">SAVE</button>

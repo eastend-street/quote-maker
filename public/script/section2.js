@@ -100,14 +100,18 @@ $(document).ready(function () {
             randomImage();
         };
         image.onload = function () {
-            $('.canvas-container').css('position', 'relative');
-            $('.canvas-container').css('z-index', 1000);
             $('#start-image').attr('src', this.src);
+            layerUp();
             drawQuote();
         };
 
 
         console.log(image.src);
+    }
+
+    const layerUp = function () {
+        $('.canvas-container').css('position', 'relative');
+        $('.canvas-container').css('z-index', 1000);
     }
 
 
@@ -194,8 +198,18 @@ $(document).ready(function () {
     $("#image-upload").change(function () {
         var input = this;
 
+        var filename = $("#image-upload").val();
+        if (/^\s*$/.test(filename)) {
+          $("#noFile").text("Random image -or- Upload image"); 
+        }
+        else {
+          $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+        }
+
         if (input.files && input.files[0]) {
             var reader = new FileReader();
+
+            layerUp();
 
             reader.onload = function (e) {
                 $('#start-image').attr('src', e.target.result);

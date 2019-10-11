@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*
 ====================
-FORM
+FORM COMPONENTS
 ====================
 */
 
@@ -66,7 +66,7 @@ input[type="text"], input[type="file"], select, textarea {
 }
 
 input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
-    border-color: #49bf9d;
+    border-color: rgb(172, 134, 53);
 }
 
 input[type="text"], input[type="file"], select {
@@ -117,16 +117,60 @@ textarea {
     opacity: 1.0;
 }
 
-.image-upload {
-    margin-left: -5px;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-input[placeholder].image-upload-input {
+.file-upload {
     text-align: center;
+    width: 100%;
+}
+
+.file-upload .file-select {
+	display: block;
+	border: 2px solid #FFC750;
+	color: #969696;
+	cursor: pointer;
+    width: 100%;
+	background: #f7f7f7;
+	overflow: hidden;
+    position: relative;
+    border-radius: 0.35em;
+}
+
+.file-upload .file-select .file-select-button {
+    background: #FFC750;
+    position: absolute;
+    top: 0;
+    right: 0;
+	height: 72px;
+    line-height: 72px;
+    width: 100px;
+    color: #fff;
+}
+
+.file-upload .file-select .random-select-button {
+    background: #FFC750;
+	position: absolute;
+    left: 0;
+	height: 72px;
+    line-height: 72px;
+    width: 100px;
+    color: #fff;
+}
+
+.file-upload .file-select .file-select-name {
+	line-height: 72px;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+.file-upload .file-select input[type=file] {
+	z-index: 5;
+	cursor: pointer;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
 
 .custom-dropdown {
@@ -188,15 +232,7 @@ BUTTON
 ====================
 */
 
-.custom-file-upload {
-    width: 50px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button, .custom-file-upload {
+button {
     padding: 8px 16px;
     cursor: pointer;
     border: 2px solid #FFC750;
@@ -208,7 +244,7 @@ button, .custom-file-upload {
     font-style: italic;
 }
 
-button:after, .custom-file-upload:after {
+button:after {
     content: "";
     position: absolute;
     top: 0;
@@ -219,19 +255,27 @@ button:after, .custom-file-upload:after {
     z-index: -1;
 }
 
-button, button:after, .custom-file-upload, .custom-file-upload:after {
+button, button:after, .custom-file-upload {
     background-size: 300%;
     background-position: 100%;
     transition: .7s;
 }
 
-button:hover, button:hover:after, .custom-file-upload:hover, .custom-file-upload:hover:after {
+button:hover, button:hover:after {
     background-position: 0;
     color: #fff;
 }
 
 button:focus {
     outline: 0;
+}
+
+.custom-random-image {
+    position: absolute;
+    height: 72px;
+    width: 100px;
+    z-index: 10;
+    cursor: pointer;
 }
 
 /*
