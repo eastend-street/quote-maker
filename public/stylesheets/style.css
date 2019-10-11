@@ -267,11 +267,17 @@ section3
     padding-bottom: 5em;
     background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
 }
+
+#head-tag{
+    padding: 1em;
+    text-align: center;
+}
 #head-tag > li{
     display: inline;
     color: white;
     list-style: none;
 }
+
 #head-tag > li > a{
     margin: 5px;
     padding-left: 10px;
@@ -564,7 +570,7 @@ footer
 footer{
     display: grid;
     position: relative;
-    background-color: rgb(1, 56, 56);
+    background-color: #1e2832;
     color: #ffffff;
     grid-template-columns:200px minmax(300px, auto) 200px;
     grid-auto-rows: minmax(60px, auto);
