@@ -70,4 +70,7 @@
     }
 
     scrollMenu();
+
+    const topQuoteTa = document.getElementsByClassName('input-quote')[0];
+    autosize(topQuoteTa);
 })();
