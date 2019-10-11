@@ -260,6 +260,34 @@
                 <h1>Section 3</h1>
             </div>
 
+            <div id="head-tag">
+                    <li><a id="tag" href="">Love</a></li>    
+                    <li><a id="tag" href="">Life</a></li>
+                    <li><a id="tag" href="">Friendship</a></li>
+                    <li><a id="tag" href="">Motivation</a></li>
+                    <li><a id="tag" href="">Prank</a></li>
+                    <li><a id="tag" href="">Travel</a></li>
+                    <!-- <input type="button" value="test to generate" onclick="addElement_img()" /> -->
+            </div>
+            <div class="grid-container">
+                <!-- here newly created div tag will be create by Javascript -->
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div>
+                <div id="inner">asd</div>
+
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div>
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div>
+
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div>
+                <div id="inner">asd</div> 
+                <div id="inner">asd</div>
+                                
+            </div>
+
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
                 console.groupEnd("SECTION Section");
@@ -271,7 +299,6 @@
             debugInfo.mainTime = endTimer("pageload-main");
             console.groupEnd("MAIN Section");
         </script>
-    </main>
 
     <footer>
         <script>
@@ -339,7 +366,16 @@
             debugInfo.footerTime = endTimer("pageload-footer");
             console.groupEnd("FOOTER Section");
         </script>
+        <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+        <div class="foot logo"><img class="footer-logo" src="./images/logo.png" width="20px"></div>
+        <div class="foot contact-logo">
+            <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
+            <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
+            <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
+        </div>
     </footer>
+</main>
+
     <script>
         debugInfo.bodyTime = endTimer("pageload-body");
         console.groupEnd("BODY Section");

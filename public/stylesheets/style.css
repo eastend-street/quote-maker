@@ -303,8 +303,43 @@ section .wrapper {
     white-space: nowrap;
 }
 
-section#two {
-    background-color: #FAFAFF;
+/* 
+====================
+section3
+====================
+*/
+#three{
+    height: auto;
+    padding-bottom: 5em;
+    background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
+}
+
+#head-tag{
+    padding: 1em;
+    text-align: center;
+}
+#head-tag > li{
+    display: inline;
+    color: white;
+    list-style: none;
+}
+
+#head-tag > li > a{
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: aliceblue;
+    border: 1px solid black; 
+}
+
+#three > div.grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
+    grid-auto-rows: minmax(10em,auto);
+}   
+#inner{
+    border: 1px solid blue;
 }
 
 section#two .back-pic-wrapper {
@@ -588,4 +623,36 @@ section#one .back-pic {
     width: 630px;
     right: 54px;
     bottom: 163px;
+}
+
+/* 
+=====================
+footer
+=====================
+*/
+footer{
+    display: grid;
+    position: relative;
+    background-color: #1e2832;
+    color: #ffffff;
+    grid-template-columns:200px minmax(300px, auto) 200px;
+    grid-auto-rows: minmax(60px, auto);
+    grid-template-areas: "copyright logo contact";
+}
+
+footer > .foot{
+    margin: auto;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 10px;
+}
+
+footer > .logo{
+    grid-area: logo;
+    padding: 20px 40px;
+    /* background-color: darkred; */
+}
+
+footer > .contact-logo > a{
+    text-decoration: none;
 }
