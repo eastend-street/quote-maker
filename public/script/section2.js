@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    let category_value;
     let canvas = document.getElementById('quoteCanvas');
     ctx = canvas.getContext('2d');
 
@@ -33,7 +34,7 @@ $(document).ready(function () {
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
 
-        var textTop = '" '+ $('#text_top').val() + ' "';
+        var textTop = '" ' + $('#text_top').val() + ' "';
         var x = canvasSize / 2;
         var y = parseInt($('#text_top_offset').val());
 
@@ -77,7 +78,7 @@ $(document).ready(function () {
         lines[pushMethod](line);
 
         for (var k in lines) {
-            if(fromBottom){
+            if (fromBottom) {
                 var fontSize = parseInt($('#text_bottom_font_size').val());
                 context.font = fontSize + 'pt sans-serif';
             }
@@ -90,8 +91,7 @@ $(document).ready(function () {
     const randomImage = function () {
         var randomNum = Math.floor(Math.random() * 999);
 
-        var source = 'https://picsum.photos/id/'+randomNum+'/500.jpg';
-        // source = 'https://picsum.photos/200/300';
+        var source = 'https://picsum.photos/id/' + randomNum + '/500.jpg';
 
         var image = new Image();
         image.crossOrigin = 'anonymous';
@@ -100,33 +100,15 @@ $(document).ready(function () {
             randomImage();
         };
         image.onload = function () {
+            $('.canvas-container').css('position', 'relative');
+            $('.canvas-container').css('z-index', 1000);
             $('#start-image').attr('src', this.src);
             drawQuote();
         };
-        
-        
+
+
         console.log(image.src);
     }
-
-    // read selected input image from upload field and display it in browser
-    $("#image-upload").change(function () {
-        var input = this;
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#start-image').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-
-        window.setTimeout(function () {
-            drawQuote();
-        }, 500);
-    });
-
 
 
     //====================
@@ -183,23 +165,55 @@ $(document).ready(function () {
         drawQuote();
     });
 
+    // get selected value from dropdown
+    $("#category-select").change(function () {
+        category_value = this.value;
+    });
+
+    // get a random image
     $('#random-image').click(function (e) {
         randomImage();
     });
 
-    $('#download_quote').click(function (e) {
-        // $(this).attr('href', canvas.toDataURL());
-        // $(this).attr('download', 'quote.png');
-        var image = canvas.toDataURL("image/jpg");
-        e.href = image;
+    // save to server
+    $('#save_quote').click(function (e) {
+        if($("#category-select").value === undefined){
+            // set ALERT to remind user to select a category
+        }else{
+            // api POST ---> apicall(category_value)
+        }
     });
 
+    // canvas save drawing as an image and download
+    download_quote = function (e) {
+        var image = canvas.toDataURL();
+        e.href = image;
+    };
+
+    // read selected input image from upload field and display it in browser
+    $("#image-upload").change(function () {
+        var input = this;
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#start-image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        window.setTimeout(function () {
+            drawQuote();
+        }, 500);
+    });
 
     //====================
     // Init at startup
     //==================== 
     window.setTimeout(function () {
-        drawQuote();
+        // drawQuote();
     }, 100);
 
 });
