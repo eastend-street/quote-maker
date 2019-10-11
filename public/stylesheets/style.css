@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
 }
 
+#backgroundVideo {
+    height: 100vh;
+}
+
 /*
 ====================
 FORM
@@ -36,7 +40,7 @@ FORM
 
 label {
     color: #787878;
-    font-size: 0.7em;
+    font-size: 1rem;
     font-weight: 400;
     margin: 0 0 1em 0;
 }
@@ -56,6 +60,7 @@ input[type="text"], input[type="file"], select, textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-size: 1.5rem;
 }
 
 input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
@@ -63,7 +68,7 @@ input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus
 }
 
 input[type="text"], input[type="file"], select {
-    height: 4.75em;
+    height: 72px;
 }
 
 textarea {
@@ -116,6 +121,10 @@ textarea {
 
 input[type="file"] {
     display: none;
+}
+
+input[placeholder].image-upload-input {
+    text-align: center;
 }
 
 /*
@@ -256,6 +265,7 @@ img#start-image {
     height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
+    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px;
     /* grid-template-rows: 50px 100px 60px 60px 50px 100px 60px 60px 50px 50px 50px 100px 52px 20px; */
     grid-column-gap: 20px;
     justify-items: stretch;
