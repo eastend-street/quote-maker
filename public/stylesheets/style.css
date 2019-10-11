@@ -694,7 +694,7 @@ HAMBURGER
 */
 
 #menuToggle {
-    display: block;
+    display: none;
     position: relative;
     top: 50px;
     left: 50px;
@@ -799,4 +799,13 @@ MEDIA QUERY
     .sidenav {
         display: none;
     }
+
+    #menuToggle {
+        display: none;
+    }
+
+    header .wrapper {
+        right: 0;
+    }
+    
 }
