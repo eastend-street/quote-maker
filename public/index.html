@@ -257,39 +257,16 @@
                 console.group("SECTION Section");
                 startTimer("pageload-section");
             </script>
-
-            <div class="wrapper">
-                <h1>Section 3</h1>
+            <div class="btnContainer">
+                <button id="Love" class="categoryBtn" value="http://localhost:3000/api?category=love">Love</button>
+                <button id="Life" class="categoryBtn" value="http://localhost:3000/api?category=life">Life</button>
+                <button id="Friendship" class="categoryBtn" value="http://localhost:3000/api?category=friendship">Friendship</button>
+                <button id="Motivation" class="categoryBtn" value="http://localhost:3000/api?category=motivation">Motivation</button>
+                <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
+                <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
             </div>
 
-            <div id="head-tag">
-                    <li><a id="tag" href="">Love</a></li>    
-                    <li><a id="tag" href="">Life</a></li>
-                    <li><a id="tag" href="">Friendship</a></li>
-                    <li><a id="tag" href="">Motivation</a></li>
-                    <li><a id="tag" href="">Prank</a></li>
-                    <li><a id="tag" href="">Travel</a></li>
-                    <!-- <input type="button" value="test to generate" onclick="addElement_img()" /> -->
-            </div>
-            <div class="grid-container">
-                <!-- here newly created div tag will be create by Javascript -->
-                <!-- <div id="inner">asd</div> 
-                <div id="inner">asd</div> 
-                <div id="inner">asd</div>
-                <div id="inner">asd</div>
-
-                <div id="inner">asd</div> 
-                <div id="inner">asd</div>
-                <div id="inner">asd</div> 
-                <div id="inner">asd</div>
-
-                <div id="inner">asd</div> 
-                <div id="inner">asd</div>
-                <div id="inner">asd</div> 
-                <div id="inner">asd</div> -->
-                                
-            </div>
-
+            <div id="gallery"></div>
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
                 console.groupEnd("SECTION Section");
@@ -386,6 +363,7 @@
     </script>
     <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
+    <script src="./script/section3.js"></script>
     <script>
         // in scroll event use this function
         // because do some acrion in every scroll events is too much
