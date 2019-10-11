@@ -555,3 +555,18 @@ section#one .back-pic {
     right: 54px;
     bottom: 163px;
 }
+
+/* 
+=====================
+footer
+=====================
+*/
+footer{
+    position: relative;
+    background-color: rgb(1, 56, 56);
+    color: #ffffff;
+}
+
+footer .wrapper{
+    padding: 20px 40px;
+}
