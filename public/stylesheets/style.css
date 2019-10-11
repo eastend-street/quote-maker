@@ -260,13 +260,22 @@ section#two {
     background-color: #FAFAFF;
 }
 
+section#two .back-pic-wrapper {
+    position: relative;
+}
+
+section#two .back-pic {
+    position: absolute;
+    left: -20%;
+    width: 100%;
+}
+
 .section-two-label {
     background-image: url('../images/02.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 1066px;
     height: 820px;
-    position: absolute;
     top: 50%;
     transform: translate(-40%, -50%);
 }

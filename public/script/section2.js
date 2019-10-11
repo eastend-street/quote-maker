@@ -99,6 +99,8 @@ $(document).ready(function () {
             randomImage();
         };
         image.onload = function () {
+            $('.canvas-container').css('position', 'relative');
+            $('.canvas-container').css('z-index', 1000);
             $('#start-image').attr('src', this.src);
             drawQuote();
         };
@@ -196,7 +198,7 @@ $(document).ready(function () {
     // Init at startup
     //==================== 
     window.setTimeout(function () {
-        drawQuote();
+        // drawQuote();
     }, 100);
 
 });
