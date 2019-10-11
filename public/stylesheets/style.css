@@ -325,11 +325,14 @@ section3
 }
 
 #head-tag > li > a{
-    margin: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: aliceblue;
-    border: 1px solid black; 
+    margin: 15px;
+    padding: 5px 25px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+#head-tag > li > .tag{
+    border-radius: 3px;
 }
 
 #three > div.grid-container{
@@ -338,7 +341,7 @@ section3
     grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
     grid-auto-rows: minmax(10em,auto);
 }   
-#inner{
+.inner{
     border: 1px solid blue;
 }
 
