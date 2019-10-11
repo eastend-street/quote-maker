@@ -314,36 +314,6 @@ section3
     background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
 }
 
-#head-tag {
-    padding: 1em;
-    text-align: center;
-}
-
-#head-tag>li {
-    display: inline;
-    color: white;
-    list-style: none;
-}
-
-#head-tag>li>a {
-    margin: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: aliceblue;
-    border: 1px solid black;
-}
-
-#three>div.grid-container {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
-    grid-auto-rows: minmax(10em, auto);
-}
-
-#inner {
-    border: 1px solid blue;
-}
-
 section#two .back-pic-wrapper {
     position: relative;
 }
