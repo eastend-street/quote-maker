@@ -5,7 +5,6 @@ FONTS
 */
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&display=swap');
-
 /*
 ====================
 MAIN STYLE
@@ -16,12 +15,13 @@ html, body {
     color: #424242;
     background: #f2f4f8;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 main {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    height: 100%;
+/*     overflow-y: scroll; */
+/*     scroll-snap-type: y mandatory; */
     scroll-behavior: smooth;
 }
 
@@ -29,8 +29,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Libre Baskerville', serif;
 }
 
-#backgroundVideo {
-    /* height: 100vh; */
+.background-video {
     min-height: 100%;
 }
 
@@ -123,13 +122,13 @@ textarea {
 }
 
 .file-upload .file-select {
-	display: block;
-	border: 2px solid #FFC750;
-	color: #969696;
-	cursor: pointer;
+    display: block;
+    border: 2px solid #FFC750;
+    color: #969696;
+    cursor: pointer;
     width: 100%;
-	background: #f7f7f7;
-	overflow: hidden;
+    background: #f7f7f7;
+    overflow: hidden;
     position: relative;
     border-radius: 0.35em;
 }
@@ -139,7 +138,7 @@ textarea {
     position: absolute;
     top: 0;
     right: 0;
-	height: 72px;
+    height: 72px;
     line-height: 72px;
     width: 100px;
     color: #fff;
@@ -148,9 +147,9 @@ textarea {
 
 .file-upload .file-select .random-select-button {
     background: #FFC750;
-	position: absolute;
+    position: absolute;
     left: 0;
-	height: 72px;
+    height: 72px;
     line-height: 72px;
     width: 100px;
     color: #fff;
@@ -158,21 +157,21 @@ textarea {
 }
 
 .file-upload .file-select .file-select-name {
-	line-height: 72px;
-	display: inline-block;
-	padding: 0 10px;
+    line-height: 72px;
+    display: inline-block;
+    padding: 0 10px;
 }
 
 .file-upload .file-select input[type=file] {
-	z-index: 5;
-	cursor: pointer;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	filter: alpha(opacity=0);
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 .custom-dropdown {
@@ -303,12 +302,13 @@ section .wrapper {
     white-space: nowrap;
 }
 
-/* 
+/*
 ====================
 section3
 ====================
 */
-#three{
+
+#three {
     height: auto;
     padding-bottom: 5em;
     background-image: linear-gradient(to bottom left, rgb(13, 1, 46), rgb(26, 3, 53), rgb(107, 5, 53));
@@ -368,7 +368,6 @@ img#start-image {
 .canvas-settings {
     flex: 1 0 300px;
     width: 25%;
-    height: 100%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
     grid-template-rows: 50px auto auto auto 50px auto auto auto 50px auto auto 75px 90px;
@@ -422,6 +421,7 @@ nav .wrapper {
     transform: translateY(-50%);
     height: 128px;
     width: 18px;
+    ;
 }
 
 nav .wrapper .outer-circle {
@@ -435,6 +435,25 @@ nav .wrapper .outer-circle {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+nav .wrapper.back-black .outer-circle {
+    border-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-black .outer-circle .inner-circle {
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle {
+    background-color: transparent;
+    border-color: #fafaff;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle {
+    transition: .5s;
 }
 
 nav .wrapper .outer-circle:nth-child(1) {
@@ -453,12 +472,17 @@ nav .wrapper .outer-circle .inner-circle {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #fafaff;
-    display: none;
+    display: block;
 }
 
-nav .wrapper .outer-circle .inner-circle.active {
-    display: block;
+nav .wrapper.back-black .outer-circle .inner-circle.active {
+    background-color: #1e2832;
+    transition: .5s;
+}
+
+nav .wrapper.back-white .outer-circle .inner-circle.active {
+    background-color: #fafaff;
+    transition: .5s;
 }
 
 /*
@@ -597,34 +621,117 @@ section#one .back-pic {
     bottom: 163px;
 }
 
-/* 
+/*
+====================
+SECTION 3
+====================
+*/
+section#three {
+    background-image: linear-gradient(45deg,rgb(127, 0, 78) 20%, rgb(0, 0, 40)90%);
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 180px;
+
+}
+
+.categoryBtn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 2px solid #fafaff;
+    background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
+    position: relative;
+    color: #fafaff;
+    font-size: 1em;
+    font-family: Arial;
+    font-style: normal;
+    background:none;
+    transition-duration: 0.5s;
+}
+
+.categoryBtn:hover {
+    border: 2px solid #FFC750;
+    color: #FFC750;
+
+}
+
+#gallery {
+    padding: 20px 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition-duration: 0.7s;
+}
+
+.image-container {
+    margin: 15px;
+    height: 200px;
+    flex: 1 0 200px;
+    overflow: hidden;
+    transition-duration: 0.7s;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-duration: 1s;
+}
+
+.image-container:hover .image {
+    transform: scale(1.2);
+}
+
+/*
 =====================
 footer
 =====================
 */
-footer{
-    display: grid;
+
+footer {
+    /* display: grid;
     position: relative;
+    width: 100%;
     background-color: #1e2832;
     color: #ffffff;
-    grid-template-columns:200px minmax(300px, auto) 200px;
+    grid-template-columns:200px minmax(30px, auto) 200px;
     grid-auto-rows: minmax(60px, auto);
-    grid-template-areas: "copyright logo contact";
+    grid-template-areas: "copyright logo contact"; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1e2832;
+    color: #ffffff;
 }
 
-footer > .foot{
-    margin: auto;
+footer>.foot {
     padding: 20px 40px;
     text-align: center;
     font-size: 10px;
 }
 
-footer > .logo{
+footer>.logo {
     grid-area: logo;
-    padding: 20px 40px;
-    /* background-color: darkred; */
+    padding: 0px 30px;
+}
+footer > div.foot.logo > img{
+    width: 120px;
 }
 
-footer > .contact-logo > a{
+footer>.contact-logo>a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 425px) {
+    .canvas-section {
+        padding: 50px 5px;
+    }
 }
