@@ -178,9 +178,9 @@ $(document).ready(function () {
 
     // save to server
     $('#save_quote').click(function (e) {
-        if($("#category-select").value === undefined){
+        if ($("#category-select").value === undefined) {
             // set ALERT to remind user to select a category
-        }else{
+        } else {
             // api POST ---> apicall(category_value)
         }
     });
@@ -197,10 +197,10 @@ $(document).ready(function () {
 
         var filename = $("#image-upload").val();
         if (/^\s*$/.test(filename)) {
-          $("#noFile").text("Random image -or- Upload image"); 
+            $("#noFile").text("Random image -or- Upload image");
         }
         else {
-          $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+            $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
         }
 
         if (input.files && input.files[0]) {
@@ -219,5 +219,13 @@ $(document).ready(function () {
             drawQuote();
         }, 500);
     });
+
+    //====================
+    // Init at startup
+    //==================== 
+    window.setTimeout(function () {
+        drawQuote();
+    }, 100);
+
 
 });
