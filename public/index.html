@@ -396,18 +396,18 @@
                 lastExec = Date.now();
             }
         }
-        const scroll_target = {
+        const scrollTarget = {
             nav1: document.getElementById("one"),
             nav2: document.getElementById("two"),
             nav3: document.getElementById("three")
         };
         const navWrapper = document.getElementsByClassName("nav-bar")[0];
         const getClientRect = () => {
-            for (let key of Object.keys(scroll_target)) {
-                let y = scroll_target[key].getBoundingClientRect().top;
+            for (const key of Object.keys(scrollTarget)) {
+                const y = scrollTarget[key].getBoundingClientRect().top;
                 document.getElementsByClassName(key)[0].classList.remove("active");
                 if (-616 < y && y <= 300) {
-                    if (!scroll_target[key].classList.contains("active")) {
+                    if (!scrollTarget[key].classList.contains("active")) {
                         document
                             .getElementsByClassName(key)[0]
                             .classList.add("active");
