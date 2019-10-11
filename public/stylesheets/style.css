@@ -731,7 +731,7 @@ footer {
     width: 100%;
     background-color: #1e2832;
     color: #ffffff;
-    grid-template-columns: 200px minmax(300px, auto) 200px;
+    grid-template-columns:200px minmax(30px, auto) 200px;
     grid-auto-rows: minmax(60px, auto);
     grid-template-areas: "copyright logo contact"; */
     display: flex;
@@ -749,8 +749,10 @@ footer>.foot {
 
 footer>.logo {
     grid-area: logo;
-    padding: 20px 10px;
-    /* background-color: darkred; */
+    padding: 0px 30px;
+}
+footer > div.foot.logo > img{
+    width: 120px;
 }
 
 footer>.contact-logo>a {
