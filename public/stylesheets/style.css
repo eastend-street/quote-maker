@@ -68,8 +68,7 @@ section3
 ====================
 */
 #three {
-    background-image: url(../images/sample.jpg);
-    background-size: cover;
+    background-image: linear-gradient(to bottom left, rgb(0, 0, 0), rgb(15, 23, 66), rgb(75, 98, 175));
     height: auto;
     padding-bottom: 5em;
 }
@@ -87,15 +86,19 @@ section3
     border: 1px solid black; 
 }
 #three > div > div.grid-container{
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5em;;
+    /* display: grid;
+    justify-content: flex-start;
     grid-template-columns: repeat(auto-fill, minmax(10em, 15em));
-    grid-auto-rows: minmax(10em,auto);
-    grid-gap: 20px;
+    grid-auto-rows: minmax(10em,auto); */
 }
 
-#three > div > div.grid-container > .inner{
-    border: 1px solid blue;
+#three > div > div.grid-container > #inner{
+    max-width: 25%;
+    min-width: 10%;
+    /* border: 1px solid blue; */
     /* background-color: aliceblue; */
 }
 
