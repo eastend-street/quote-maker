@@ -361,12 +361,12 @@ img#start-image {
 }
 
 .canvas-main {
-    flex: 2 0 300px;
+    flex: 2 450px;
     width: 75%;
 }
 
 .canvas-settings {
-    flex: 1 0 300px;
+    flex: 1 450px;
     width: 25%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
@@ -529,20 +529,20 @@ section#one .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    max-width: 490px;
 }
 
 section#one .wrapper .input-quote {
     height: 196px;
-    width: 490px;
+    
     margin-bottom: 40px;
-    border: none;
     box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
-    font-size: 1.8rem;
     padding: 15px;
-    border-style: none;
+    border-radius: 0.35em;
+    border: solid 2px #FFC750;
     background-color: #fafaff;
     box-sizing: border-box;
-    border-radius: 0;
     max-height: 500px;
     resize: none;
 }
@@ -557,16 +557,13 @@ section#one .wrapper .input-quote:focus {
 
 section#one .wrapper input {
     height: 72px;
-    width: 490px;
     margin-bottom: 40px;
-    border: none;
     box-shadow: 5px 7px 15px -4px rgb(172, 33, 80, 0.8);
-    font-size: 1.8rem;
     padding-left: 15px;
-    border-style: none;
+    border-radius: 0.35em;
+    border: solid 2px #FFC750;
     background-color: #fafaff;
     box-sizing: border-box;
-    border-radius: 0;
 }
 
 section#one .wrapper input.input-quote {
@@ -807,7 +804,6 @@ HAMBURGER
     background: #ededed;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
@@ -817,10 +813,6 @@ HAMBURGER
     padding: 10px 0;
     font-size: 1.375rem;
 }
-
-/*
- * And let's slide it in from the left
- */
 
 #menuToggle input:checked~ul {
     transform: none;
@@ -835,6 +827,22 @@ MEDIA QUERY
 @media only screen and (max-width: 425px) {
     .canvas-section {
         padding: 50px 5px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    footer>.wrapper {
+        text-align: center;
+    }
+    
+    footer>.contact-logo {
+        text-align: center;
+    }
+
+    footer>.foot {
+        padding: 20px 0;
     }
 }
 
@@ -853,3 +861,11 @@ MEDIA QUERY
     }
     
 }
+
+@media only screen and (max-width: 1024px) {
+    label {
+        font-size: 0.6rem;
+    }
+}
+
+
