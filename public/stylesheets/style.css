@@ -350,7 +350,7 @@ img#start-image {
 .canvas-container {
     display: block;
     width: 100%;
-    height: calc(100% - 100px);
+    /* height: calc(100% - 100px); */
     background-color: #fff;
     -webkit-box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
     box-shadow: 1px 1px 24px 9px rgba(147, 147, 147, 0.2);
@@ -361,7 +361,7 @@ img#start-image {
 }
 
 .canvas-main {
-    flex: 2 450px;
+    flex: 1 450px;
     width: 75%;
 }
 
