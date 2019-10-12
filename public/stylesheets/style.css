@@ -392,8 +392,13 @@ img#start-image {
 .settings-buttons {
     grid-column: 1 / span 3;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.settings-buttons > * {
+    margin: 10px;
 }
 
 .settings-slider-val {
@@ -626,16 +631,21 @@ SECTION 3
 section#three {
     background-image: linear-gradient(45deg,rgb(127, 0, 78) 20%, rgb(0, 0, 40)90%);
     padding-top: 50px;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
 
 .btnContainer {
-    justify-content: space-between;
-    padding: 0px 180px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap:wrap
 }
+
+.btnContainer > button {
+    width: 100px;
+    margin: 20px;
+}
+
 
 .categoryBtn {
     padding: 8px 16px;
@@ -844,6 +854,14 @@ MEDIA QUERY
     footer>.foot {
         padding: 20px 0;
     }
+
+    .file-upload .file-select .random-select-button {
+        font-size: 1.35rem;
+    }
+    
+    .file-upload .file-select .file-select-button {
+        font-size: 1.35rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -856,8 +874,8 @@ MEDIA QUERY
         display: none;
     }
 
-    header .wrapper {
-        right: 0;
+    #gallery {
+        padding: 20px 10px;
     }
     
 }
