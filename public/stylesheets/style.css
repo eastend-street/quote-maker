@@ -407,7 +407,7 @@ img#start-image {
 }
 
 .settings-header {
-    font-size: 180%;
+    font-size: 1.6em;
 }
 
 .settings-header, .settings-input {
@@ -546,7 +546,7 @@ header .wrapper .logo {
 
 header .wrapper .header-title {
     padding-left: 23px;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-family: 'Calisto MT';
 }
 
@@ -678,7 +678,7 @@ section#three {
     background: linear-gradient(45deg, #FFC750 50%, transparent 50%);
     position: relative;
     color: #fafaff;
-    font-size: 1em;
+    font-size: 1rem;
     font-family: Arial;
     font-style: normal;
     background:none;
@@ -737,7 +737,7 @@ footer {
 
 footer>.foot {
     padding: 20px 20px;
-    font-size: 10px;
+    font-size: 0.625rem;
     width: 100%;
 }
 
@@ -848,7 +848,7 @@ HAMBURGER
 
 #menu li {
     padding: 10px 0;
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 
 /*
