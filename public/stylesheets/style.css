@@ -480,7 +480,7 @@ img#start-image {
     width: 25%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
-    grid-template-rows: 50px auto auto auto 50px auto auto auto 50px auto auto 75px 90px;
+    grid-template-rows: 50px 80px auto auto 50px 80px auto auto 50px auto 30px 75px 90px;
     grid-column-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
@@ -488,6 +488,13 @@ img#start-image {
 
 .settings-header {
     font-size: 1.6em;
+    display: table;
+    height: 100%;
+}
+
+.settings-header > span{
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 .settings-header, .settings-input {
@@ -864,6 +871,10 @@ MEDIA QUERY
     .file-upload .file-select .file-select-button {
         font-size: 1.35rem;
         width: 40px;
+    }
+
+    .file-upload .file-select .file-select-name {
+        font-size: .75rem;
     }
 }
 
