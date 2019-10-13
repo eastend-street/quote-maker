@@ -11,16 +11,23 @@ $(document).ready(function () {
         var fontSize = parseInt($('#text_top_font_size').val());
         // var canvasSize = $(".canvas-container").width();
         var canvasSize = parseInt($('#canvas_size').val());
-        console.log(canvasSize);
 
         $('#text_top_offset').attr('max', canvasSize);
         $('#text_bottom_offset').attr('max', canvasSize);
 
-        if(img.width > img.height) { 
-            $('#canvas_size').attr('max',img.width);
-        } else {
-            $('#canvas_size').attr('max',img.height);
-        }
+        window.setTimeout(function () {
+            if(img.width > img.height) { 
+                $('#canvas_size').attr('max',img.width);
+                $('#canvas_size').attr('value',img.width);
+            } else {
+                $('#canvas_size').attr('max',img.height);
+                $('#canvas_size').attr('value',img.height);
+            }
+            $('#canvas_size__val').text($('#canvas_size').val());
+            drawQuote();
+        }, 500);
+
+        
 
         canvas.width = canvasSize;
         canvas.height = canvasSize;
@@ -125,9 +132,6 @@ $(document).ready(function () {
             layerUp();
             drawQuote();
         };
-
-
-        console.log(image.src);
     };
 
     const layerUp = function () {
@@ -203,6 +207,8 @@ $(document).ready(function () {
 
     // get a random image
     $('#random-image').click(function (e) {
+        $('#canvas_size').attr('max',500);
+        $('#canvas_size').val(500);
         randomImage();
     });
 
@@ -245,6 +251,7 @@ $(document).ready(function () {
             reader.readAsDataURL(input.files[0]);
         }
 
+        
         window.setTimeout(function () {
             drawQuote();
         }, 500);
