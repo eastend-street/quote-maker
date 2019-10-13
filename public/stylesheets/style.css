@@ -745,7 +745,7 @@ HAMBURGER
     position: fixed;
     top: 50px;
     left: 50px;
-    z-index: 100;
+    z-index: 1000;
     -webkit-user-select: none;
     user-select: none;
 }

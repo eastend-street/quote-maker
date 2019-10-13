@@ -11,16 +11,22 @@ $(document).ready(function () {
         var fontSize = parseInt($('#text_top_font_size').val());
         // var canvasSize = $(".canvas-container").width();
         var canvasSize = parseInt($('#canvas_size').val());
-        console.log(canvasSize);
+        console.log("canvasSize = " + canvasSize);
 
         $('#text_top_offset').attr('max', canvasSize);
         $('#text_bottom_offset').attr('max', canvasSize);
 
-        if(img.width > img.height) { 
-            $('#canvas_size').attr('max',img.width);
-        } else {
-            $('#canvas_size').attr('max',img.height);
-        }
+        // if(img.width > img.height) { 
+        //     $('#canvas_size').attr('max',img.width);
+        //     $('#canvas_size').val(img.width);
+        //     $('#canvas_size__val').val(img.width);
+        //     canvasSize = img.width;
+        // } else {
+        //     $('#canvas_size').attr('max',img.height);
+        //     $('#canvas_size').val(img.height);
+        //     $('#canvas_size__val').val(img.height);
+        //     canvasSize = img.height;
+        // }
 
         canvas.width = canvasSize;
         canvas.height = canvasSize;
@@ -203,6 +209,8 @@ $(document).ready(function () {
 
     // get a random image
     $('#random-image').click(function (e) {
+        $('#canvas_size').attr('max',500);
+        $('#canvas_size').val(500);
         randomImage();
     });
 
