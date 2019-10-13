@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="./script/main.js"></script>
     <script>
         debugInfo.headTime = endTimer("pageload-head");
         console.groupEnd("HEAD Section");
@@ -76,25 +76,25 @@
 
 
 
-        <div id="menuToggle">
+    <div id="menuToggle">
 
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
+        <input class="check" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
 
-            <ul id="menu">
-                <a href="#one">
-                    <li>Home</li>
-                </a>
-                <a href="#two">
-                    <li>Quote Maker</li>
-                </a>
-                <a href="#three">
-                    <li>Quote Ideas</li>
-                </a>
-            </ul>
-        </div>
+        <ul id="menu">
+            <a id="hamOne" href="#one">
+                <li>Home</li>
+            </a>
+            <a id="hamTwo" href="#two">
+                <li>Quote Maker</li>
+            </a>
+            <a id="hamThree" href="#three">
+                <li>Quote Ideas</li>
+            </a>
+        </ul>
+    </div>
 
     <nav class="sidenav">
         <script>
@@ -159,10 +159,8 @@
 
             <div class="wrapper">
 
-                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150"
-                    id="text_top"></textarea>
-                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
-                    id="text_bottom" />
+                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="text_top"></textarea>
+                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30" id="text_bottom" />
                 <a href="#two" class="next-button">
                     <button class="next">
                         <span>NEXT</span>
@@ -201,7 +199,7 @@
                     <img id="start-image" src="" alt="" crossorigin="anonymous" />
                 </div>
                 <div class="canvas-settings">
-                    <div class="settings-header">Quote</div>
+                    <div class="settings-header"><span>Quote</span></div>
                     <div class="settings-input"><input type="text" placeholder='"Your Quote"' id="text_top2" /></div>
 
                     <div><label for="text_top_font_size">Font size:</label></div>
@@ -212,7 +210,7 @@
                     <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
                     <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
 
-                    <div class="settings-header">Author</div>
+                    <div class="settings-header"><span>Author</span></div>
                     <div class="settings-input"><input type="text" placeholder="Author" id="text_bottom2" minlength="1"
                             maxlength="30" /></div>
 
@@ -225,7 +223,7 @@
                     </div>
                     <div class="settings-slider-val"><span id="text_bottom_offset__val">860</span>px</div>
 
-                    <div class="settings-header">More</div>
+                    <div class="settings-header"><span>More</span></div>
                     <div><label for="text_line_height">Line height:</label></div>
                     <div><input id="text_line_height" class="slider" type="range" min="0" max="100" value="15" /></div>
                     <div class="settings-slider-val"><span id="text_line_height__val">15</span>pt</div>
@@ -287,9 +285,8 @@
                 <button id="Motivation" class="categoryBtn" value="http://localhost:3000/api?category=motivation">Motivation</button>
                 <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
                 <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
-
-
             </div>
+
             <div id="gallery"></div>
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
