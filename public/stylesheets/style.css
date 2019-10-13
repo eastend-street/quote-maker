@@ -480,7 +480,7 @@ img#start-image {
     width: 25%;
     display: grid;
     grid-template-columns: 2fr 60% 1fr;
-    grid-template-rows: 50px 80px auto auto 50px 80px auto auto 50px auto 30px 75px 90px;
+    grid-template-rows: 50px 80px auto auto 50px 80px auto auto 50px auto auto 30px 75px 90px;
     grid-column-gap: 20px;
     justify-items: stretch;
     align-items: stretch;

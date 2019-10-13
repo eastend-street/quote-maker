@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     let category_value;
+    let typing = false;
     let canvas = document.getElementById('quoteCanvas');
     ctx = canvas.getContext('2d');
 
@@ -8,23 +9,34 @@ $(document).ready(function () {
     const drawQuote = function () {
         var img = document.getElementById('start-image');
         var fontSize = parseInt($('#text_top_font_size').val());
-        var canvasSize = $(".canvas-container").width();
+        // var canvasSize = $(".canvas-container").width();
+        var canvasSize = parseInt($('#canvas_size').val());
+        console.log(canvasSize);
 
         $('#text_top_offset').attr('max', canvasSize);
         $('#text_bottom_offset').attr('max', canvasSize);
+
+        if(img.width > img.height) { 
+            $('#canvas_size').attr('max',img.width);
+        } else {
+            $('#canvas_size').attr('max',img.height);
+        }
 
         canvas.width = canvasSize;
         canvas.height = canvasSize;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // calculate minimum cropping dimension
         var croppingDimension = img.height;
         if (img.width < croppingDimension) {
             croppingDimension = img.width;
         }
 
-        ctx.drawImage(img, 0, 0, croppingDimension, croppingDimension, 0, 0, canvasSize, canvasSize);
+        xC = canvas.width / 2 - img.width / 2;
+        yC = canvas.height / 2 - img.height / 2;
+
+        // Draw default image on canvas
+        ctx.drawImage(img, xC, yC);
 
         ctx.lineWidth = parseInt($('#text_stroke_width').val());
         ctx.lineJoin = 'round';
@@ -41,13 +53,17 @@ $(document).ready(function () {
         var lineHeight = fontSize + parseInt($('#text_line_height').val());
         var maxTextAreaWidth = canvasSize * 0.85;
 
-        wrapText(ctx, textTop, x, y, maxTextAreaWidth, lineHeight, false);
+        scaleImage(ctx);
 
-        ctx.textBaseline = 'bottom';
-        var textBottom = '— ' + $('#text_bottom').val();
-        y = parseInt($('#text_bottom_offset').val());
+        if (typing) {
+            wrapText(ctx, textTop, x, y, maxTextAreaWidth, lineHeight, false);
 
-        wrapText(ctx, textBottom, x, y, maxTextAreaWidth, lineHeight, true);
+            ctx.textBaseline = 'bottom';
+            var textBottom = '— ' + $('#text_bottom').val();
+            y = parseInt($('#text_bottom_offset').val());
+
+            wrapText(ctx, textBottom, x, y, maxTextAreaWidth, lineHeight, true);
+        }
 
     };
 
@@ -87,6 +103,11 @@ $(document).ready(function () {
         }
     };
 
+    const scaleImage = function (ctx) {
+        var val = $('#canvas_size').value
+        ctx.scale(val, val);
+    }
+
     // read random image from upload field and display it in browser
     const randomImage = function () {
         var randomNum = Math.floor(Math.random() * 999);
@@ -107,31 +128,35 @@ $(document).ready(function () {
 
 
         console.log(image.src);
-    }
+    };
 
     const layerUp = function () {
         $('.canvas-container').css('position', 'relative');
         $('.canvas-container').css('z-index', 1000);
-    }
+    };
 
 
     // Event listeners
     $(document).on('change keydown keyup', '#text_top', function () {
         $('#text_top2').val($(this).val());
+        typing = true;
         drawQuote();
     });
 
     $(document).on('change keydown keyup', '#text_bottom', function () {
+        typing = true;
         $('#text_bottom2').val($(this).val());
         drawQuote();
     });
 
     $(document).on('change keydown keyup', '#text_top2', function () {
+        typing = true;
         $('#text_top').val($(this).val());
         drawQuote();
     });
 
     $(document).on('change keydown keyup', '#text_bottom2', function () {
+        typing = true;
         $('#text_bottom').val($(this).val());
         drawQuote();
     });
@@ -163,6 +188,11 @@ $(document).ready(function () {
 
     $(document).on('input change', '#text_stroke_width', function () {
         $('#text_stroke_width__val').text($(this).val());
+        drawQuote();
+    });
+
+    $(document).on('input change', '#canvas_size', function () {
+        $('#canvas_size__val').text($(this).val());
         drawQuote();
     });
 
