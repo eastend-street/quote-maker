@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="./script/main.js"></script>
     <script>
         debugInfo.headTime = endTimer("pageload-head");
         console.groupEnd("HEAD Section");
@@ -76,25 +76,25 @@
 
 
 
-        <div id="menuToggle">
+    <div id="menuToggle">
 
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
+        <input class="check" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
 
-            <ul id="menu">
-                <a href="#one">
-                    <li>Home</li>
-                </a>
-                <a href="#two">
-                    <li>Quote Maker</li>
-                </a>
-                <a href="#three">
-                    <li>Quote Ideas</li>
-                </a>
-            </ul>
-        </div>
+        <ul id="menu">
+            <a id="hamOne" href="#one">
+                <li>Home</li>
+            </a>
+            <a id="hamTwo" href="#two">
+                <li>Quote Maker</li>
+            </a>
+            <a id="hamThree" href="#three">
+                <li>Quote Ideas</li>
+            </a>
+        </ul>
+    </div>
 
     <nav class="sidenav">
         <script>
@@ -159,10 +159,8 @@
 
             <div class="wrapper">
 
-                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150"
-                    id="text_top"></textarea>
-                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30"
-                    id="text_bottom" />
+                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="text_top"></textarea>
+                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30" id="text_bottom" />
                 <a href="#two" class="next-button">
                     <button class="next">
                         <span>NEXT</span>
@@ -287,9 +285,8 @@
                 <button id="Motivation" class="categoryBtn" value="http://localhost:3000/api?category=motivation">Motivation</button>
                 <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
                 <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
-
-
             </div>
+
             <div id="gallery"></div>
             <script>
                 debugInfo.sectionTime = endTimer("pageload-section");
