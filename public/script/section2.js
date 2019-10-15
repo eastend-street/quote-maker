@@ -218,6 +218,7 @@ $(document).ready(function () {
             // set ALERT to remind user to select a category
         } else {
             // api POST ---> apicall(category_value)
+            // var image = canvas.toDataURL();
         }
     });
 

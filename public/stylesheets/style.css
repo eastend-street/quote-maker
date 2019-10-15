@@ -518,6 +518,10 @@ img#start-image {
     margin: 10px;
 }
 
+.settings-buttons > a > button{
+    height: 100%;
+}
+
 .settings-slider-val {
     text-align: end;
 }
