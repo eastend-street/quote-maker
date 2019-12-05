@@ -27,7 +27,13 @@ localhost:3000
 
 
 ## Authors
+### Front end:
+- James Yang
+- Francois Polo
+- Markus Naoya Aoki
+- Tatsuya Takarabe
 
-* **Team Shihomi**
+### Back end:
+- Jun Yamada
 
 See also the list of [contributors](https://github.com/eastend-street/quote-maker/graphs/contributors) who participated in this project.
