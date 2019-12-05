@@ -28,12 +28,12 @@ localhost:3000
 
 ## Authors
 ### Front end:
-- James Yang
-- Francois Polo
-- Markus Naoya Aoki
-- Tatsuya Takarabe
+- [James ChinPing Yang](https://github.com/ChingPingYang)
+- [Francois Polo](https://github.com/andasan)
+- [Marcus Naoya Aoki](https://github.com/naoyama88)
+- [Tatsuya Takarabe](https://github.com/tatsuya167)
 
 ### Back end:
-- Jun Yamada
+- [Jun Yamada](https://github.com/eastend-street)
 
 See also the list of [contributors](https://github.com/eastend-street/quote-maker/graphs/contributors) who participated in this project.
