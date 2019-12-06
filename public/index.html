@@ -1,97 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-    clearConsole();
-    console.group("HTML Section");
-    startTimer("pageload-html");
-
-    class DebugInfo {
-      constructor() {
-        this.htmlTime = 0;
-        this.headTime = 0;
-        this.navTime = 0;
-        this.headerTime = 0;
-        this.mainTime = 0;
-        this.sectionTime = 0;
-        this.bodyTime = 0;
-        this.footerTime = 0;
-      }
-    }
-
-    let debugInfo = new DebugInfo();
-
-    function clearConsole() {
-      console.clear();
-    }
-
-    function startTimer(group) {
-      return console.time(group);
-    }
-
-    function endTimer(group) {
-      return console.timeEnd(group);
-    }
-  </script>
-
   <head>
-    <script>
-      console.group("HEAD SECTION");
-      startTimer("pageload-head");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="keywords" content="HTML,CSS,ExpressJS,JavaScript" />
-    <meta name="description" content="Quote making website" />
-    <meta name="author" content="Team Shihomi" />
-    <meta name="generator" content="Visual Studio Code" />
-    <meta name="application-name" content="Responsive Website" />
+    <meta name="keywords" content="quote, generator, picture" />
+    <meta name="description" content="Make quote with pictures easily. Choose your favorite image and quote to make a beautiful quote picture!" />
     <title>Quote maker</title>
     <!-- Add Base URI later -->
     <!-- <base href="http://localhost:3000/" target="_self"> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <noscript>JavaScript is not supported or is disabled in browser!</noscript>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./stylesheets/reset.css" />
-    <link rel="stylesheet" href="./stylesheets/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="./script/main.js"></script>
-    <script>
-      debugInfo.headTime = endTimer("pageload-head");
-      console.groupEnd("HEAD Section");
-    </script>
-    <script src="./script/lib/autosize.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css" />
   </head>
-
   <body
-    onload="onPageLoad()"
-    onunload="onPageUnLoad()"
-    onpagehide="onPageHide()"
-    onpageshow="onPageShow()"
-    onfocus="onPageFocus()"
-    onblur="onPageBlur()"
-    oncopy="onCopyEvent()"
-    oncut="onCutEvent()"
-    onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()"
-    onkeydown="onKeyDownEvent()"
-    onkeyup="onKeyUpEvent()"
+  onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
+    onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
+    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()"
   >
-    <script>
-      console.group("BODY Section");
-      startTimer("pageload-body");
-    </script>
-
     <div id="menuToggle">
       <input class="check" type="checkbox" />
       <span></span>
       <span></span>
       <span></span>
-
       <ul id="menu">
         <a id="hamOne" href="#one">
           <li>Home</li>
@@ -104,13 +40,7 @@
         </a>
       </ul>
     </div>
-
     <nav class="sidenav">
-      <script>
-        console.group("NAV SECTION");
-        startTimer("pageload-nav");
-      </script>
-
       <div class="wrapper nav-bar">
         <ul>
           <li class="outer-circle">
@@ -124,43 +54,17 @@
           </li>
         </ul>
       </div>
-
-      <script>
-        debugInfo.navTime = endTimer("pageload-nav");
-        console.groupEnd("NAV Section");
-      </script>
     </nav>
-
     <main>
       <header>
-        <script>
-          console.group("HEADER Section");
-          startTimer("pageload-header");
-        </script>
-
         <div class="wrapper">
           <a href="/">
             <img class="logo" src="./images/logo.png" />
             <span class="header-title">QUOTE MAKER</span>
           </a>
         </div>
-
-        <script>
-          debugInfo.headerTime = endTimer("pageload-header");
-          console.groupEnd("HEADER Section");
-        </script>
       </header>
-      <script>
-        console.group("MAIN Section");
-        startTimer("pageload-main");
-      </script>
-
       <section id="one">
-        <script>
-          console.group("SECTION Section");
-          startTimer("pageload-section");
-        </script>
-
         <video autoplay muted loop class="background-video">
           <source src="./videos/header_background.mp4" type="video/mp4" />
         </video>
@@ -188,27 +92,14 @@
             </button>
           </a>
         </div>
-
         <div class="back-pic-wrapper">
           <img src="./images/01.png" class="back-pic" />
         </div>
-
         <audio class="audio-beautiful" controls style="display: none">
           <source src="./beautiful.mp3" type="audio/mp3" />
         </audio>
-
-        <script>
-          debugInfo.sectionTime = endTimer("pageload-section");
-          console.groupEnd("SECTION Section");
-        </script>
       </section>
-
       <section id="two">
-        <script>
-          console.group("SECTION Section");
-          startTimer("pageload-section");
-        </script>
-
         <div class="canvas-section">
           <div class="canvas-main">
             <div class="back-pic-wrapper">
@@ -224,7 +115,6 @@
             <div class="settings-input">
               <input type="text" placeholder='"Your Quote"' id="text_top2" />
             </div>
-
             <div><label for="text_top_font_size">Font size:</label></div>
             <div>
               <input
@@ -239,7 +129,6 @@
             <div class="settings-slider-val">
               <span id="text_top_font_size__val">50</span>px
             </div>
-
             <div><label for="text_top_offset">Offset from top:</label></div>
             <div>
               <input
@@ -254,7 +143,6 @@
             <div class="settings-slider-val">
               <span id="text_top_offset__val">250</span>px
             </div>
-
             <div class="settings-header"><span>Author</span></div>
             <div class="settings-input">
               <input
@@ -265,7 +153,6 @@
                 maxlength="30"
               />
             </div>
-
             <div><label for="text_bottom_font_size">Font size:</label></div>
             <div>
               <input
@@ -294,7 +181,6 @@
             <div class="settings-slider-val">
               <span id="text_bottom_offset__val">860</span>px
             </div>
-
             <div class="settings-header"><span>More</span></div>
             <div><label for="canvas_size">Image size:</label></div>
             <div>
@@ -310,7 +196,6 @@
             <div class="settings-slider-val">
               <span id="canvas_size__val">500</span>px
             </div>
-
             <div><label for="text_line_height">Line height:</label></div>
             <div>
               <input
@@ -339,7 +224,6 @@
             <div class="settings-slider-val">
               <span id="text_stroke_width__val">4</span>pt
             </div>
-
             <div class="settings-input">
               <span class="custom-dropdown">
                 <select id="category-select">
@@ -353,7 +237,6 @@
                 </select>
               </span>
             </div>
-
             <div class="settings-input-file">
               <a id="random-image" class="custom-random-image"></a>
               <div class="file-upload">
@@ -371,7 +254,6 @@
                 </div>
               </div>
             </div>
-
             <div class="settings-buttons">
               <button id="save_quote" type="button">SAVE</button>
               <a
@@ -384,19 +266,8 @@
             </div>
           </div>
         </div>
-
-        <script>
-          debugInfo.sectionTime = endTimer("pageload-section");
-          console.groupEnd("SECTION Section");
-        </script>
       </section>
-
       <section id="three">
-        <script>
-          console.group("SECTION Section");
-          startTimer("pageload-section");
-        </script>
-
         <div class="btnContainer">
           <button
             id="Love"
@@ -441,87 +312,11 @@
             Travel
           </button>
         </div>
-
         <div id="gallery"></div>
-        <script>
-          debugInfo.sectionTime = endTimer("pageload-section");
-          console.groupEnd("SECTION Section");
-        </script>
       </section>
-
-      <script>
-        debugInfo.mainTime = endTimer("pageload-main");
-        console.groupEnd("MAIN Section");
-      </script>
     </main>
     <footer>
-      <script>
-        console.group("FOOTER SECTION");
-        startTimer("pageload-footer");
-
-        function onContextMenuEvent() {
-          console.log("onContextMenuEvent");
-        }
-
-        function onKeyDownEvent() {
-          console.log("onKeyDownEvent");
-        }
-        function onKeyUpEvent() {
-          console.log("onKeyUpEvent");
-        }
-
-        function onKeyPressEvent() {
-          console.log("onKeyPressEvent");
-        }
-
-        function onCopyEvent() {
-          console.log("copy");
-        }
-
-        function onPasteEvent() {
-          console.log("paste");
-        }
-
-        function onCutEvent() {
-          console.log("cut");
-        }
-
-        function onPageLoad() {
-          console.log("Page is loaded");
-          getClientRect();
-        }
-
-        function onPageUnLoad() {
-          console.log("Page is Un-loaded");
-        }
-
-        function onPageShow() {
-          console.log("Page is Showing");
-        }
-
-        function onPageHide() {
-          console.log("Page is hiding");
-        }
-
-        function onPageFocus() {
-          console.log("Page has Focus");
-        }
-
-        function onPageBlur() {
-          console.log("Page lost focus");
-        }
-
-        function onBeforePageFocus() {
-          console.log("Page is about to gain focus");
-        }
-        function onBeforePageBlur() {
-          console.log("Page about to lose focus");
-        }
-
-        debugInfo.footerTime = endTimer("pageload-footer");
-        console.groupEnd("FOOTER Section");
-      </script>
-      <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+      <div class="foot wrapper">&copy; 2019 Quote Maker</div>
       <div class="foot logo">
         <img class="footer-logo" src="./images/outline-logo.png" width="20px" />
       </div>
@@ -535,56 +330,12 @@
         /></a>
       </div>
     </footer>
-
-    <script>
-      debugInfo.bodyTime = endTimer("pageload-body");
-      console.groupEnd("BODY Section");
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="./script/lib/autosize.min.js"></script>
     <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
     <script src="./script/section3.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
   </body>
-
-  <script>
-    debugInfo.htmlTime = endTimer("pageload-html");
-    console.groupEnd("HTML Section");
-
-    console.group("Debug Information");
-    console.group("Page Information");
-    console.log(
-      "Page Loaded: " + location.href + " with parms: " + location.search
-    );
-    console.log("Language: " + navigator.language);
-    console.log("Cookies Enabled: " + navigator.cookieEnabled);
-    console.log(
-      "Platform: " + navigator.platform + "(" + navigator.product + ")"
-    );
-    console.log(
-      navigator.appCodeName +
-        "(" +
-        navigator.appName +
-        ") " +
-        navigator.appVersion
-    );
-    console.log("UserAgent: " + navigator.userAgent);
-    console.log("JavaEnabled: " + navigator.javaEnabled());
-    console.log("Is Online: " + navigator.onLine);
-    console.groupEnd("Page Information");
-
-    console.group("DOM Information");
-    console.group("DOM - Window Object");
-    console.log(window);
-    console.groupEnd("DOM - Window object");
-
-    console.group("DOM - Document Object");
-    console.log(document);
-    console.groupEnd("DOM - Document Object");
-
-    console.group("DOM - Navigator");
-    console.log(navigator);
-    console.groupEnd("DOM - Navigator");
-    console.groupEnd("DOM Information");
-
-    console.groupEnd("DebugInformation");
-  </script>
 </html>

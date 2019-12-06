@@ -25,7 +25,6 @@
     // because do some action in every scroll events is too much
     let lastExec = 0;
     function throttle(delay, callback) {
-        console.log("aaaaa");
         const elapsed = Date.now() - lastExec;
         if (elapsed >= delay) {
             callback();
