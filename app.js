@@ -6,6 +6,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const app = express();
 const { check, validationResult } = require("express-validator");
+const functions = require('firebase-functions');
 require("dotenv").config();
 
 // view engine setup
@@ -20,8 +21,16 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 
+const userName = functions.config().db.username;
+const password = functions.config().db.password;
+const hostname = functions.config().db.hostname;
+const databaseName = functions.config().db.database_name;
+
+
+
 const MongoClient = require("mongodb").MongoClient;
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOSTNAME}/test?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOSTNAME}/test?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${userName}:${password}@${hostname}/test?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -29,7 +38,8 @@ const client = new MongoClient(uri, {
 
 app.get("/api", (req, res) => {
   client.connect(err => {
-    const db = client.db(process.env.DB_DATABASE_NAME);
+    // const db = client.db(process.env.DB_DATABASE_NAME);
+    const db = client.db(databaseName);
     db.collection("quotes")
       .find(req.query)
       .toArray(function(err, result) {
