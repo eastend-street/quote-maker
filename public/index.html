@@ -1,406 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
+  <script>
     clearConsole();
     console.group("HTML Section");
     startTimer("pageload-html");
 
     class DebugInfo {
-        constructor() {
-            this.htmlTime = 0;
-            this.headTime = 0;
-            this.navTime = 0;
-            this.headerTime = 0;
-            this.mainTime = 0;
-            this.sectionTime = 0;
-            this.bodyTime = 0;
-            this.footerTime = 0;
-        }
+      constructor() {
+        this.htmlTime = 0;
+        this.headTime = 0;
+        this.navTime = 0;
+        this.headerTime = 0;
+        this.mainTime = 0;
+        this.sectionTime = 0;
+        this.bodyTime = 0;
+        this.footerTime = 0;
+      }
     }
 
     let debugInfo = new DebugInfo();
 
-
     function clearConsole() {
-        console.clear();
+      console.clear();
     }
 
     function startTimer(group) {
-        return console.time(group);
+      return console.time(group);
     }
 
     function endTimer(group) {
-        return console.timeEnd(group);
+      return console.timeEnd(group);
     }
-</script>
+  </script>
 
-<head>
+  <head>
     <script>
-        console.group("HEAD SECTION");
-        startTimer("pageload-head");
+      console.group("HEAD SECTION");
+      startTimer("pageload-head");
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="HTML,CSS,ExpressJS,JavaScript">
-    <meta name="description" content="Quote making website">
-    <meta name="author" content="Team Shihomi">
-    <meta name="generator" content="Visual Studio Code">
-    <meta name="application-name" content="Responsive Website">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="HTML,CSS,ExpressJS,JavaScript" />
+    <meta name="description" content="Quote making website" />
+    <meta name="author" content="Team Shihomi" />
+    <meta name="generator" content="Visual Studio Code" />
+    <meta name="application-name" content="Responsive Website" />
     <title>Quote maker</title>
     <!-- Add Base URI later -->
     <!-- <base href="http://localhost:3000/" target="_self"> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <noscript>JavaScript is not supported or is disabled in browser!</noscript>
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./stylesheets/reset.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="./script/main.js"></script>
     <script>
-        debugInfo.headTime = endTimer("pageload-head");
-        console.groupEnd("HEAD Section");
+      debugInfo.headTime = endTimer("pageload-head");
+      console.groupEnd("HEAD Section");
     </script>
     <script src="./script/lib/autosize.min.js"></script>
-</head>
+  </head>
 
-<body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
-    onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
-    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
-
+  <body
+    onload="onPageLoad()"
+    onunload="onPageUnLoad()"
+    onpagehide="onPageHide()"
+    onpageshow="onPageShow()"
+    onfocus="onPageFocus()"
+    onblur="onPageBlur()"
+    oncopy="onCopyEvent()"
+    oncut="onCutEvent()"
+    onpaste="onPasteEvent()"
+    onkeypress="onKeyPressEvent()"
+    onkeydown="onKeyDownEvent()"
+    onkeyup="onKeyUpEvent()"
+  >
     <script>
-        console.group("BODY Section");
-        startTimer("pageload-body");
+      console.group("BODY Section");
+      startTimer("pageload-body");
     </script>
 
-
-
     <div id="menuToggle">
+      <input class="check" type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
 
-        <input class="check" type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <ul id="menu">
-            <a id="hamOne" href="#one">
-                <li>Home</li>
-            </a>
-            <a id="hamTwo" href="#two">
-                <li>Quote Maker</li>
-            </a>
-            <a id="hamThree" href="#three">
-                <li>Quote Ideas</li>
-            </a>
-        </ul>
+      <ul id="menu">
+        <a id="hamOne" href="#one">
+          <li>Home</li>
+        </a>
+        <a id="hamTwo" href="#two">
+          <li>Quote Maker</li>
+        </a>
+        <a id="hamThree" href="#three">
+          <li>Quote Ideas</li>
+        </a>
+      </ul>
     </div>
 
     <nav class="sidenav">
-        <script>
-            console.group("NAV SECTION");
-            startTimer("pageload-nav");
-        </script>
+      <script>
+        console.group("NAV SECTION");
+        startTimer("pageload-nav");
+      </script>
 
-        <div class="wrapper nav-bar">
-            <ul>
-                <li class="outer-circle">
-                    <a href="#one" class="inner-circle nav1"></a>
-                </li>
-                <li class="outer-circle">
-                    <a href="#two" class="inner-circle nav2"></a>
-                </li>
-                <li class="outer-circle">
-                    <a href="#three" class="inner-circle nav3"></a>
-                </li>
-            </ul>
-        </div>
+      <div class="wrapper nav-bar">
+        <ul>
+          <li class="outer-circle">
+            <a href="#one" class="inner-circle nav1"></a>
+          </li>
+          <li class="outer-circle">
+            <a href="#two" class="inner-circle nav2"></a>
+          </li>
+          <li class="outer-circle">
+            <a href="#three" class="inner-circle nav3"></a>
+          </li>
+        </ul>
+      </div>
 
-        <script>
-            debugInfo.navTime = endTimer("pageload-nav");
-            console.groupEnd("NAV Section");
-        </script>
+      <script>
+        debugInfo.navTime = endTimer("pageload-nav");
+        console.groupEnd("NAV Section");
+      </script>
     </nav>
 
     <main>
-        <header>
-            <script>
-                console.group("HEADER Section");
-                startTimer("pageload-header");
-            </script>
-
-            <div class="wrapper">
-                <a href="/">
-                    <img class="logo" src="./images/logo.png">
-                    <span class="header-title">QUOTE MAKER</span>
-                </a>
-            </div>
-
-            <script>
-                debugInfo.headerTime = endTimer("pageload-header");
-                console.groupEnd("HEADER Section");
-            </script>
-        </header>
+      <header>
         <script>
-            console.group("MAIN Section");
-            startTimer("pageload-main");
+          console.group("HEADER Section");
+          startTimer("pageload-header");
         </script>
 
-        <section id="one">
+        <div class="wrapper">
+          <a href="/">
+            <img class="logo" src="./images/logo.png" />
+            <span class="header-title">QUOTE MAKER</span>
+          </a>
+        </div>
 
-            <script>
-                console.group("SECTION Section");
-                startTimer("pageload-section");
-            </script>
+        <script>
+          debugInfo.headerTime = endTimer("pageload-header");
+          console.groupEnd("HEADER Section");
+        </script>
+      </header>
+      <script>
+        console.group("MAIN Section");
+        startTimer("pageload-main");
+      </script>
 
-            <video autoplay muted loop class="background-video">
-                <source src="./videos/header_background.mp4" type="video/mp4">
-            </video>
+      <section id="one">
+        <script>
+          console.group("SECTION Section");
+          startTimer("pageload-section");
+        </script>
 
-            <div class="wrapper">
+        <video autoplay muted loop class="background-video">
+          <source src="./videos/header_background.mp4" type="video/mp4" />
+        </video>
 
-                <textarea type="textarea" class="input-quote" placeholder="Your Quote" minlength="1" maxlength="150" id="text_top"></textarea>
-                <input type="text" class="input-author" placeholder="Author" minlength="1" maxlength="30" id="text_bottom" />
-                <a href="#two" class="next-button">
-                    <button class="next">
-                        <span>NEXT</span>
-                    </button>
-                </a>
-            </div>
+        <div class="wrapper">
+          <textarea
+            type="textarea"
+            class="input-quote"
+            placeholder="Your Quote"
+            minlength="1"
+            maxlength="150"
+            id="text_top"
+          ></textarea>
+          <input
+            type="text"
+            class="input-author"
+            placeholder="Author"
+            minlength="1"
+            maxlength="30"
+            id="text_bottom"
+          />
+          <a href="#two" class="next-button">
+            <button class="next">
+              <span>NEXT</span>
+            </button>
+          </a>
+        </div>
 
+        <div class="back-pic-wrapper">
+          <img src="./images/01.png" class="back-pic" />
+        </div>
+
+        <audio class="audio-beautiful" controls style="display: none">
+          <source src="./beautiful.mp3" type="audio/mp3" />
+        </audio>
+
+        <script>
+          debugInfo.sectionTime = endTimer("pageload-section");
+          console.groupEnd("SECTION Section");
+        </script>
+      </section>
+
+      <section id="two">
+        <script>
+          console.group("SECTION Section");
+          startTimer("pageload-section");
+        </script>
+
+        <div class="canvas-section">
+          <div class="canvas-main">
             <div class="back-pic-wrapper">
-                <img src="./images/01.png" class="back-pic">
+              <img src="./images/02.png" class="back-pic" />
+            </div>
+            <canvas id="quoteCanvas" class="canvas-container">
+              Unfortunately your browser does not support canvas.
+            </canvas>
+            <img id="start-image" src="" alt="" crossorigin="anonymous" />
+          </div>
+          <div class="canvas-settings">
+            <div class="settings-header"><span>Quote</span></div>
+            <div class="settings-input">
+              <input type="text" placeholder='"Your Quote"' id="text_top2" />
             </div>
 
-            <audio class="audio-beautiful" controls style="display: none">
-                <source src="./beautiful.mp3" type="audio/mp3">
-            </audio>
+            <div><label for="text_top_font_size">Font size:</label></div>
+            <div>
+              <input
+                id="text_top_font_size"
+                class="slider"
+                type="range"
+                min="0"
+                max="72"
+                value="50"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_top_font_size__val">50</span>px
+            </div>
 
-            <script>
-                debugInfo.sectionTime = endTimer("pageload-section");
-                console.groupEnd("SECTION Section");
-            </script>
-        </section>
+            <div><label for="text_top_offset">Offset from top:</label></div>
+            <div>
+              <input
+                id="text_top_offset"
+                class="slider"
+                type="range"
+                min="0"
+                max="500"
+                value="250"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_top_offset__val">250</span>px
+            </div>
 
-        <section id="two">
-            <script>
-                console.group("SECTION Section");
-                startTimer("pageload-section");
-            </script>
+            <div class="settings-header"><span>Author</span></div>
+            <div class="settings-input">
+              <input
+                type="text"
+                placeholder="Author"
+                id="text_bottom2"
+                minlength="1"
+                maxlength="30"
+              />
+            </div>
 
-            <div class="canvas-section">
-                <div class="canvas-main">
-                    <div class="back-pic-wrapper">
-                        <img src="./images/02.png" class="back-pic">
-                    </div>
-                    <canvas id="quoteCanvas" class="canvas-container">
-                        Unfortunately your browser does not support canvas.
-                    </canvas>
-                    <img id="start-image" src="" alt="" crossorigin="anonymous" />
+            <div><label for="text_bottom_font_size">Font size:</label></div>
+            <div>
+              <input
+                id="text_bottom_font_size"
+                class="slider"
+                type="range"
+                min="0"
+                max="20"
+                value="15"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_bottom_font_size__val">15</span>px
+            </div>
+            <div><label for="text_bottom_offset">Offset from top:</label></div>
+            <div>
+              <input
+                id="text_bottom_offset"
+                class="slider"
+                type="range"
+                min="0"
+                max="1000"
+                value="860"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_bottom_offset__val">860</span>px
+            </div>
+
+            <div class="settings-header"><span>More</span></div>
+            <div><label for="canvas_size">Image size:</label></div>
+            <div>
+              <input
+                id="canvas_size"
+                class="slider"
+                type="range"
+                min="1"
+                max="500"
+                value="500"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="canvas_size__val">500</span>px
+            </div>
+
+            <div><label for="text_line_height">Line height:</label></div>
+            <div>
+              <input
+                id="text_line_height"
+                class="slider"
+                type="range"
+                min="0"
+                max="100"
+                value="15"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_line_height__val">15</span>pt
+            </div>
+            <div><label for="text_stroke_width">Stroke width:</label></div>
+            <div>
+              <input
+                id="text_stroke_width"
+                class="slider"
+                type="range"
+                min="0"
+                max="20"
+                value="4"
+              />
+            </div>
+            <div class="settings-slider-val">
+              <span id="text_stroke_width__val">4</span>pt
+            </div>
+
+            <div class="settings-input">
+              <span class="custom-dropdown">
+                <select id="category-select">
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="love">Love</option>
+                  <option value="life">Life</option>
+                  <option value="friendship">Friendship</option>
+                  <option value="motivation">Motivation</option>
+                  <option value="prank">Prank</option>
+                  <option value="travel">Travel</option>
+                </select>
+              </span>
+            </div>
+
+            <div class="settings-input-file">
+              <a id="random-image" class="custom-random-image"></a>
+              <div class="file-upload">
+                <div class="file-select">
+                  <div class="random-select-button">
+                    <i class="fa fa-random"></i>
+                  </div>
+                  <div class="file-select-name" id="noFile">
+                    Random image -or- Upload image
+                  </div>
+                  <div class="file-select-button" id="fileName">
+                    <i class="fa fa-upload"></i>
+                  </div>
+                  <input type="file" name="chooseFile" id="image-upload" />
                 </div>
-                <div class="canvas-settings">
-                    <div class="settings-header"><span>Quote</span></div>
-                    <div class="settings-input"><input type="text" placeholder='"Your Quote"' id="text_top2" /></div>
-
-                    <div><label for="text_top_font_size">Font size:</label></div>
-                    <div><input id="text_top_font_size" class="slider" type="range" min="0" max="72" value="50" /></div>
-                    <div class="settings-slider-val"><span id="text_top_font_size__val">50</span>px</div>
-
-                    <div><label for="text_top_offset">Offset from top:</label></div>
-                    <div><input id="text_top_offset" class="slider" type="range" min="0" max="500" value="250" /></div>
-                    <div class="settings-slider-val"><span id="text_top_offset__val">250</span>px</div>
-
-                    <div class="settings-header"><span>Author</span></div>
-                    <div class="settings-input"><input type="text" placeholder="Author" id="text_bottom2" minlength="1"
-                            maxlength="30" /></div>
-
-                    <div><label for="text_bottom_font_size">Font size:</label></div>
-                    <div><input id="text_bottom_font_size" class="slider" type="range" min="0" max="20" value="15" />
-                    </div>
-                    <div class="settings-slider-val"><span id="text_bottom_font_size__val">15</span>px</div>
-                    <div><label for="text_bottom_offset">Offset from top:</label></div>
-                    <div><input id="text_bottom_offset" class="slider" type="range" min="0" max="1000" value="860" />
-                    </div>
-                    <div class="settings-slider-val"><span id="text_bottom_offset__val">860</span>px</div>
-
-                    <div class="settings-header"><span>More</span></div>
-                    <div><label for="canvas_size">Image size:</label></div>
-                    <div><input id="canvas_size" class="slider" type="range" min="1" max="500" value="500"/></div>
-                    <div class="settings-slider-val"><span id="canvas_size__val">500</span>px</div>
-
-                    <div><label for="text_line_height">Line height:</label></div>
-                    <div><input id="text_line_height" class="slider" type="range" min="0" max="100" value="15" /></div>
-                    <div class="settings-slider-val"><span id="text_line_height__val">15</span>pt</div>
-                    <div><label for="text_stroke_width">Stroke width:</label></div>
-                    <div><input id="text_stroke_width" class="slider" type="range" min="0" max="20" value="4" /></div>
-                    <div class="settings-slider-val"><span id="text_stroke_width__val">4</span>pt</div>
-
-                    <div class="settings-input">
-                        <span class="custom-dropdown">
-                            <select id="category-select">
-                                <option value="" disabled selected>Select a category</option>
-                                <option value="love">Love</option>
-                                <option value="life">Life</option>
-                                <option value="friendship">Friendship</option>
-                                <option value="motivation">Motivation</option>
-                                <option value="prank">Prank</option>
-                                <option value="travel">Travel</option>
-                            </select>
-                        </span>
-                    </div>
-
-                    <div class="settings-input-file">
-                        <a id="random-image" class="custom-random-image"></a>
-                        <div class="file-upload">
-                            <div class="file-select">
-                                <div class="random-select-button"><i class="fa fa-random"></i></div>
-                                <div class="file-select-name" id="noFile">Random image -or- Upload image</div>
-                                <div class="file-select-button" id="fileName"><i class="fa fa-upload"></i></div>
-                                <input type="file" name="chooseFile" id="image-upload">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-buttons">
-                        <button id="save_quote" type="button">SAVE</button>
-                        <a id="download_quote" download="myQuote.png" onclick="download_quote(this);">
-                            <button type="button">DOWNLOAD</button>
-                        </a>
-                    </div>
-                </div>
+              </div>
             </div>
 
-            <script>
-                debugInfo.sectionTime = endTimer("pageload-section");
-                console.groupEnd("SECTION Section");
-            </script>
-        </section>
-
-        <section id="three">
-            <script>
-                console.group("SECTION Section");
-                startTimer("pageload-section");
-            </script>
-
-            <div class="btnContainer">
-                <button id="Love" class="categoryBtn" value="http://localhost:3000/api?category=love">Love</button>
-                <button id="Life" class="categoryBtn" value="http://localhost:3000/api?category=life">Life</button>
-                <button id="Friendship" class="categoryBtn" value="http://localhost:3000/api?category=friendship">Friendship</button>
-                <button id="Motivation" class="categoryBtn" value="http://localhost:3000/api?category=motivation">Motivation</button>
-                <button id="Prank" class="categoryBtn" value="http://localhost:3000/api?category=prank">Prank</button>
-                <button id="Travel" class="categoryBtn" value="http://localhost:3000/api?category=travel">Travel</button>
+            <div class="settings-buttons">
+              <button id="save_quote" type="button">SAVE</button>
+              <a
+                id="download_quote"
+                download="myQuote.png"
+                onclick="download_quote(this);"
+              >
+                <button type="button">DOWNLOAD</button>
+              </a>
             </div>
-
-            <div id="gallery"></div>
-            <script>
-                debugInfo.sectionTime = endTimer("pageload-section");
-                console.groupEnd("SECTION Section");
-            </script>
-        </section>
+          </div>
+        </div>
 
         <script>
-            debugInfo.mainTime = endTimer("pageload-main");
-            console.groupEnd("MAIN Section");
+          debugInfo.sectionTime = endTimer("pageload-section");
+          console.groupEnd("SECTION Section");
+        </script>
+      </section>
+
+      <section id="three">
+        <script>
+          console.group("SECTION Section");
+          startTimer("pageload-section");
         </script>
 
+        <div class="btnContainer">
+          <button
+            id="Love"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=love"
+          >
+            Love
+          </button>
+          <button
+            id="Life"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=life"
+          >
+            Life
+          </button>
+          <button
+            id="Friendship"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=friendship"
+          >
+            Friendship
+          </button>
+          <button
+            id="Motivation"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=motivation"
+          >
+            Motivation
+          </button>
+          <button
+            id="Prank"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=prank"
+          >
+            Prank
+          </button>
+          <button
+            id="Travel"
+            class="categoryBtn"
+            value="http://localhost:3000/api?category=travel"
+          >
+            Travel
+          </button>
+        </div>
+
+        <div id="gallery"></div>
+        <script>
+          debugInfo.sectionTime = endTimer("pageload-section");
+          console.groupEnd("SECTION Section");
+        </script>
+      </section>
+
+      <script>
+        debugInfo.mainTime = endTimer("pageload-main");
+        console.groupEnd("MAIN Section");
+      </script>
     </main>
     <footer>
-        <script>
-            console.group("FOOTER SECTION");
-            startTimer("pageload-footer");
+      <script>
+        console.group("FOOTER SECTION");
+        startTimer("pageload-footer");
 
-            function onContextMenuEvent() {
-                console.log("onContextMenuEvent")
-            }
+        function onContextMenuEvent() {
+          console.log("onContextMenuEvent");
+        }
 
-            function onKeyDownEvent() {
-                console.log("onKeyDownEvent")
-            }
-            function onKeyUpEvent() {
-                console.log("onKeyUpEvent")
-            }
+        function onKeyDownEvent() {
+          console.log("onKeyDownEvent");
+        }
+        function onKeyUpEvent() {
+          console.log("onKeyUpEvent");
+        }
 
-            function onKeyPressEvent() {
-                console.log("onKeyPressEvent")
-            }
+        function onKeyPressEvent() {
+          console.log("onKeyPressEvent");
+        }
 
-            function onCopyEvent() {
-                console.log("copy")
-            }
+        function onCopyEvent() {
+          console.log("copy");
+        }
 
-            function onPasteEvent() {
-                console.log("paste")
-            }
+        function onPasteEvent() {
+          console.log("paste");
+        }
 
-            function onCutEvent() {
-                console.log("cut")
-            }
+        function onCutEvent() {
+          console.log("cut");
+        }
 
-            function onPageLoad() {
-                console.log("Page is loaded");
-                getClientRect();
-            }
+        function onPageLoad() {
+          console.log("Page is loaded");
+          getClientRect();
+        }
 
-            function onPageUnLoad() {
-                console.log("Page is Un-loaded");
-            }
+        function onPageUnLoad() {
+          console.log("Page is Un-loaded");
+        }
 
-            function onPageShow() {
-                console.log("Page is Showing")
-            }
+        function onPageShow() {
+          console.log("Page is Showing");
+        }
 
-            function onPageHide() {
-                console.log("Page is hiding")
-            }
+        function onPageHide() {
+          console.log("Page is hiding");
+        }
 
-            function onPageFocus() {
-                console.log("Page has Focus")
-            }
+        function onPageFocus() {
+          console.log("Page has Focus");
+        }
 
-            function onPageBlur() {
-                console.log("Page lost focus")
-            }
+        function onPageBlur() {
+          console.log("Page lost focus");
+        }
 
-            function onBeforePageFocus() {
-                console.log("Page is about to gain focus")
-            }
-            function onBeforePageBlur() {
-                console.log("Page about to lose focus")
-            }
+        function onBeforePageFocus() {
+          console.log("Page is about to gain focus");
+        }
+        function onBeforePageBlur() {
+          console.log("Page about to lose focus");
+        }
 
-            debugInfo.footerTime = endTimer("pageload-footer");
-            console.groupEnd("FOOTER Section");
-        </script>
-        <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
-        <div class="foot logo"><img class="footer-logo" src="./images/outline-logo.png" width="20px"></div>
-        <div class="foot contact-logo">
-            <a href="/"><img src="images/instagram-logo.png" alt="instagram-logo"></a>
-            <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
-            <a href="/"><img src="images//facebook-logo.png" alt="facebook-logo"></a>
-        </div>
+        debugInfo.footerTime = endTimer("pageload-footer");
+        console.groupEnd("FOOTER Section");
+      </script>
+      <div class="foot wrapper">&copy; 2019 QuoteMaker</div>
+      <div class="foot logo">
+        <img class="footer-logo" src="./images/outline-logo.png" width="20px" />
+      </div>
+      <div class="foot contact-logo">
+        <a href="/"
+          ><img src="images/instagram-logo.png" alt="instagram-logo"
+        /></a>
+        <a href="/"><img src="images/twitter-logo.png" alt="twitter-logo"/></a>
+        <a href="/"
+          ><img src="images//facebook-logo.png" alt="facebook-logo"
+        /></a>
+      </div>
     </footer>
 
-
     <script>
-        debugInfo.bodyTime = endTimer("pageload-body");
-        console.groupEnd("BODY Section");
+      debugInfo.bodyTime = endTimer("pageload-body");
+      console.groupEnd("BODY Section");
     </script>
     <script src="./script/section1.js"></script>
     <script src="./script/section2.js"></script>
     <script src="./script/section3.js"></script>
-</body>
+  </body>
 
-<script>
+  <script>
     debugInfo.htmlTime = endTimer("pageload-html");
     console.groupEnd("HTML Section");
 
     console.group("Debug Information");
     console.group("Page Information");
-    console.log("Page Loaded: " + location.href + " with parms: " + location.search);
+    console.log(
+      "Page Loaded: " + location.href + " with parms: " + location.search
+    );
     console.log("Language: " + navigator.language);
     console.log("Cookies Enabled: " + navigator.cookieEnabled);
-    console.log("Platform: " + navigator.platform + "(" + navigator.product + ")");
-    console.log(navigator.appCodeName + "(" + navigator.appName + ") " + navigator.appVersion);
+    console.log(
+      "Platform: " + navigator.platform + "(" + navigator.product + ")"
+    );
+    console.log(
+      navigator.appCodeName +
+        "(" +
+        navigator.appName +
+        ") " +
+        navigator.appVersion
+    );
     console.log("UserAgent: " + navigator.userAgent);
     console.log("JavaEnabled: " + navigator.javaEnabled());
     console.log("Is Online: " + navigator.onLine);
@@ -421,7 +586,5 @@
     console.groupEnd("DOM Information");
 
     console.groupEnd("DebugInformation");
-
-</script>
-
+  </script>
 </html>
