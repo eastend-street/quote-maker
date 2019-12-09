@@ -703,39 +703,42 @@ FOOTER
 */
 
 footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #1e2832;
     color: #ffffff;
+}
+
+footer > hr {
+    width: 100%;
+    background-color: rgb(20, 20, 20);
 }
 
 footer>.foot {
     padding: 20px 20px;
     font-size: 0.625rem;
-    width: 100%;
 }
 
 footer>.wrapper {
-    justify-self: start;
-    text-align: left;
+    justify-self: center;
+    text-align: center;
 }
 
 footer>.logo {
     justify-self: center;
-    padding: 20px 10px;
     text-align: center;
     /* background-color: darkred; */
     padding: 0px 30px;
 }
 
 .footer-logo{
-    width: 120px;
+    width: 250px;
 }
 
 footer>.contact-logo {
-    justify-self: end;
-    text-align: right;
+    justify-self: center;
+    text-align: center;
 }
 
 /* 
