@@ -10,7 +10,7 @@
     "debug": "~2.6.9",
     "dotenv": "^8.1.0",
     "ejs": "^2.7.1",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "express-validator": "^6.2.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
